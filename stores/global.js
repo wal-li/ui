@@ -7,8 +7,10 @@ export const storeName = GLOBAL_STORE_NAME;
 
 export const useGlobalStore = defineStore(storeName, () => {
   const addresses = ref([]);
+  const dashboardName = import.meta.env.WALLI_DASHBOARD_NAME;
 
   return {
-    addresses
+    addresses,
+    dashboardName
   };
 });

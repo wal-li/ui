@@ -14,7 +14,7 @@ import {
 export const storeName = HTTP_STORE_NAME;
 
 export const useHttpStore = defineStore(storeName, () => {
-  const baseURL = import.meta.env.VITE_BASE_API;
+  const baseURL = import.meta.env.WALLI_BASE_API;
   const state = useStorage(storeName, { authToken: null }, localStorage);
   const noReq = ref(0);
   const isLoading = computed(() => noReq.value !== 0);

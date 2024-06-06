@@ -10,9 +10,11 @@ import {
 } from '../constants.js';
 import { useTableStore } from '../stores/table.js';
 import { useAuthStore } from '../stores/auth.js';
+import { useGlobalStore } from '../stores/global';
 
 const tableStore = useTableStore();
 const authStore = useAuthStore();
+const globalStore = useGlobalStore();
 
 const items = ref([]);
 
@@ -60,7 +62,7 @@ watch(() => tableStore.tables, loadMenuItems);
         <h1
           class="text-center text-xl font-semibold w-full uppercase tracking-widest text-primary my-4"
         >
-          WalliDB
+          {{ globalStore.dashboardName }}
         </h1>
       </template>
 
