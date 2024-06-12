@@ -1,10 +1,9 @@
-import { createWebHistory, createRouter } from 'vue-router';
-
 import AuthLayout from './layouts/Auth.vue';
 import AdminLayout from './layouts/Admin.vue';
 
 import AuthLoginView from './views/auth/Login.vue';
 import AdminOverviewView from './views/admin/Overview.vue';
+import AdminChangePassword from './views/admin/ChangePassword.vue';
 import AdminTableView from './views/admin/Table.vue';
 import AdminRecordView from './views/admin/Record.vue';
 import NotFoundView from './views/NotFound.vue';
@@ -16,12 +15,13 @@ import {
   ADMIN_OVERVIEW_PATH,
   INDEX_PATH,
   ADMIN_TABLE_PATH,
+  ADMIN_CHANGE_PASSWORD_PATH,
   ADMIN_NEW_RECORD_PATH,
   CATCH_ALL_PATH,
   ADMIN_RECORD_PATH,
 } from './constants';
 
-const routes = [
+export default [
   {
     path: ADMIN_PATH,
     redirect: ADMIN_OVERVIEW_PATH,
@@ -30,6 +30,10 @@ const routes = [
       {
         path: ADMIN_OVERVIEW_PATH,
         component: AdminOverviewView,
+      },
+      {
+        path: ADMIN_CHANGE_PASSWORD_PATH,
+        component: AdminChangePassword,
       },
       {
         path: ADMIN_TABLE_PATH,
@@ -65,8 +69,3 @@ const routes = [
     component: NotFoundView,
   },
 ];
-
-export default createRouter({
-  history: createWebHistory(),
-  routes,
-});

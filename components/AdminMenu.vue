@@ -11,53 +11,22 @@ import {
 import { useTableStore } from '../stores/table';
 import { useAuthStore } from '../stores/auth';
 import { useGlobalStore } from '../stores/global';
+import { computed } from 'vue';
 
 const tableStore = useTableStore();
 const authStore = useAuthStore();
 const globalStore = useGlobalStore();
 
-const items = ref([]);
+const sortedMenuItems = computed(() => {
+  const items = [...globalStore.menuItems];
 
-/**
- * Do log out and clear token, then redirect to login page
- */
-function handleLogout() {
-  authStore.logout();
-}
-
-function loadMenuItems() {
-  items.value = [];
-
-  items.value.push({
-    label: 'Overview',
-    route: ADMIN_OVERVIEW_PATH,
-    icon: 'pi pi-th-large',
-  });
-
-  for (const table of tableStore.tables) {
-    items.value.push({
-      label: table.name,
-      route: ADMIN_TABLE_PATH.replace(':tableName', table.name),
-      icon: 'pi pi-file',
-    });
-  }
-
-  items.value.push({
-    label: 'Logout',
-    command: handleLogout,
-    icon: 'pi pi-sign-out',
-  });
-}
-
-onMounted(() => {
-  loadMenuItems();
+  return items.map((i) => i.value);
 });
-watch(() => tableStore.tables, loadMenuItems);
 </script>
 
 <template>
   <div>
-    <Menu :model="items" class="admin-menu">
+    <Menu :model="sortedMenuItems" class="admin-menu">
       <template #start>
         <h1
           class="text-center text-xl font-semibold w-full uppercase tracking-widest text-primary my-4"

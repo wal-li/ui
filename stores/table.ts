@@ -1,18 +1,25 @@
-import { computed, ref } from 'vue';
+import { Ref, computed, ref } from 'vue';
 import { defineStore } from 'pinia';
 
 import qs from 'qs';
 
 import { useHttpStore } from './http';
-import { TABLE_API, TABLE_LIST_API, TABLE_STORE_NAME } from '../constants';
+import {
+  ADMIN_TABLE_PATH,
+  TABLE_API,
+  TABLE_LIST_API,
+  TABLE_STORE_NAME,
+} from '../constants';
 import { joinPath } from '../utils';
+import { useGlobalStore } from './global';
 
 export const storeName = TABLE_STORE_NAME;
 
 export const useTableStore = defineStore(storeName, () => {
   const httpStore = useHttpStore();
+  const globalStore = useGlobalStore();
 
-  const tables = ref([]);
+  const tables: Ref<any[]> = ref([]);
   const permissions = ref([]);
   const isTableLoading = ref(true);
 
@@ -33,6 +40,20 @@ export const useTableStore = defineStore(storeName, () => {
         ...res.data.data[tableName],
       });
     }
+
+    // update menu
+    const tableItems: any[] = [];
+    for (const table of tables.value) {
+      tableItems.push({
+        label: table.name,
+        route: ADMIN_TABLE_PATH.replace(':tableName', table.name),
+        icon: 'pi pi-file',
+      });
+    }
+    globalStore.setMenuItem('tables', {
+      label: 'Tables',
+      items: tableItems,
+    });
 
     permissions.value = res.data.user?.permissions || [];
 

@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+import { createRouter, createWebHistory } from 'vue-router';
 
 import 'primeicons/primeicons.css';
 
@@ -12,10 +13,14 @@ import './style.css';
 
 import Lara from './presets/lara';
 import App from './App.vue';
-import router from './router';
+import routes from './routes';
 
 // create app
 const app = createApp(App);
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
 
 // routing
 app.use(router);

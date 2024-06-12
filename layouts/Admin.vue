@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { onMounted, watch, ref } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useToast } from 'primevue/usetoast';
@@ -7,11 +7,17 @@ import ProgressSpinner from 'primevue/progressspinner';
 import Sidebar from 'primevue/sidebar';
 import Button from 'primevue/button';
 import Breadcrumb from 'primevue/breadcrumb';
+import Menu from 'primevue/menu';
 
 import { useTableStore } from '../stores/table';
 import { useAuthStore } from '../stores/auth';
 import { useGlobalStore } from '../stores/global';
-import { AUTH_LOGIN_PATH, ADMIN_PATH } from '../constants';
+import {
+  AUTH_LOGIN_PATH,
+  ADMIN_PATH,
+  ADMIN_OVERVIEW_PATH,
+  ADMIN_CHANGE_PASSWORD_PATH,
+} from '../constants';
 
 import AdminMenu from '../components/AdminMenu.vue';
 
@@ -25,6 +31,20 @@ const toast = useToast();
 
 const adminMenuState = ref(false);
 const settingMenuState = ref(false);
+
+function handleLogout() {
+  authStore.logout();
+}
+
+const userMenu = ref();
+const userMenuItems = ref([
+  {
+    label: 'Change Password',
+    route: ADMIN_CHANGE_PASSWORD_PATH,
+    icon: 'pi pi-lock',
+  },
+  { label: 'Logout', command: handleLogout, icon: 'pi pi-sign-out' },
+]);
 
 const home = ref({
   icon: 'pi pi-home',
@@ -56,6 +76,10 @@ function toggleAdminMenu(nextValue = !adminMenuState.value) {
 
 function toggleSettingMenu(nextValue = !settingMenuState.value) {
   settingMenuState.value = nextValue;
+}
+
+function toggleUserMenu(event) {
+  userMenu.value.toggle(event);
 }
 
 onMounted(() => {
@@ -101,14 +125,14 @@ watch(
     </Sidebar>
 
     <div
-      class="hidden md:block fixed h-full top-0 left-0 w-72 border-r"
+      class="hidden md:block fixed h-full top-0 left-0 w-72 border-r bg-surface-0"
       v-if="!adminMenuState"
     >
       <AdminMenu />
     </div>
 
     <div class="md:ml-72 h-full">
-      <div class="h-12 flex items-center border-b">
+      <div class="h-16 flex items-center border-b bg-surface-0 px-2">
         <Button
           class="md:hidden"
           icon="pi pi-bars"
@@ -116,7 +140,7 @@ watch(
           @click="() => toggleAdminMenu()"
         />
 
-        <div class="w-full">
+        <div class="w-full flex justify-center">
           <Breadcrumb
             class="admin-breadcumb"
             :home="home"
@@ -150,9 +174,37 @@ watch(
             </template>
           </Breadcrumb>
         </div>
-        <!-- <h1 class="w-full text-center font-semibold uppercase">
-          {{ globalStore.title }}
-        </h1> -->
+
+        <Button icon="pi pi-user" severity="none" @click="toggleUserMenu" />
+        <Menu
+          ref="userMenu"
+          class="user-menu"
+          :model="userMenuItems"
+          :popup="true"
+        >
+          <template #item="{ item, props }">
+            <router-link
+              v-if="item.route"
+              v-slot="{ href, navigate }"
+              :to="item.route"
+              custom
+            >
+              <a :href="href" v-bind="props.action" @click="navigate">
+                <span :class="item.icon" />
+                <span class="ml-4 capitalize">{{ item.label }}</span>
+              </a>
+            </router-link>
+            <a
+              v-else
+              :href="item.url"
+              :target="item.target"
+              v-bind="props.action"
+            >
+              <span :class="item.icon" />
+              <span class="ml-4 capitalize">{{ item.label }}</span>
+            </a>
+          </template></Menu
+        >
 
         <Button
           icon="pi pi-cog"
@@ -174,9 +226,9 @@ watch(
 <style>
 .admin-breadcumb {
   border: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.user-menu ul li [data-pc-section='content'] {
+  background-color: transparent;
 }
 </style>
