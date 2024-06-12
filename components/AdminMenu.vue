@@ -6,10 +6,10 @@ import Menu from 'primevue/menu';
 import {
   ADMIN_OVERVIEW_PATH,
   ADMIN_PATH,
-  ADMIN_TABLE_PATH
-} from '../constants.js';
-import { useTableStore } from '../stores/table.js';
-import { useAuthStore } from '../stores/auth.js';
+  ADMIN_TABLE_PATH,
+} from '../constants';
+import { useTableStore } from '../stores/table';
+import { useAuthStore } from '../stores/auth';
 import { useGlobalStore } from '../stores/global';
 
 const tableStore = useTableStore();
@@ -31,21 +31,21 @@ function loadMenuItems() {
   items.value.push({
     label: 'Overview',
     route: ADMIN_OVERVIEW_PATH,
-    icon: 'pi pi-th-large'
+    icon: 'pi pi-th-large',
   });
 
   for (const table of tableStore.tables) {
     items.value.push({
       label: table.name,
       route: ADMIN_TABLE_PATH.replace(':tableName', table.name),
-      icon: 'pi pi-file'
+      icon: 'pi pi-file',
     });
   }
 
   items.value.push({
     label: 'Logout',
     command: handleLogout,
-    icon: 'pi pi-sign-out'
+    icon: 'pi pi-sign-out',
   });
 }
 

@@ -7,14 +7,14 @@ import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 import Chips from 'primevue/chips';
 
-import { useTableStore } from '../../stores/table.js';
-import { useGlobalStore } from '../../stores/global.js';
+import { useTableStore } from '../../stores/table';
+import { useGlobalStore } from '../../stores/global';
 import {
   NOT_FOUND_PATH,
   ADMIN_RECORD_PATH,
   ADMIN_TABLE_PATH,
-  ADMIN_NEW_RECORD_PATH
-} from '../../constants.js';
+  ADMIN_NEW_RECORD_PATH,
+} from '../../constants';
 
 import PasswordFormField from '../../components/PasswordFormField.vue';
 
@@ -45,7 +45,7 @@ async function load() {
       severity: 'error',
       summary: 'Invalid Request',
       detail: err.response?.data?.error || err.message,
-      life: 3000
+      life: 3000,
     });
     router.push(NOT_FOUND_PATH);
     return;
@@ -83,7 +83,7 @@ function init() {
   for (const fieldName in tableConfig.value.fields) {
     fieldList.value.push({
       ...tableConfig.value.fields[fieldName],
-      name: fieldName
+      name: fieldName,
     });
   }
 
@@ -92,7 +92,7 @@ function init() {
     { label: 'Table' },
     {
       label: tableName.value,
-      route: ADMIN_TABLE_PATH.replace(':tableName', tableName.value)
+      route: ADMIN_TABLE_PATH.replace(':tableName', tableName.value),
     },
     {
       label: recordId.value
@@ -101,10 +101,10 @@ function init() {
       route: recordId.value
         ? ADMIN_RECORD_PATH.replace(':tableName', tableName.value).replace(
             ':recordId',
-            recordId.value
+            recordId.value,
           )
-        : ADMIN_NEW_RECORD_PATH.replace(':tableName', tableName.value)
-    }
+        : ADMIN_NEW_RECORD_PATH.replace(':tableName', tableName.value),
+    },
   ];
   // `Table > ${tableName.value} > ${
   //   recordId.value
@@ -132,7 +132,7 @@ async function handleSubmit() {
         severity: 'error',
         summary: 'Invalid field(s)',
         detail: 'Some fields are incorrect.',
-        life: 3000
+        life: 3000,
       });
       return;
     }
@@ -144,14 +144,14 @@ async function handleSubmit() {
     try {
       nextRecord = await tableStore.createRecord(
         tableName.value,
-        dataForm.value
+        dataForm.value,
       );
     } catch (err) {
       toast.add({
         severity: 'error',
         summary: 'Invalid Request',
         detail: err.response?.data?.error || err.message,
-        life: 3000
+        life: 3000,
       });
       return;
     }
@@ -160,14 +160,14 @@ async function handleSubmit() {
       severity: 'success',
       summary: 'Created',
       detail: `Record was created successful.`,
-      life: 3000
+      life: 3000,
     });
 
     router.push(
       ADMIN_RECORD_PATH.replace(':tableName', tableName.value).replace(
         ':recordId',
-        nextRecord._id
-      )
+        nextRecord._id,
+      ),
     );
     return;
   }
@@ -178,14 +178,14 @@ async function handleSubmit() {
     nextRecord = await tableStore.putRecord(
       tableName.value,
       recordId.value,
-      dataForm.value
+      dataForm.value,
     );
   } catch (err) {
     toast.add({
       severity: 'error',
       summary: 'Invalid Request',
       detail: err.response?.data?.error || err.message,
-      life: 3000
+      life: 3000,
     });
     return;
   }
@@ -194,7 +194,7 @@ async function handleSubmit() {
     severity: 'success',
     summary: 'Updated',
     detail: `Record was updated successful.`,
-    life: 3000
+    life: 3000,
   });
 
   init();
@@ -208,7 +208,7 @@ watch(
   () => [route.params.tableName, route.params.recordId],
   () => {
     init();
-  }
+  },
 );
 </script>
 

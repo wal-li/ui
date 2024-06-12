@@ -1,20 +1,5 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  style="
-    --primary-50: 236 253 245;
-    --primary-100: 209 250 229;
-    --primary-200: 167 243 208;
-    --primary-300: 110 231 183;
-    --primary-400: 52 211 153;
-    --primary-500: 16 185 129;
-    --primary-600: 5 150 105;
-    --primary-700: 4 120 87;
-    --primary-800: 6 95 70;
-    --primary-900: 4 78 56;
-    --primary-950: 2 44 34;
-  "
->
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,17 +13,18 @@
       href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;600;700&family=Fira+Code&family=Raleway:wght@400;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./theme.css" />
   </head>
   <body
     class="bg-surface-100 text-surface-900 dark:bg-surface-900 dark:text-surface-100 antialias h-full"
   >
     <noscript>
       <strong
-        >We're sorry but walli-db doesn't work properly without JavaScript
-        enabled. Please enable it to continue.</strong
+        >We're sorry but Walli Dashboard doesn't work properly without
+        JavaScript enabled. Please enable it to continue.</strong
       >
     </noscript>
     <div id="app" class="h-full"></div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.ts"></script>
   </body>
 </html>

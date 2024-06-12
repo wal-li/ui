@@ -1,6 +1,6 @@
 <script setup>
-import { useGlobalStore } from '../../stores/global.js';
-import { ADMIN_OVERVIEW_PATH } from '../../constants.js';
+import { useGlobalStore } from '../../stores/global';
+import { ADMIN_OVERVIEW_PATH } from '../../constants';
 
 const globalStore = useGlobalStore();
 

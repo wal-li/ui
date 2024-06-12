@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
-import { GLOBAL_STORE_NAME } from '../constants.js';
+import { GLOBAL_STORE_NAME } from '../constants';
 
 export const storeName = GLOBAL_STORE_NAME;
 
@@ -11,6 +11,6 @@ export const useGlobalStore = defineStore(storeName, () => {
 
   return {
     addresses,
-    dashboardName
+    dashboardName,
   };
 });

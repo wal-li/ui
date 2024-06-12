@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
-import { useHttpStore } from './http.js';
-import { AUTH_LOGIN_API, AUTH_STORE_NAME } from '../constants.js';
+import { useHttpStore } from './http';
+import { AUTH_LOGIN_API, AUTH_STORE_NAME } from '../constants';
 import { computed, watch } from 'vue';
 
 export const storeName = AUTH_STORE_NAME;
@@ -24,11 +24,11 @@ export const useAuthStore = defineStore(storeName, () => {
     // make request
     const res = await httpStore
       .createRequest({
-        autoLoginRedirect: false
+        autoLoginRedirect: false,
       })
       .post(AUTH_LOGIN_API, {
         username,
-        password
+        password,
       });
 
     // validate status
@@ -55,6 +55,6 @@ export const useAuthStore = defineStore(storeName, () => {
     isLoggedIn,
     user,
     login,
-    logout
+    logout,
   };
 });

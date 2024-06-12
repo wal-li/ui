@@ -8,8 +8,8 @@ import {
   HTTP_FORBIDDEN,
   HTTP_INTERNAL_SERVER_ERROR,
   HTTP_OK,
-  HTTP_STORE_NAME
-} from '../constants.js';
+  HTTP_STORE_NAME,
+} from '../constants';
 
 export const storeName = HTTP_STORE_NAME;
 
@@ -42,7 +42,7 @@ export const useHttpStore = defineStore(storeName, () => {
 
         return status >= HTTP_OK && status < HTTP_INTERNAL_SERVER_ERROR;
       },
-      headers
+      headers,
     });
 
     ins.interceptors.request.use(function (config) {
@@ -58,7 +58,7 @@ export const useHttpStore = defineStore(storeName, () => {
       function (error) {
         noReq.value--;
         return Promise.reject(error);
-      }
+      },
     );
 
     return ins;
@@ -68,6 +68,6 @@ export const useHttpStore = defineStore(storeName, () => {
     isLoading,
     baseURL,
     state,
-    createRequest
+    createRequest,
   };
 });

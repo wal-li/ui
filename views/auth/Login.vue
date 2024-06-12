@@ -9,8 +9,8 @@ import Card from 'primevue/card';
 import IconField from 'primevue/iconfield';
 import InputIcon from 'primevue/inputicon';
 
-import { useAuthStore } from '../../stores/auth.js';
-import { ADMIN_PATH } from '../../constants.js';
+import { useAuthStore } from '../../stores/auth';
+import { ADMIN_PATH } from '../../constants';
 
 const authStore = useAuthStore();
 const router = useRouter();
@@ -34,7 +34,7 @@ async function handleSubmit(e) {
       severity: 'error',
       summary: 'Invalid Login',
       detail: err.response?.data?.error || err.message,
-      life: 3000
+      life: 3000,
     });
   }
 }

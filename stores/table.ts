@@ -3,9 +3,9 @@ import { defineStore } from 'pinia';
 
 import qs from 'qs';
 
-import { useHttpStore } from './http.js';
-import { TABLE_API, TABLE_LIST_API, TABLE_STORE_NAME } from '../constants.js';
-import { joinPath } from '../utils.js';
+import { useHttpStore } from './http';
+import { TABLE_API, TABLE_LIST_API, TABLE_STORE_NAME } from '../constants';
+import { joinPath } from '../utils';
 
 export const storeName = TABLE_STORE_NAME;
 
@@ -30,7 +30,7 @@ export const useTableStore = defineStore(storeName, () => {
     for (const tableName in res.data.data) {
       tables.value.push({
         name: tableName,
-        ...res.data.data[tableName]
+        ...res.data.data[tableName],
       });
     }
 
@@ -42,7 +42,7 @@ export const useTableStore = defineStore(storeName, () => {
   /**
    * Get table config in local store
    * @param {string} tableName
-   * @returns {import('../typedefs.js').TableConfig}
+   * @returns {import('../typedefs').TableConfig}
    */
   function getConfig(tableName) {
     for (const table of tables.value) {
@@ -152,6 +152,6 @@ export const useTableStore = defineStore(storeName, () => {
     createRecord,
     getRecord,
     putRecord,
-    removeRecord
+    removeRecord,
   };
 });

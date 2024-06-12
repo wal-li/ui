@@ -1,6 +1,6 @@
 <script setup>
 import Button from 'primevue/button';
-import { ADMIN_OVERVIEW_PATH } from '../constants.js';
+import { ADMIN_OVERVIEW_PATH } from '../constants';
 </script>
 
 <template>

@@ -18,8 +18,8 @@ import {
   ADMIN_TABLE_PATH,
   ADMIN_NEW_RECORD_PATH,
   CATCH_ALL_PATH,
-  ADMIN_RECORD_PATH
-} from './constants.js';
+  ADMIN_RECORD_PATH,
+} from './constants';
 
 const routes = [
   {
@@ -29,21 +29,21 @@ const routes = [
     children: [
       {
         path: ADMIN_OVERVIEW_PATH,
-        component: AdminOverviewView
+        component: AdminOverviewView,
       },
       {
         path: ADMIN_TABLE_PATH,
-        component: AdminTableView
+        component: AdminTableView,
       },
       {
         path: ADMIN_NEW_RECORD_PATH,
-        component: AdminRecordView
+        component: AdminRecordView,
       },
       {
         path: ADMIN_RECORD_PATH,
-        component: AdminRecordView
-      }
-    ]
+        component: AdminRecordView,
+      },
+    ],
   },
   {
     path: AUTH_PATH,
@@ -52,21 +52,21 @@ const routes = [
     children: [
       {
         path: AUTH_LOGIN_PATH,
-        component: AuthLoginView
-      }
-    ]
+        component: AuthLoginView,
+      },
+    ],
   },
   {
     path: INDEX_PATH,
-    redirect: ADMIN_OVERVIEW_PATH
+    redirect: ADMIN_OVERVIEW_PATH,
   },
   {
     path: CATCH_ALL_PATH,
-    component: NotFoundView
-  }
+    component: NotFoundView,
+  },
 ];
 
 export default createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 });

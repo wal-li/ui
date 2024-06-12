@@ -4,7 +4,7 @@ import ProgressSpinner from 'primevue/progressspinner';
 import ConfirmDialog from 'primevue/confirmdialog';
 import DynamicDialog from 'primevue/dynamicdialog';
 
-import { useHttpStore } from './stores/http.js';
+import { useHttpStore } from './stores/http';
 
 const httpStore = useHttpStore();
 </script>

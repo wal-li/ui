@@ -8,10 +8,10 @@ import Sidebar from 'primevue/sidebar';
 import Button from 'primevue/button';
 import Breadcrumb from 'primevue/breadcrumb';
 
-import { useTableStore } from '../stores/table.js';
-import { useAuthStore } from '../stores/auth.js';
-import { useGlobalStore } from '../stores/global.js';
-import { AUTH_LOGIN_PATH, ADMIN_PATH } from '../constants.js';
+import { useTableStore } from '../stores/table';
+import { useAuthStore } from '../stores/auth';
+import { useGlobalStore } from '../stores/global';
+import { AUTH_LOGIN_PATH, ADMIN_PATH } from '../constants';
 
 import AdminMenu from '../components/AdminMenu.vue';
 
@@ -28,7 +28,7 @@ const settingMenuState = ref(false);
 
 const home = ref({
   icon: 'pi pi-home',
-  route: ADMIN_PATH
+  route: ADMIN_PATH,
 });
 
 /**
@@ -41,7 +41,7 @@ function updateLoginState() {
       severity: 'warn',
       summary: 'Login Required',
       detail: 'Invalid session, please login.',
-      life: 3000
+      life: 3000,
     });
     return;
   }
@@ -68,7 +68,7 @@ watch(
   () => authStore.isLoggedIn,
   () => {
     updateLoginState();
-  }
+  },
 );
 
 // watch navigation
@@ -76,7 +76,7 @@ watch(
   () => route.path,
   () => {
     toggleAdminMenu(false);
-  }
+  },
 );
 </script>
 

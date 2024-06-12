@@ -12,7 +12,7 @@ import './style.css';
 
 import Lara from './presets/lara';
 import App from './App.vue';
-import router from './router.js';
+import router from './router';
 
 // create app
 const app = createApp(App);
@@ -26,7 +26,7 @@ app.use(createPinia());
 // ui
 app.use(PrimeVue, {
   unstyled: true,
-  pt: Lara
+  pt: Lara,
 });
 app.use(ToastService);
 app.use(ConfirmationService);

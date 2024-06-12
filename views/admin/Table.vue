@@ -9,8 +9,8 @@ import Column from 'primevue/column';
 import Button from 'primevue/button';
 import Paginator from 'primevue/paginator';
 
-import { useTableStore } from '../../stores/table.js';
-import { useGlobalStore } from '../../stores/global.js';
+import { useTableStore } from '../../stores/table';
+import { useGlobalStore } from '../../stores/global';
 import {
   ADMIN_NEW_RECORD_PATH,
   ADMIN_RECORD_PATH,
@@ -19,8 +19,8 @@ import {
   AUTH_READ_PERM,
   AUTH_CREATE_PERM,
   AUTH_UPDATE_PERM,
-  AUTH_DELETE_PERM
-} from '../../constants.js';
+  AUTH_DELETE_PERM,
+} from '../../constants';
 
 import RawViewField from '../../components/RawViewField.vue';
 import PasswordViewField from '../../components/PasswordViewField.vue';
@@ -63,17 +63,17 @@ async function load() {
   const res = await tableStore.listRecord(tableName.value, {
     pagination: {
       start: loadConfig.value.first,
-      limit: loadConfig.value.rows
+      limit: loadConfig.value.rows,
     },
     ...(loadConfig.value.sortField
       ? {
           sort: [
             `${loadConfig.value.sortField}:${
               loadConfig.value.sortOrder === -1 ? 'desc' : 'asc'
-            }`
-          ]
+            }`,
+          ],
         }
-      : {})
+      : {}),
   });
   isLoading.value = false;
   recordList.value = res.data;
@@ -90,7 +90,7 @@ function handleRemove(recordId) {
   confirm.require({
     message: `Do you want to delete this record (****${recordId.substr(
       -4,
-      4
+      4,
     )})?`,
     header: 'Danger Zone',
     icon: 'pi pi-info-circle mr-2',
@@ -104,7 +104,7 @@ function handleRemove(recordId) {
           severity: 'error',
           summary: 'Invalid Request',
           detail: err.response?.data?.error || err.message,
-          life: 3000
+          life: 3000,
         });
         return;
       }
@@ -113,14 +113,14 @@ function handleRemove(recordId) {
         severity: 'success',
         summary: 'Deleted',
         detail: 'Record deleted',
-        life: 3000
+        life: 3000,
       });
 
       load();
     },
     reject: () => {
       // pass
-    }
+    },
   });
 }
 
@@ -134,7 +134,7 @@ function init() {
     first: 0,
     rows: 10,
     sortField: null,
-    sortOrder: null
+    sortOrder: null,
   };
   isLoading.value = false;
 
@@ -150,14 +150,14 @@ function init() {
     { label: 'Table' },
     {
       label: tableName.value,
-      route: ADMIN_TABLE_PATH.replace(':tableName', tableName.value)
-    }
+      route: ADMIN_TABLE_PATH.replace(':tableName', tableName.value),
+    },
   ];
 
   for (const fieldName in tableConfig.value.fields) {
     fieldList.value.push({
       ...tableConfig.value.fields[fieldName],
-      name: fieldName
+      name: fieldName,
     });
   }
 
@@ -172,7 +172,7 @@ watch(
   () => route.params.tableName,
   () => {
     init();
-  }
+  },
 );
 </script>
 
@@ -248,7 +248,7 @@ watch(
               :to="
                 ADMIN_RECORD_PATH.replace(':tableName', tableName).replace(
                   ':recordId',
-                  data._id
+                  data._id,
                 )
               "
             >

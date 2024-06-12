@@ -3,5 +3,5 @@ import vue from '@vitejs/plugin-vue';
 /** @type {import('vite').UserConfig} */
 export default {
   plugins: [vue()],
-  envPrefix: 'WALLI_'
+  envPrefix: 'WALLI_',
 };
