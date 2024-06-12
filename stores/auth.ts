@@ -5,7 +5,7 @@ import {
   AUTH_STORE_NAME,
   AUTH_CHANGE_PASSWORD_API,
 } from '../constants';
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 
 export const storeName = AUTH_STORE_NAME;
 
@@ -15,7 +15,9 @@ export const useAuthStore = defineStore(storeName, () => {
   const isLoggedIn = computed(() => !!httpStore.state.authToken);
   const user = computed(() => {
     if (!httpStore.state.authToken) return null;
-    return JSON.parse(atob(httpStore.state.authToken.split('.')[1]));
+
+    const authToken: string = httpStore.state.authToken;
+    return JSON.parse(atob(authToken.split('.')[1]));
   });
 
   /**
