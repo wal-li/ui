@@ -5,6 +5,10 @@ export default {
   theme: {
     extend: {
       colors: {
+        white: 'var(--white)',
+        black: 'var(--black)',
+        purewhite: 'var(--purewhite)',
+        pureblack: 'var(--pureblack)',
         primary: 'var(--primary-500)',
         'primary-50': 'var(--primary-50)',
         'primary-100': 'var(--primary-100)',

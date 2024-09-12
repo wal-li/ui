@@ -8,11 +8,9 @@ const id = (props.name ? `${props.name}-` : '') + crypto.randomUUID().split('-')
 
 <template>
   <div class="mb-4">
-    <label class="uppercase text-xs uppercase tracking-wider leading-normal mb-2 block" v-if="label" :for="id">{{
-      label
-    }}</label>
+    <label class="uppercase text-xs tracking-wider leading-normal mb-2 block" v-if="label" :for="id">{{ label }}</label>
     <input
-      class="block border border-stone-300 px-3 py-2 outline-0 w-full focus:outline-1 text-sm"
+      class="block border border-stone-300 px-3 py-2 outline-0 w-full bg-white focus:outline-1 text-sm dark:bg-black dark:border-stone-700 dark:outline-0"
       :id="id"
       :type="type ?? 'text'"
       :name="name"

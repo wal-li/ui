@@ -14,8 +14,12 @@
     <link rel="preconnect" href="https://cdn.wal.li" />
     <link rel="preconnect" href="https://cdn.wal.li" crossorigin />
     <link href="https://cdn.wal.li/@wal-li/ui/style.css" rel="stylesheet" />
+
+    <script>
+      document.getElementsByTagName('html')[0].classList.add(localStorage.getItem('@wal-li/ui.theme') || 'light');
+    </script>
   </head>
-  <body class="font-sans antialiased">
+  <body class="font-sans antialiased bg-white text-black dark:bg-black dark:text-white">
     <noscript>
       <strong
         >We're sorry but Walli UI doesn't work properly without JavaScript enabled. Please enable it to

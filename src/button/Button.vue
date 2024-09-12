@@ -2,6 +2,8 @@
 
 <template>
   <div>
-    <button class="px-4 py-2.5 text-xs font-semibold bg-primary uppercase leading-normal"><slot /></button>
+    <button class="px-4 py-2.5 text-xs font-semibold bg-primary uppercase leading-normal dark:text-black">
+      <slot />
+    </button>
   </div>
 </template>
