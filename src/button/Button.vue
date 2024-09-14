@@ -30,7 +30,7 @@ const SIZES = {
     :class="`${SIZES[size]} ${
       outlined
         ? `text-${severity} border border-${severity} hover:bg-${severity}/10`
-        : `bg-${severity} text-white dark:text-white`
+        : `bg-${severity} text-white dark:text-black`
     } ${rounded ? 'rounded-full' : ''} uppercase`"
   >
     <slot />

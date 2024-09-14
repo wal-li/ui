@@ -5,8 +5,8 @@ const id = (props.name ? `${props.name}-` : '') + crypto.randomUUID().split('-')
 </script>
 
 <template>
-  <div>
-    <label class="uppercase text-xs tracking-wider leading-normal mb-2 block" v-if="label" :for="id">{{ label }}</label>
+  <div class="flex flex-col gap-2">
+    <label class="uppercase text-xs tracking-wider leading-normal block" v-if="label" :for="id">{{ label }}</label>
     <slot v-bind="{ id }"></slot>
   </div>
 </template>

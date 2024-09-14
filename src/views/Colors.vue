@@ -440,7 +440,7 @@ onMounted(() => {
   </div>
 
   <div
-    class="sticky flex bottom-0 left-0 w-full bg-white border-t border-secondary-300 dark:border-pureblack z-40 py-2 dark:bg-black z-30"
+    class="sticky flex bottom-0 left-0 w-full bg-white border-t border-secondary-300 dark:border-pureblack py-2 dark:bg-black z-30"
   >
     <button
       :class="`w-[8.8%] overflow-hidden h-20 flex flex-col justify-between items-center ${

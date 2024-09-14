@@ -33,6 +33,20 @@ const sideMenuItems = ref([
     icon: 'palette',
   },
   {
+    section: 'Fundamental',
+    label: 'Icons',
+    url: '/icons',
+    command: handleRouter,
+    icon: 'face-smile',
+  },
+  {
+    section: 'Fundamental',
+    label: 'SVG',
+    url: '/svg',
+    command: handleRouter,
+    icon: '<svg viewBox="0 0 24 24"><path d="M7.45 14.65 18.25 2.05 23.65.25 21.85 5.65 9.25 16.45C11.05 18.25 11.05 20.05 12.85 18.25 12.85 20.05 14.65 21.85 12.85 21.85A2.556 2.556 90 0111.05 23.65 9 9 90 007.45 18.25Q6.55 18.07 6.55 19.15T3.85 21.49 2.41 20.05 4.75 17.35 5.65 16.45A9 9 90 00.25 12.85 2.556 2.556 90 012.05 11.05C2.05 9.25 3.85 11.05 5.65 11.05 3.85 12.85 5.65 12.85 7.45 14.65M18.25 2.05 18.25 5.65 21.85 5.65 20.05 3.85 18.25 2.05Z" /></svg>',
+  },
+  {
     label: 'Components',
   },
   {
@@ -40,7 +54,7 @@ const sideMenuItems = ref([
     label: 'Headings',
     url: '/headings',
     command: handleRouter,
-    icon: '<svg viewBox="0 0 13.999999 10.000001" class="w-full h-full"><defs id=defs1 /><rect fill=none height=24 id=rect1 width=24 x=-5 y=-7 /><g id=g1 transform=translate(-5,-7)><path fill="currentColor" d="m 11,7 h 2 V 17 H 11 V 13 H 7 v 4 H 5 V 7 h 2 v 4 h 4 z m 6.57,0 C 16.976,7.95 16.066,8.658 15,9 v 1 h 2 v 7 h 2 V 7 Z"id=path1 /></g></svg>',
+    icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 3h2v18h-2v-8H2v8H0V3h2v8h9V11zm11 0L15 8l1.464 1.517L22 5.695v15.347h2V3z"/></svg>',
   },
   {
     section: 'Components',
@@ -54,7 +68,7 @@ const sideMenuItems = ref([
     label: 'Inputs',
     url: '/inputs',
     command: handleRouter,
-    icon: 'caret-up',
+    icon: '<svg class="w-full h-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 9 3 3-3 3m5 0h3M4 20h16c2 0 3-1 3-3V7c0-2-1-3-3-3H4c-2 0-3 1-3 3v10c0 2 1 3 3 3Z"/></svg>',
   },
   {
     label: 'Combination',
@@ -64,7 +78,7 @@ const sideMenuItems = ref([
     label: 'Form',
     url: '/form',
     command: handleRouter,
-    icon: 'calculator',
+    icon: '<svg fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 10h6m-6 4h6M6.996 10h1m-1 4h1M4 4h16c2 0 3 1 3 3v10c0 2-1 3-3 3H4c-2 0-3-1-3-3V7c0-2 1-3 3-3Z"/></svg>',
   },
 ]);
 

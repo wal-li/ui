@@ -6,12 +6,13 @@ import './theme.css';
 
 import App from './App.vue';
 import Layout from './Layout.vue';
-import Charts from './views/Charts.vue';
 import Buttons from './views/Buttons.vue';
 import Headings from './views/Headings.vue';
 import Form from './views/Form.vue';
 import Colors from './views/Colors.vue';
 import Inputs from './views/Inputs.vue';
+import Icons from './views/Icons.vue';
+import SvgEditor from './views/SvgEditor.vue';
 
 // router
 const routes = [
@@ -38,6 +39,14 @@ const routes = [
       {
         path: '/',
         component: Colors,
+      },
+      {
+        path: '/icons',
+        component: Icons,
+      },
+      {
+        path: '/svg',
+        component: SvgEditor,
       },
       {
         path: '/inputs',

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "generate:theme": "node ./scripts/generate-theme.mjs",
-    "build": "npm run build:rollup && npm run build:tailwind && npm run build:post",
+    "build:pre": "npm run generate:theme",
+    "build": "npm run build:pre && npm run build:rollup && npm run build:tailwind && npm run build:post",
     "build:post": "node ./scripts/postbuild.mjs",
     "build:rollup": "rollup -c",
     "build:tailwind": "tailwindcss -i ./src/style.css -o ./dist/style.css"
