@@ -1,7 +1,6 @@
 <script setup>
 defineProps({
   level: {
-    type: Number,
     default: 1,
   },
 });
