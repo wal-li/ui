@@ -18,17 +18,17 @@ const sideMenuItems = ref([
   {
     label: 'Fundamental',
   },
-  {
-    section: 'Fundamental',
-    label: 'Charts',
-    url: '/',
-    command: handleRouter,
-    icon: 'chart-bar',
-  },
+  // {
+  //   section: 'Fundamental',
+  //   label: 'Charts',
+  //   url: '/',
+  //   command: handleRouter,
+  //   icon: 'chart-bar',
+  // },
   {
     section: 'Fundamental',
     label: 'Colors',
-    url: '/colors',
+    url: '/',
     command: handleRouter,
     icon: 'palette',
   },
@@ -48,6 +48,13 @@ const sideMenuItems = ref([
     url: '/buttons',
     command: handleRouter,
     icon: 'clone',
+  },
+  {
+    section: 'Components',
+    label: 'Inputs',
+    url: '/inputs',
+    command: handleRouter,
+    icon: 'caret-up',
   },
   {
     label: 'Combination',

@@ -24,9 +24,9 @@ const GAMMA = 2.4;
 const DEFAULT_STOP = 500;
 const DEFAULT_STOPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 
-const primaryColor = ref('#3ba0f6');
+const primaryColor = ref('#1a85e2');
 const secondaryColor = ref(BLACK);
-const baseLuminance = ref(0.33);
+const baseLuminance = ref(0.22);
 const canvasRef = ref();
 
 const selectedPallete = ref(DEFAULT_STOPS.map(() => ''));
@@ -311,26 +311,26 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex gap-4 mb-4">
+  <div class="flex flex-col md:flex-row gap-4 mb-4 items-center">
     <div>
       <canvas ref="canvasRef" @click="pickCanvasColor"></canvas>
     </div>
 
-    <div class="flex flex-col gap-4 flex-1">
+    <div class="flex flex-col gap-4 flex-1 w-full">
       <Field label="Base Luminance" v-slot="{ id }">
         <Input type="number" :id="id" v-model="baseLuminance" @change="drawCanvas" />
       </Field>
 
       <Field class="w-full relative" label="Primary Color">
         <ColorPicker v-model="primaryColor" />
-        <button class="absolute p-1 top-8 right-2" @click="selectPalleteColor(primaryColor)">
+        <button class="absolute p-1.5 top-7 right-1" @click="selectPalleteColor(primaryColor)">
           <i class="pi pi-wrench"></i>
         </button>
       </Field>
 
       <Field class="w-full relative" label="Secondary Color">
         <ColorPicker v-model="secondaryColor" />
-        <button class="absolute p-1 top-8 right-2" @click="selectPalleteColor(secondaryColor)">
+        <button class="absolute p-1.5 top-7 right-1" @click="selectPalleteColor(secondaryColor)">
           <i class="pi pi-wrench"></i>
         </button>
       </Field>
@@ -340,49 +340,56 @@ onMounted(() => {
   <table class="table table-fixed text-sm w-full mb-4">
     <tbody>
       <tr>
-        <td class="border border-stone-300 px-3 py-2">Luminance</td>
-        <td class="border border-stone-300 px-3 py-2 w-12 text-center">
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2">Luminance</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2 w-12 text-center">
           {{ rounded(luminance(...hexToRgb(primaryColor))) }}
         </td>
-        <td class="border border-stone-300 px-3 py-2">{{ rounded(luminance(...hexToRgb(secondaryColor))) }}</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2">
+          {{ rounded(luminance(...hexToRgb(secondaryColor))) }}
+        </td>
       </tr>
       <tr>
-        <td class="border border-stone-300 px-3 py-2">Contrast</td>
-        <td class="border border-stone-300 px-3 py-2 w-12 text-center">
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2">Contrast</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2 w-12 text-center">
           {{ rounded(primarySecondaryContrast) }}
         </td>
-        <td class="border border-stone-300 px-3 py-2" :style="{ backgroundColor: primaryColor, color: secondaryColor }">
-          Lorem ipsum dolor sit amet.
+        <td
+          class="border border-secondary-300 dark:border-secondary-700 px-3 py-2"
+          :style="{ backgroundColor: primaryColor, color: secondaryColor }"
+        >
+          <b>Lorem</b> ipsum <i>dolor</i> <u>sit</u> <span class="line-through">hamet</span>.
         </td>
       </tr>
       <tr>
-        <td class="border border-stone-300 px-3 py-2">AA Large Text</td>
-        <td class="border border-stone-300 px-3 py-2 w-12 text-center">3</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2">AA Large Text</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2 w-12 text-center">3</td>
         <td
-          :class="`border border-stone-300 px-3 py-2 ${
-            primarySecondaryContrast >= 3 ? 'bg-emerald-300' : 'bg-rose-300'
+          :class="`font-semibold text-xs uppercase border border-secondary-300 dark:border-secondary-700 px-3 py-2 ${
+            primarySecondaryContrast >= 3 ? 'bg-success' : 'bg-danger'
           }`"
         >
           {{ primarySecondaryContrast >= 3 ? 'OK' : 'Huh?' }}
         </td>
       </tr>
       <tr>
-        <td class="border border-stone-300 px-3 py-2">AA Small Text, AAA Large Text, Button</td>
-        <td class="border border-stone-300 px-3 py-2 w-12 text-center">4.5</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2">
+          AA Small Text, AAA Large Text, Button
+        </td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2 w-12 text-center">4.5</td>
         <td
-          :class="`border border-stone-300 px-3 py-2 ${
-            primarySecondaryContrast >= 4.5 ? 'bg-emerald-300' : 'bg-rose-300'
+          :class="`font-semibold text-xs uppercase border border-secondary-300 dark:border-secondary-700 px-3 py-2 ${
+            primarySecondaryContrast >= 4.5 ? 'bg-success' : 'bg-danger'
           }`"
         >
           {{ primarySecondaryContrast >= 4.5 ? 'OK' : 'Huh?' }}
         </td>
       </tr>
       <tr>
-        <td class="border border-stone-300 px-3 py-2">AAA Small Text</td>
-        <td class="border border-stone-300 px-3 py-2 w-12 text-center">7</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2">AAA Small Text</td>
+        <td class="border border-secondary-300 dark:border-secondary-700 px-3 py-2 w-12 text-center">7</td>
         <td
-          :class="`border border-stone-300 px-3 py-2 ${
-            primarySecondaryContrast >= 7 ? 'bg-emerald-300' : 'bg-rose-300'
+          :class="`font-semibold text-xs uppercase border border-secondary-300 dark:border-secondary-700 px-3 py-2 ${
+            primarySecondaryContrast >= 7 ? 'bg-success' : 'bg-danger'
           }`"
         >
           {{ primarySecondaryContrast >= 7 ? 'OK' : 'Huh?' }}
@@ -393,13 +400,15 @@ onMounted(() => {
 
   <div class="mb-4">
     <div class="flex">
-      <span class="w-[9.09%] block text-xs uppercase px-2 py-1 text-center" v-for="stop in DEFAULT_STOPS">{{
-        stop
-      }}</span>
+      <span
+        class="w-[9.09%] overflow-hidden block text-xs uppercase px-2 py-1 text-center"
+        v-for="stop in DEFAULT_STOPS"
+        >{{ stop }}</span
+      >
     </div>
 
     <div class="text-sm flex mb-2" v-for="pallete in palletes">
-      <button class="w-[9.09%]" v-for="(color, index) in pallete" @click="selectPalleteColor(color)">
+      <button class="w-[9.09%] overflow-hidden" v-for="(color, index) in pallete" @click="selectPalleteColor(color)">
         <div class="text-center px-2 py-1" :style="{ backgroundColor: color, color: bestContrastColor(color) }">
           <span class="block text-xs font-lighter w-full">{{ color }}</span>
           <span class="block font-semibold">{{ rounded(luminance(...hexToRgb(color))) }}</span>
@@ -410,13 +419,15 @@ onMounted(() => {
 
   <div class="mb-4">
     <div class="text-xs uppercase flex">
-      <div class="text-center px-2 py-1 w-[9.09%]">Origin</div>
-      <div class="text-center px-2 py-1 w-[9.09%]">Base</div>
-      <div class="text-center px-2 py-1 w-[9.09%]" v-for="stop in DEFAULT_STOPS.slice(1, -1)">{{ stop }}</div>
+      <div class="text-center px-2 py-1 w-[9.09%] overflow-hidden">Origin</div>
+      <div class="text-center px-2 py-1 w-[9.09%] overflow-hidden">Base</div>
+      <div class="text-center px-2 py-1 w-[9.09%] overflow-hidden" v-for="stop in DEFAULT_STOPS.slice(1, -1)">
+        {{ stop }}
+      </div>
     </div>
     <div class="text-sm flex" v-for="row in colorGrid">
       <button
-        class="w-[9.09%] hover:outline outline-2 -outline-offset-2"
+        class="w-[9.09%] overflow-hidden hover:outline outline-2 -outline-offset-2"
         v-for="color in row"
         @click="selectPrimaryColor(color)"
       >
@@ -428,9 +439,11 @@ onMounted(() => {
     </div>
   </div>
 
-  <div class="sticky flex bottom-0 left-0 w-full bg-white border-t border-stone-300 z-40 py-2">
+  <div
+    class="sticky flex bottom-0 left-0 w-full bg-white border-t border-secondary-300 dark:border-pureblack z-40 py-2 dark:bg-black z-30"
+  >
     <button
-      :class="`w-[8.8%] h-20 flex flex-col justify-between items-center ${
+      :class="`w-[8.8%] overflow-hidden h-20 flex flex-col justify-between items-center ${
         selectedIndex === i ? 'outline outline-2 -outline-offset-2' : ''
       }`"
       v-for="(color, i) in selectedPallete"

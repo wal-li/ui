@@ -11,6 +11,7 @@ import Buttons from './views/Buttons.vue';
 import Headings from './views/Headings.vue';
 import Form from './views/Form.vue';
 import Colors from './views/Colors.vue';
+import Inputs from './views/Inputs.vue';
 
 // router
 const routes = [
@@ -18,10 +19,10 @@ const routes = [
     path: '/',
     component: Layout,
     children: [
-      {
-        path: '/',
-        component: Charts,
-      },
+      // {
+      //   path: '/',
+      //   component: Charts,
+      // },
       {
         path: '/headings',
         component: Headings,
@@ -35,8 +36,12 @@ const routes = [
         component: Form,
       },
       {
-        path: '/colors',
+        path: '/',
         component: Colors,
+      },
+      {
+        path: '/inputs',
+        component: Inputs,
       },
     ],
   },
