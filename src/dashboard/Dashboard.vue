@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 
-defineProps(['sideMenuItems', 'topMenuItems']);
+const props = defineProps(['sideMenuItems', 'topMenuItems', 'isFloatSideMenu', 'hideSlideMenu']);
 
 const SIDE_PANEL_WIDTH_KEY = '@wal-li/ui.sidePanelWidth';
 const THEME_KEY = '@wal-li/ui.theme';
@@ -14,6 +14,7 @@ const toggleConfigMenu = ref(false);
 const theme = ref(localStorage.getItem(THEME_KEY) === 'dark');
 
 const sidePanelActualWidth = computed(() => sidePanelWidth.value + sidePanelResize.value);
+const floatSideMenu = computed(() => isMobileScreen.value || props.isFloatSideMenu || props.hideSlideMenu);
 
 let lastX = null;
 
@@ -53,6 +54,18 @@ function updateTheme() {
   htmlTag.classList.add(theme.value ? 'dark' : 'light');
 }
 
+function handleCommand(e, item) {
+  if (!item.command) return;
+
+  e.preventDefault();
+  item.command.bind(item)(item);
+}
+
+function isSvgIcon(data) {
+  console.log(/\<svg/.test(data));
+  return /\<svg/.test(data);
+}
+
 onMounted(() => {
   resizeWindow();
   updateTheme();
@@ -74,7 +87,11 @@ onUnmounted(() => {
     <div
       class="fixed top-0 left-0 w-full h-16 px-4 flex items-center gap-4 border-b border-stone-300 z-40 bg-white dark:bg-black dark:border-pureblack"
     >
-      <button class="leading-normal text-lg" v-if="isMobileScreen" @click="toggleSideMenu = !toggleSideMenu">
+      <button
+        class="leading-normal text-lg"
+        v-if="floatSideMenu && !hideSlideMenu"
+        @click="toggleSideMenu = !toggleSideMenu"
+      >
         <i class="pi pi-bars"></i>
       </button>
       <div class="flex items-center gap-4 w-full">
@@ -83,7 +100,9 @@ onUnmounted(() => {
         </div>
 
         <a
-          class="bg-primary px-2 inline-flex items-center rounded dark:text-black"
+          :class="`bg-primary px-2 inline-flex items-center rounded ${
+            item.active ? 'dark:text-primary' : 'dark:text-black'
+          }`"
           v-for="item in topMenuItems"
           :key="item.key"
           :href="item.url"
@@ -134,23 +153,27 @@ onUnmounted(() => {
       </div>
     </div>
     <div
-      class="fixed top-16 overflow-x-hidden bg-white z-40 h-[calc(100vh-64px)] border-r md:border-none transition-all md:transition-none dark:bg-black dark:border-pureblack"
+      class="fixed top-16 overflow-x-hidden bg-white z-40 h-[calc(100vh-64px)] transition-all md:transition-none dark:bg-black dark:border-pureblack"
       :style="{
-        width: isMobileScreen ? '100%' : sidePanelActualWidth + 'px',
-        left: isMobileScreen && !toggleSideMenu ? '-100%' : '0px',
+        width: floatSideMenu ? '280px' : sidePanelActualWidth + 'px',
+        left: floatSideMenu && !toggleSideMenu ? '-100%' : '0px',
+        borderRightWidth: floatSideMenu ? '1px' : '0px',
       }"
     >
       <slot name="side-menu">
         <a
           v-for="item in sideMenuItems"
           :key="item.key"
-          :class="`block cursor-pointer flex items-center px-4 ${
-            item.command || item.url ? 'h-10 text-sm leading-normal' : 'uppercase text-xs uppercase tracking-wider h-16'
-          }`"
+          :class="`block flex items-center px-4 ${
+            item.command || item.url
+              ? 'cursor-pointer h-10 text-sm leading-normal hover:text-primary'
+              : 'uppercase text-xs uppercase tracking-wider h-16'
+          } ${item.active ? 'text-primary' : ''}`"
           :href="item.url"
-          @click="item.command"
+          @click="(e) => handleCommand(e, item)"
         >
-          <i :class="`pi pi-${item.icon} text-base mr-4`" v-if="item.icon"></i>
+          <span class="w-4 h-4 text-base mr-4" v-if="isSvgIcon(item.icon)" v-html="item.icon"></span>
+          <i :class="`pi pi-${item.icon} text-base mr-4`" v-else-if="item.icon"></i>
           <span>
             {{ item.label }}
           </span>
@@ -159,7 +182,7 @@ onUnmounted(() => {
     </div>
     <div
       class="fixed top-16 w-[5px] h-[calc(100vh-64px)] hover:bg-stone-300 cursor-col-resize select-none z-40 dark:hover:bg-pureblack"
-      v-if="!isMobileScreen"
+      v-if="!floatSideMenu"
       :style="{ left: sidePanelActualWidth + 'px' }"
       @mousedown="resizeSidePanelDown"
     >
@@ -168,12 +191,12 @@ onUnmounted(() => {
     <div
       class="p-4 mt-16 relative h-[calc(100vh-64px)]"
       :style="{
-        marginLeft: isMobileScreen ? '0px' : sidePanelActualWidth + 'px',
+        marginLeft: floatSideMenu ? '0px' : sidePanelActualWidth + 'px',
       }"
     >
       <Transition>
         <div
-          v-if="isMobileScreen && (toggleSideMenu || toggleConfigMenu)"
+          v-if="floatSideMenu && (toggleSideMenu || toggleConfigMenu)"
           @click="
             () => {
               toggleConfigMenu = false;
