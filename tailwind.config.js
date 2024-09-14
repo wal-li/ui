@@ -1,7 +1,9 @@
+const SEVERITIES = ['primary', 'secondary', 'success', 'danger', 'warning', 'info'];
+
 export default {
   darkMode: 'class',
   content: ['index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  safelist: [],
+  safelist: [...SEVERITIES.map((severity) => `bg-${severity}`)],
   theme: {
     extend: {
       colors: {
@@ -9,18 +11,20 @@ export default {
         black: 'var(--black)',
         purewhite: 'var(--purewhite)',
         pureblack: 'var(--pureblack)',
-        primary: 'var(--primary-500)',
-        'primary-50': 'var(--primary-50)',
-        'primary-100': 'var(--primary-100)',
-        'primary-200': 'var(--primary-200)',
-        'primary-300': 'var(--primary-300)',
-        'primary-400': 'var(--primary-400)',
-        'primary-500': 'var(--primary-500)',
-        'primary-600': 'var(--primary-600)',
-        'primary-700': 'var(--primary-700)',
-        'primary-800': 'var(--primary-800)',
-        'primary-900': 'var(--primary-900)',
-        'primary-950': 'var(--primary-950)',
+        ...SEVERITIES.map((severity) => ({
+          [severity]: `var(--${severity}-500)`,
+          [`${severity}-50`]: `var(--${severity}-50)`,
+          [`${severity}-100`]: `var(--${severity}-100)`,
+          [`${severity}-200`]: `var(--${severity}-200)`,
+          [`${severity}-300`]: `var(--${severity}-300)`,
+          [`${severity}-400`]: `var(--${severity}-400)`,
+          [`${severity}-500`]: `var(--${severity}-500)`,
+          [`${severity}-600`]: `var(--${severity}-600)`,
+          [`${severity}-700`]: `var(--${severity}-700)`,
+          [`${severity}-800`]: `var(--${severity}-800)`,
+          [`${severity}-900`]: `var(--${severity}-900)`,
+          [`${severity}-950`]: `var(--${severity}-950)`,
+        })).reduce((t, c) => ({ ...t, ...c }), {}),
       },
     },
     fontFamily: {
