@@ -13,7 +13,7 @@ const OUTPUT_DIR = './dist/';
 const entries = [];
 
 readdirSync(resolvePath(__dirname, INPUT_DIR), { withFileTypes: true })
-  .filter((dir) => dir.isDirectory())
+  .filter((dir) => dir.isDirectory() && dir.name !== 'views')
   .forEach(({ name: compName }) => {
     const fileList = readdirSync(resolvePath(__dirname, INPUT_DIR, compName));
 

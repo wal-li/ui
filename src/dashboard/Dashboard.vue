@@ -62,7 +62,6 @@ function handleCommand(e, item) {
 }
 
 function isSvgIcon(data) {
-  console.log(/\<svg/.test(data));
   return /\<svg/.test(data);
 }
 
@@ -101,7 +100,7 @@ onUnmounted(() => {
 
         <a
           :class="`bg-primary px-2 inline-flex items-center rounded ${
-            item.active ? 'dark:text-primary' : 'dark:text-black'
+            item.active ? 'font-semibold dark:text-primary' : 'dark:text-black'
           }`"
           v-for="item in topMenuItems"
           :key="item.key"
@@ -168,7 +167,7 @@ onUnmounted(() => {
             item.command || item.url
               ? 'cursor-pointer h-10 text-sm leading-normal hover:text-primary'
               : 'uppercase text-xs uppercase tracking-wider h-16'
-          } ${item.active ? 'text-primary' : ''}`"
+          } ${item.active ? 'font-semibold text-primary' : ''}`"
           :href="item.url"
           @click="(e) => handleCommand(e, item)"
         >
