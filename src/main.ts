@@ -13,6 +13,7 @@ import Colors from './views/Colors.vue';
 import Inputs from './views/Inputs.vue';
 import Icons from './views/Icons.vue';
 import SvgEditor from './views/SvgEditor.vue';
+import Size from './views/Size.vue';
 
 // router
 const routes = [
@@ -51,6 +52,10 @@ const routes = [
       {
         path: '/inputs',
         component: Inputs,
+      },
+      {
+        path: '/size',
+        component: Size,
       },
     ],
   },

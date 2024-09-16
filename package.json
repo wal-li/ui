@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "generate:theme": "node ./scripts/generate-theme.mjs",
-    "build:pre": "npm run generate:theme",
+    "generate:example": "node ./scripts/generate-example.mjs",
+    "build:pre": "npm run generate:theme && npm run generate:example",
     "build": "npm run build:pre && npm run build:rollup && npm run build:tailwind && npm run build:post",
     "build:post": "node ./scripts/postbuild.mjs",
     "build:rollup": "rollup -c",
@@ -25,6 +26,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@vitejs/plugin-vue": "^5.1.3",
     "autoprefixer": "^10.4.20",
+    "cheerio": "^1.0.0",
     "postcss": "^8.4.45",
     "rollup": "^4.21.2",
     "rollup-plugin-vue": "^6.0.0",
