@@ -19,7 +19,7 @@ for (const name of ['Inputs.vue']) {
     $(example).prop('raw', btoa($(example).html().trim()));
   }
 
-  console.log(content.split('<template>')[0] + $.xml());
+  writeFileSync(filePath, content.split('<template>')[0] + $.xml());
 
   break;
 }
