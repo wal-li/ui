@@ -179,7 +179,7 @@ function updateValue() {
   }
 
   el.value.value = currentValue.replace(/\0/g, '_').replace(/\x01/g, ' ');
-  el.value.setSelectionRange(currentSelectionStart, currentSelectionStart);
+  if (props.type === 'text') el.value.setSelectionRange(currentSelectionStart, currentSelectionStart);
   prevValue = currentValue;
   prevKey = '';
 
