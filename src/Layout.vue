@@ -61,7 +61,7 @@ const sideMenuItems = ref([
     label: 'Headings',
     url: '/headings',
     command: handleRouter,
-    icon: '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 3h2v18h-2v-8H2v8H0V3h2v8h9V11zm11 0L15 8l1.464 1.517L22 5.695v15.347h2V3z"/></svg>',
+    icon: '<svg viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 3 1 17M1 10 10 10M10 3 10 17M14 8 19 3 19 17"/></svg>',
   },
   {
     section: 'Components',
@@ -75,7 +75,7 @@ const sideMenuItems = ref([
     label: 'Inputs',
     url: '/inputs',
     command: handleRouter,
-    icon: '<svg class="w-full h-full" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 9 3 3-3 3m5 0h3M4 20h16c2 0 3-1 3-3V7c0-2-1-3-3-3H4c-2 0-3 1-3 3v10c0 2 1 3 3 3Z"/></svg>',
+    icon: '<svg viewBox="0 0 18 18" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 2 17 2 17 15 1 15ZM4 5 7 5M5.5 5 5.5 12M4 12 7 12" /></svg>',
   },
   {
     label: 'Combination',
