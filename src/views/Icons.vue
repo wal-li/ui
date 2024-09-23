@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue';
 import { loremIpsum } from 'lorem-ipsum';
 
-import Field from '../input/Field.vue';
+import Field from '../field/Field.vue';
 import Heading from '../heading/Heading.vue';
 import Icon from '../icon/Icon.vue';
 import Button from '../button/Button.vue';

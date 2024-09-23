@@ -9,7 +9,7 @@
 import { ref, computed, onMounted } from 'vue';
 import Heading from '../heading/Heading.vue';
 import Input from '../input/Input.vue';
-import Field from '../input/Field.vue';
+import Field from '../field/Field.vue';
 import ColorPicker from '../color-picker/ColorPicker.vue';
 
 const RED = 0.2126;

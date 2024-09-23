@@ -1,7 +1,7 @@
 <script setup>
 import Button from '../button/Button.vue';
 import Input from '../input/Input.vue';
-import Field from '../input/Field.vue';
+import Field from '../field/Field.vue';
 import Heading from '../heading/Heading.vue';
 
 function handleSubmit(e) {
