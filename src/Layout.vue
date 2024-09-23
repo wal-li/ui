@@ -78,6 +78,13 @@ const sideMenuItems = ref([
     icon: '<svg viewBox="0 0 18 18" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 2 17 2 17 15 1 15ZM4 5 7 5M5.5 5 5.5 12M4 12 7 12" /></svg>',
   },
   {
+    section: 'Components',
+    label: 'Dialog',
+    url: '/dialog',
+    command: handleRouter,
+    icon: 'window-maximize',
+  },
+  {
     label: 'Combination',
   },
   {

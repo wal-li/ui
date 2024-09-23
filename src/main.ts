@@ -14,6 +14,7 @@ import Inputs from './views/Inputs.vue';
 import Icons from './views/Icons.vue';
 import SvgEditor from './views/SvgEditor.vue';
 import Size from './views/Size.vue';
+import Dialog from './views/Dialog.vue';
 
 // router
 const routes = [
@@ -56,6 +57,10 @@ const routes = [
       {
         path: '/size',
         component: Size,
+      },
+      {
+        path: '/dialog',
+        component: Dialog,
       },
     ],
   },
