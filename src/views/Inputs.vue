@@ -3,6 +3,7 @@ import { ref } from 'vue';
 
 import Input from '../input/Input.vue';
 import Heading from '../heading/Heading.vue';
+import Textarea from '../textarea/Textarea.vue';
 import ColorPicker from '../color-picker/ColorPicker.vue';
 import Example from '../test/Example.vue';
 
@@ -67,6 +68,17 @@ const SIZES = ['small', 'normal', 'large'];
       raw="PENvbG9yUGlja2VyIDptb2RlbFZhbHVlPSJ2YWx1ZSIgQHVwZGF0ZTptb2RlbFZhbHVlPSJ1cGRhdGUiLz4="
     >
       <ColorPicker :modelValue="value" @update:modelValue="update" />
+    </Example>
+  </div>
+
+  <Heading level="2">Textarea</Heading>
+  <div class="flex flex-col gap-4">
+    <Example v-slot="{ value, update }" raw="">
+      <Textarea :modelValue="value" @update:modelValue="update" />
+    </Example>
+
+    <Example init="code editor" v-slot="{ value, update }" raw="">
+      <Textarea class="font-mono" mode="code" :modelValue="value" @update:modelValue="update" />
     </Example>
   </div>
 </template>

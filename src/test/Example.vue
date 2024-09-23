@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import Tabs from '../tabs/Tabs.vue';
 
 const props = defineProps({
   init: {},
@@ -18,14 +19,19 @@ function toText(raw) {
 </script>
 
 <template>
-  <div>
-    <div>
-      <slot v-bind="{ value, update }"></slot>
-      <span class="text-xs block mt-2 italic">
-        Entered Value: <span class="font-semibold">{{ value }}</span>
-      </span>
-    </div>
-
-    <pre class="bg-secondary-200 border border-secondary-300 mt-2 p-2 rounded overflow-x-auto">{{ toText(raw) }}</pre>
+  <div class="border border-secondary-300">
+    <Tabs>
+      <template #Preview>
+        <div class="p-3">
+          <slot v-bind="{ value, update }"></slot>
+          <span class="text-xs block mt-2 italic" v-if="value">
+            Entered Value: <span class="font-semibold">{{ value }}</span>
+          </span>
+        </div>
+      </template>
+      <template #Source>
+        <pre class="p-3 bg-secondary-200 overflow-x-auto">{{ toText(raw) }}</pre>
+      </template>
+    </Tabs>
   </div>
 </template>
