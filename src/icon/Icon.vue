@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-const props = defineProps(['data']);
+const props = defineProps(['data', 'name']);
 
 const content = computed(() => {
   return props.data;
@@ -8,5 +8,6 @@ const content = computed(() => {
 </script>
 
 <template>
-  <span class="w-[1em] h-[1em] inline-block align-middle" v-html="content"></span>
+  <i v-if="name" :class="`pi pi-${name}`"></i>
+  <span class="w-[1em] h-[1em] inline-block align-middle" v-else v-html="content"></span>
 </template>

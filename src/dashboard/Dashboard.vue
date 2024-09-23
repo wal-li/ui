@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from 'vue';
 
+import Icon from '../icon/Icon.vue';
+
 const props = defineProps(['sideMenuItems', 'topMenuItems', 'isFloatSideMenu', 'hideSlideMenu']);
 
 const SIDE_PANEL_WIDTH_KEY = '@wal-li/ui.sidePanelWidth';
@@ -171,8 +173,9 @@ onUnmounted(() => {
           :href="item.url"
           @click="(e) => handleCommand(e, item)"
         >
-          <span class="w-4 h-4 text-base mr-4" v-if="isSvgIcon(item.icon)" v-html="item.icon"></span>
-          <i :class="`pi pi-${item.icon} text-base mr-4`" v-else-if="item.icon"></i>
+          <span class="text-base mr-4" v-if="item.icon">
+            <Icon :name="isSvgIcon(item.icon) ? null : item.icon" :data="isSvgIcon(item.icon) ? item.icon : null" />
+          </span>
           <span>
             {{ item.label }}
           </span>
