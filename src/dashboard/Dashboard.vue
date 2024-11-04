@@ -13,6 +13,8 @@ const sidePanelResize = ref(0);
 const isMobileScreen = ref(true);
 const toggleSideMenu = ref(false);
 const toggleConfigMenu = ref(false);
+
+// @todo: not key return default theme in html
 const theme = ref(localStorage.getItem(THEME_KEY) === 'dark');
 
 const sidePanelActualWidth = computed(() => sidePanelWidth.value + sidePanelResize.value);
@@ -85,9 +87,7 @@ onUnmounted(() => {
 
 <template>
   <div>
-    <div
-      class="fixed top-0 left-0 w-full h-16 px-4 flex items-center gap-4 border-b border-stone-300 z-40 bg-white dark:bg-black dark:border-pureblack"
-    >
+    <div class="fixed top-0 left-0 w-full h-16 px-4 flex items-center gap-4 border-b z-40">
       <button
         class="leading-normal text-lg"
         v-if="floatSideMenu && !hideSlideMenu"
@@ -101,9 +101,7 @@ onUnmounted(() => {
         </div>
 
         <a
-          :class="`bg-primary px-2 inline-flex items-center rounded ${
-            item.active ? 'font-semibold dark:text-primary' : 'dark:text-black'
-          }`"
+          :class="`bg-primary px-2 inline-flex items-center rounded ${item.active ? 'font-semibold' : ''}`"
           v-for="item in topMenuItems"
           :key="item.key"
           :href="item.url"
@@ -116,7 +114,7 @@ onUnmounted(() => {
       </button>
     </div>
     <div
-      class="fixed z-40 top-16 overflow-x-hidden bg-white border-l border-stone-300 w-64 h-[calc(100vh-64px)] transition-all flex flex-col justify-between dark:bg-black dark:border-pureblack"
+      class="fixed z-40 top-16 overflow-x-hidden border-l w-64 h-[calc(100vh-64px)] transition-all flex flex-col justify-between"
       :style="{ right: toggleConfigMenu ? '0px' : '-256px' }"
     >
       <div></div>
@@ -130,7 +128,7 @@ onUnmounted(() => {
             tabindex="0"
             aria-checked="true"
             :class="`relative inline-flex flex-shrink-0 cursor-pointer transition-colors ease-in-out duration-200 border-2 border-transparent rounded-full ${
-              theme ? 'bg-primary' : 'bg-stone-200'
+              theme ? 'bg-primary' : ''
             }`"
           >
             <span
@@ -145,7 +143,7 @@ onUnmounted(() => {
             <span
               aria-hidden="true"
               :class="`inline-block absolute transform transition ease-in-out duration-200 h-5 w-5 rounded-full shadow flex items-center justify-center text-xs ${
-                theme ? 'translate-x-full text-primary bg-black' : 'translate-x-0 text-stone-400 bg-white'
+                theme ? 'translate-x-full text-primary bg-black' : 'translate-x-0'
               }`"
             ></span>
           </label>
@@ -154,7 +152,7 @@ onUnmounted(() => {
       </div>
     </div>
     <div
-      class="fixed top-16 overflow-x-hidden bg-white z-40 h-[calc(100vh-64px)] transition-all md:transition-none dark:bg-black dark:border-pureblack"
+      class="fixed top-16 overflow-x-hidden z-40 h-[calc(100vh-64px)] transition-all md:transition-none"
       :style="{
         width: floatSideMenu ? '280px' : sidePanelActualWidth + 'px',
         left: floatSideMenu && !toggleSideMenu ? '-100%' : '0px',
@@ -165,11 +163,11 @@ onUnmounted(() => {
         <a
           v-for="item in sideMenuItems"
           :key="item.key"
-          :class="`block flex items-center px-4 ${
+          :class="`block flex items-center px-4  ${
             item.command || item.url
-              ? 'cursor-pointer h-10 text-sm leading-normal hover:text-primary'
+              ? 'cursor-pointer h-10 text-sm leading-normal hover:bg-secondary'
               : 'uppercase text-xs uppercase tracking-wider h-16'
-          } ${item.active ? 'font-semibold text-primary' : ''}`"
+          } ${item.active ? 'font-semibold bg-secondary' : ''}`"
           :href="item.url"
           @click="(e) => handleCommand(e, item)"
         >
@@ -183,12 +181,12 @@ onUnmounted(() => {
       </slot>
     </div>
     <div
-      class="fixed top-16 w-[5px] h-[calc(100vh-64px)] hover:bg-stone-300 cursor-col-resize select-none z-40 dark:hover:bg-pureblack"
+      class="fixed top-16 w-[5px] h-[calc(100vh-64px)] hover:bg-secondary cursor-col-resize select-none z-40"
       v-if="!floatSideMenu"
       :style="{ left: sidePanelActualWidth + 'px' }"
       @mousedown="resizeSidePanelDown"
     >
-      <div class="w-[1px] ml-[2px] h-full bg-stone-300 dark:bg-pureblack"></div>
+      <div class="w-[1px] ml-[2px] h-full bg-secondary"></div>
     </div>
     <div
       class="p-4 mt-16 relative h-[calc(100vh-64px)]"

@@ -1,84 +1,91 @@
 <script setup>
 import { ref } from 'vue';
+import Playground from '../test/Playground.vue';
+import vMask from '../mask/mask';
 
-import Input from '../input/Input.vue';
-import Heading from '../heading/Heading.vue';
-import Textarea from '../textarea/Textarea.vue';
-import ColorPicker from '../color-picker/ColorPicker.vue';
-import Example from '../test/Example.vue';
-
-const SIZES = ['small', 'normal', 'large'];
+const tmp = ref('');
 </script>
 
 <template>
-  <Heading level="2">Text</Heading>
-  <div class="flex flex-col gap-4 mb-4">
-    <Example
-      init="Lorem ipsum"
-      v-slot="{ value, update }"
-      raw="PElucHV0IDptb2RlbFZhbHVlPSJ2YWx1ZSIgQHVwZGF0ZTptb2RlbFZhbHVlPSJ1cGRhdGUiIHNwZWxsY2hlY2s9ImZhbHNlIi8+"
-    >
-      <Input :modelValue="value" @update:modelValue="update" spellcheck="false" />
-    </Example>
-  </div>
+  <div class="grid grid-cols-1 gap-4">
+    <Playground id="text-input">
+      <input
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="Text Input"
+        spellcheck="false"
+      />
+    </Playground>
 
-  <Heading level="2">Masked Input</Heading>
-  <div class="flex flex-col gap-4 mb-4">
-    <Example
-      v-slot="{ value, update }"
-      raw="PElucHV0IG1hc2s9IigrMDApIDAwMCAwMDAgMDAwIiA6bW9kZWxWYWx1ZT0idmFsdWUiIEB1cGRhdGU6bW9kZWxWYWx1ZT0idXBkYXRlIi8+"
-    >
-      <Input mask="(+00) 000 000 000" :modelValue="value" @update:modelValue="update" />
-    </Example>
+    <Playground id="number-input">
+      <input
+        type="number"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="Number Input"
+      />
+    </Playground>
 
-    <Example
-      v-slot="{ value, update }"
-      raw="PElucHV0IDptb2RlbFZhbHVlPSJ2YWx1ZSIgQHVwZGF0ZTptb2RlbFZhbHVlPSJ1cGRhdGUiIDptYXNrPSIvXltcZFxzXSsmI3gyNDsvIiBwbGFjZWhvbGRlcj0iRGVjaW1hbCBhbmQgU3BhY2UiLz4="
-    >
-      <Input :modelValue="value" @update:modelValue="update" :mask="/^[\d\s]+&#x24;/" placeholder="Decimal and Space" />
-    </Example>
+    <Playground id="date-input">
+      <input
+        type="date"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="Date Input"
+      />
+    </Playground>
 
-    <Example
-      v-slot="{ value, update }"
-      raw="PElucHV0IDptb2RlbFZhbHVlPSJ2YWx1ZSIgQHVwZGF0ZTptb2RlbFZhbHVlPSJ1cGRhdGUiIG1hc2s9Inl5eXktbW0tZGQiLz4="
-    >
-      <Input :modelValue="value" @update:modelValue="update" mask="yyyy-mm-dd" />
-    </Example>
+    <Playground id="file-input">
+      <input
+        type="file"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="File Input"
+      />
+    </Playground>
 
-    <Example
-      v-slot="{ value, update }"
-      raw="PElucHV0IDptb2RlbFZhbHVlPSJ2YWx1ZSIgQHVwZGF0ZTptb2RlbFZhbHVlPSJ1cGRhdGUiIG1hc2s9ImhoOmlpOnNzIi8+"
-    >
-      <Input :modelValue="value" @update:modelValue="update" mask="hh:ii:ss" />
-    </Example>
+    <Playground id="mask-number-input">
+      <input
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="Mask Number Input"
+        v-mask="Number"
+      />
+    </Playground>
 
-    <Example
-      init="-1234.5678"
-      v-slot="{ value, update }"
-      raw="PElucHV0IDptb2RlbFZhbHVlPSJ2YWx1ZSIgQHVwZGF0ZTptb2RlbFZhbHVlPSJ1cGRhdGUiIDptYXNrPSJOdW1iZXIiIHBsYWNlaG9sZGVyPSJFbnRlciBudW1iZXIiLz4="
-    >
-      <Input :modelValue="value" @update:modelValue="update" :mask="Number" placeholder="Enter number" />
-    </Example>
-  </div>
+    <Playground id="mask-number-input">
+      <input
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="(+00) 000 000 000"
+        v-mask="'(+00) 000 000 000'"
+      />
+    </Playground>
 
-  <Heading level="2">Color Picker</Heading>
-  <div>
-    <Example
-      v-slot="{ value, update }"
-      raw="PENvbG9yUGlja2VyIDptb2RlbFZhbHVlPSJ2YWx1ZSIgQHVwZGF0ZTptb2RlbFZhbHVlPSJ1cGRhdGUiLz4="
-    >
-      <ColorPicker :modelValue="value" @update:modelValue="update" />
-    </Example>
-  </div>
+    <Playground id="mask-date-input">
+      <input
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="yyyy-mm-dd"
+        v-mask="'yyyy-mm-dd'"
+      />
+    </Playground>
 
-  <Heading level="2">Textarea</Heading>
-  <div class="flex flex-col gap-4">
-    <Example v-slot="{ value, update }" raw="">
-      <Textarea :modelValue="value" @update:modelValue="update" />
-    </Example>
+    <Playground id="mask-time-input">
+      <input
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="hh:ii:ss"
+        v-mask="'hh:ii:ss'"
+      />
+    </Playground>
 
-    <Example init="code editor" v-slot="{ value, update }" raw="">
-      <Textarea class="font-mono" mode="code" :modelValue="value" @update:modelValue="update" />
-    </Example>
+    <Playground id="mask-regex-input">
+      <input
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="Decimal and Space"
+        v-mask="/^[\d\s]+$/"
+      />
+    </Playground>
+
+    <Playground id="mask-color-input">
+      <input
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        placeholder="Hex Color"
+        v-mask="'#xxxxxx'"
+      />
+    </Playground>
   </div>
 </template>

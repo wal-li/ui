@@ -1,16 +1,12 @@
 {
   "name": "@wal-li/ui",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "generate:theme": "node ./scripts/generate-theme.mjs",
-    "generate:example": "node ./scripts/generate-example.mjs",
-    "build:pre": "npm run generate:theme && npm run generate:example",
-    "build": "npm run build:pre && npm run build:rollup && npm run build:tailwind && npm run build:post",
-    "build:post": "node ./scripts/postbuild.mjs",
-    "build:rollup": "rollup -c",
-    "build:tailwind": "tailwindcss -i ./src/style.css -o ./dist/style.css"
+    "dev": "npm run generate:code && vite --host 0.0.0.0",
+    "generate:code": "node ./scripts/generate-code.mjs",
+    "build:lib": "npm run generate:code && rollup -c && node ./scripts/postbuild.mjs",
+    "build:example": "npm run generate:code && vite build"
   },
   "exports": {
     "./*": {
@@ -20,7 +16,7 @@
       },
       "default": "./*/index.mjs"
     },
-    "./style.css": "./style.css"
+    "./theme.css": "./theme.css"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
