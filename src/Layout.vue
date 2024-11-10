@@ -85,6 +85,13 @@ const sideMenuItems = ref([
     icon: 'window-maximize',
   },
   {
+    section: 'Components',
+    label: 'SideBar',
+    url: '/sidebar',
+    command: handleRouter,
+    icon: 'bars',
+  },
+  {
     label: 'Combination',
   },
   {
