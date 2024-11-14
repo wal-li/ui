@@ -5,10 +5,25 @@
   "scripts": {
     "dev": "npm run generate:code && vite --host 0.0.0.0",
     "generate:code": "node ./scripts/generate-code.mjs",
-    "build:lib": "npm run generate:code && rollup -c && node ./scripts/postbuild.mjs",
+    "generate:icon": "node ./scripts/generate-icon.mjs",
+    "build:lib": "npm run generate:code && npm run generate:icon && rollup -c && node ./scripts/postbuild.mjs",
     "build:example": "npm run generate:code && vite build"
   },
   "exports": {
+    "./icons": {
+      "node": {
+        "import": "./icons/index.mjs",
+        "require": "./icons/index.cjs"
+      },
+      "default": "./icons/index.mjs"
+    },
+    "./icons/*": {
+      "node": {
+        "import": "./icons/*.mjs",
+        "require": "./icons/*.cjs"
+      },
+      "default": "./icons/*.mjs"
+    },
     "./*": {
       "node": {
         "import": "./*/index.mjs",
@@ -22,6 +37,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@vitejs/plugin-vue": "^5.1.3",
     "autoprefixer": "^10.4.20",
+    "camelcase": "^8.0.0",
     "cheerio": "^1.0.0",
     "lorem-ipsum": "^2.0.8",
     "postcss": "^8.4.45",

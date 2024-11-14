@@ -2,8 +2,9 @@
 import { ref, watch, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
-import Dashboard from './dashboard/Dashboard.vue';
+// import Dashboard from './dashboard/Dashboard.vue';
 import Heading from './heading/Heading.vue';
+import Sidebar from './sidebar/Sidebar.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -15,6 +16,41 @@ function handleRouter(item) {
 }
 
 const sideMenuItems = ref([
+  {
+    label: 'Components',
+  },
+
+  {
+    section: 'Components',
+    label: 'Button',
+    url: '/button',
+    command: handleRouter,
+    icon: 'clone',
+  },
+  {
+    section: 'Components',
+    label: 'Heading',
+    url: '/heading',
+    command: handleRouter,
+    icon: '<svg viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 3 1 17M1 10 10 10M10 3 10 17M14 8 19 3 19 17"/></svg>',
+  },
+  {
+    section: 'Components',
+    label: 'Input',
+    url: '/input',
+    command: handleRouter,
+    icon: '<svg viewBox="0 0 18 18" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 2 17 2 17 15 1 15ZM4 5 7 5M5.5 5 5.5 12M4 12 7 12" /></svg>',
+  },
+  {
+    section: 'Components',
+    label: 'SideBar',
+    url: '/sidebar',
+    command: handleRouter,
+    icon: 'bars',
+  },
+  {
+    label: '--- END ---',
+  },
   {
     label: 'Fundamental',
   },
@@ -53,30 +89,7 @@ const sideMenuItems = ref([
     command: handleRouter,
     icon: 'arrows-h',
   },
-  {
-    label: 'Components',
-  },
-  {
-    section: 'Components',
-    label: 'Headings',
-    url: '/headings',
-    command: handleRouter,
-    icon: '<svg viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 3 1 17M1 10 10 10M10 3 10 17M14 8 19 3 19 17"/></svg>',
-  },
-  {
-    section: 'Components',
-    label: 'Buttons',
-    url: '/buttons',
-    command: handleRouter,
-    icon: 'clone',
-  },
-  {
-    section: 'Components',
-    label: 'Inputs',
-    url: '/inputs',
-    command: handleRouter,
-    icon: '<svg viewBox="0 0 18 18" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 2 17 2 17 15 1 15ZM4 5 7 5M5.5 5 5.5 12M4 12 7 12" /></svg>',
-  },
+
   {
     section: 'Components',
     label: 'Dialog',
@@ -84,13 +97,7 @@ const sideMenuItems = ref([
     command: handleRouter,
     icon: 'window-maximize',
   },
-  {
-    section: 'Components',
-    label: 'SideBar',
-    url: '/sidebar',
-    command: handleRouter,
-    icon: 'bars',
-  },
+
   {
     label: 'Combination',
   },
@@ -128,7 +135,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Dashboard :sideMenuItems="sideMenuItems" :topMenuItems="topMenuItems">
+  <!-- <Dashboard :sideMenuItems="sideMenuItems" :topMenuItems="topMenuItems">
     <template #logo>
       <div class="flex gap-2 items-center text-primary">
         <svg class="w-6 h-6" viewBox="0 0 24 24">
@@ -147,5 +154,59 @@ onMounted(() => {
 
       <RouterView />
     </div>
-  </Dashboard>
+  </Dashboard> -->
+
+  <Sidebar
+    class="w-full relative h-[100svh]"
+    v-slot="{ ready, isShort, isFloat, toggle }"
+    :lg="[
+      ['static', 'full'],
+      ['static', 'short'],
+    ]"
+  >
+    <!-- sidebar -->
+    <div
+      class="w-[--sidebar-width] left-[--sidebar-offset] top-0 h-full fixed transition-all z-20 bg-background border-r border-secondary overflow-hidden flex flex-col p-1"
+    >
+      <template v-for="item in sideMenuItems">
+        <Transition :name="ready ? 'slideUp' : ''" v-if="!item.command && !item.url">
+          <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">{{ item.label }}</label>
+        </Transition>
+
+        <a
+          v-else
+          :class="`w-full text-sm leading-4 p-3 rounded cursor-pointer overflow-hidden mb-1 ${
+            item.active ? 'font-bold bg-secondary' : 'hover:bg-secondary'
+          }`"
+          @click="item.command(item)"
+        >
+          <div class="w-[--sidebar-base] flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" fill="currentColor" class="w-4 h-4">
+              <path
+                fill-rule="evenodd"
+                d="M2.25 13.5a8.25 8.25 0 0 1 8.25-8.25.75.75 0 0 1 .75.75v6.75H18a.75.75 0 0 1 .75.75 8.25 8.25 0 0 1-16.5 0Z"
+                clip-rule="evenodd"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M12.75 3a.75.75 0 0 1 .75-.75 8.25 8.25 0 0 1 8.25 8.25.75.75 0 0 1-.75.75h-7.5a.75.75 0 0 1-.75-.75V3Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span class="w-0">{{ item.label }}</span>
+          </div>
+        </a>
+      </template>
+    </div>
+    <!-- backdrop -->
+    <Transition :name="ready ? 'fade' : ''">
+      <label v-if="isFloat" class="absolute top-0 left-0 w-full h-full z-10 bg-zinc-950/50" @click="toggle"></label>
+    </Transition>
+    <!-- main -->
+    <main class="pl-[--sidebar-padding] w-full min-h-full transition-all">
+      <div class="p-4">
+        <RouterView></RouterView>
+      </div>
+    </main>
+  </Sidebar>
 </template>

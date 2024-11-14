@@ -2,7 +2,7 @@ import vue from 'rollup-plugin-vue';
 import typescript from '@rollup/plugin-typescript';
 
 import { readdirSync } from 'fs';
-import { resolve as resolvePath, join as joinPath, dirname, extname } from 'path';
+import { resolve as resolvePath, join as joinPath, dirname, extname, basename } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -26,11 +26,13 @@ readdirSync(resolvePath(__dirname, INPUT_DIR), { withFileTypes: true })
           output: [
             {
               format: 'es',
-              file: OUTPUT_DIR + joinPath(compName, `index.mjs`),
+              file:
+                OUTPUT_DIR + joinPath(compName, fileList.length > 1 ? basename(fileName, ext) + '.mjs' : `index.mjs`),
             },
             {
               format: 'cjs',
-              file: OUTPUT_DIR + joinPath(compName, `index.cjs`),
+              file:
+                OUTPUT_DIR + joinPath(compName, fileList.length > 1 ? basename(fileName, ext) + '.cjs' : `index.cjs`),
             },
           ],
           plugins: [vue()],
@@ -43,11 +45,13 @@ readdirSync(resolvePath(__dirname, INPUT_DIR), { withFileTypes: true })
           output: [
             {
               format: 'es',
-              file: OUTPUT_DIR + joinPath(compName, `index.mjs`),
+              file:
+                OUTPUT_DIR + joinPath(compName, fileList.length > 1 ? basename(fileName, ext) + '.mjs' : `index.mjs`),
             },
             {
               format: 'cjs',
-              file: OUTPUT_DIR + joinPath(compName, `index.cjs`),
+              file:
+                OUTPUT_DIR + joinPath(compName, fileList.length > 1 ? basename(fileName, ext) + '.cjs' : `index.cjs`),
             },
           ],
           plugins: [typescript()],

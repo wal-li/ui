@@ -85,6 +85,11 @@ const isFloat = computed(() => {
   return type === 'float';
 });
 
+const isShort = computed(() => {
+  const size = states[windowSize.value][boolState.value ? 1 : 0][1];
+  return size === 'short';
+});
+
 // init
 function init() {
   const propWidth = parseInt(props.width);
@@ -154,6 +159,6 @@ watch(
 
 <template>
   <div :style="cssVariables">
-    <slot v-bind="{ ready, isFloat, toggle }"></slot>
+    <slot v-bind="{ ready, isShort, isFloat, toggle }"></slot>
   </div>
 </template>
