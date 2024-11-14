@@ -71,6 +71,10 @@
   background-color: rgb(var(--muted));
 }
 
+.border-muted {
+  border-color: rgb(var(--muted));
+}
+
 /* transition */
 .fade-enter-active,
 .fade-leave-active {

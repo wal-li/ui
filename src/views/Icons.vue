@@ -1,49 +1,121 @@
 <script setup>
-import { ref, computed } from 'vue';
-import { loremIpsum } from 'lorem-ipsum';
+import { onMounted, onBeforeMount, ref, shallowRef } from 'vue';
+import icons from '../icons';
 
-import Field from '../field/Field.vue';
-import Heading from '../heading/Heading.vue';
-import Icon from '../icon/Icon.vue';
-import Button from '../button/Button.vue';
+const loadedComponents = shallowRef([]);
+const outlined = ref(true);
 
-import IconEditor from './IconEditor.vue';
-
-const SIZES = ['text-xs', 'text-sm', 'test-base', 'text-lg', 'text-xl', 'text-2xl'];
-const COLORS = ['text-primary', 'text-secondary', 'text-success', 'text-danger', 'text-warning', 'text-info'];
-
-const ICON_DATA = [
-  {
-    name: 'plus',
-    data: '<svg viewBox="0 0 20 20"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 1 10 19M1 10 19 10"/></svg>',
-  },
-  {
-    name: 'h1',
-    data: '<svg viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 3 1 17M1 10 10 10M10 3 10 17M14 8 19 3 19 17"/></svg>',
-  },
-  {
-    name: 'input',
-    data: '<svg viewBox="0 0 18 18" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 2 17 2 17 15 1 15ZM4 5 7 5M5.5 5 5.5 12M4 12 7 12" /></svg>',
-  },
-];
-
-const svg = ref(
-  '<svg viewBox="0 0 24 24"><path d="M12 0Q0 0 0 13 0 24 12 24T24 12 12 0ZM5 5 7 5 11 9 9 11 5 7ZM19 5 19 7 15 11 13 9 17 5ZM12 4 14 6 12 8 10 6ZM5 9 8 12 8 16 11 19 7 19 5 17zM19 9 19 17 17 19 13 19 16 16 16 12zM12 10 14 12 12 18 10 12Z" fill="currentColor"/></svg>',
-);
-const selectedIcon = ref();
-
-const sampleText = loremIpsum();
-
-function updateSvg(value) {
-  console.log(value);
-  if (!/^\<svg((.|\n)*)\<\/svg\>$/gm.test(value)) return;
-
-  svg.value = value;
+function copyToClipboard(text) {
+  if (navigator.clipboard) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        console.log('Text copied to clipboard');
+      })
+      .catch((err) => {
+        console.error('Failed to copy text: ', err);
+      });
+  } else {
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed'; // Prevent scrolling to the bottom of the page in mobile Safari
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      document.execCommand('copy');
+      console.log('Text copied to clipboard (fallback)');
+    } catch (err) {
+      console.error('Fallback copy failed: ', err);
+    }
+    document.body.removeChild(textArea);
+  }
 }
+
+onBeforeMount(async () => {
+  const res = [];
+  for (const item of icons) {
+    res.push({
+      ...item,
+      component: (await import(`../icons/${item.componentName}.vue`)).default,
+    });
+  }
+  loadedComponents.value = res;
+
+  console.log(loadedComponents);
+});
+
+// import { ref, computed } from 'vue';
+// import { loremIpsum } from 'lorem-ipsum';
+
+// import Field from '../field/Field.vue';
+// import Heading from '../heading/Heading.vue';
+// // import Icon from '../icon/Icon.vue';
+// import Button from '../button/Button.vue';
+
+// import IconEditor from './IconEditor.vue';
+
+// const SIZES = ['text-xs', 'text-sm', 'test-base', 'text-lg', 'text-xl', 'text-2xl'];
+// const COLORS = ['text-primary', 'text-secondary', 'text-success', 'text-danger', 'text-warning', 'text-info'];
+
+// const ICON_DATA = [
+//   {
+//     name: 'plus',
+//     data: '<svg viewBox="0 0 20 20"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 1 10 19M1 10 19 10"/></svg>',
+//   },
+//   {
+//     name: 'h1',
+//     data: '<svg viewBox="0 0 20 20" fill="none"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M1 3 1 17M1 10 10 10M10 3 10 17M14 8 19 3 19 17"/></svg>',
+//   },
+//   {
+//     name: 'input',
+//     data: '<svg viewBox="0 0 18 18" fill="none"><path stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M1 2 17 2 17 15 1 15ZM4 5 7 5M5.5 5 5.5 12M4 12 7 12" /></svg>',
+//   },
+// ];
+
+// const svg = ref(
+//   '<svg viewBox="0 0 24 24"><path d="M12 0Q0 0 0 13 0 24 12 24T24 12 12 0ZM5 5 7 5 11 9 9 11 5 7ZM19 5 19 7 15 11 13 9 17 5ZM12 4 14 6 12 8 10 6ZM5 9 8 12 8 16 11 19 7 19 5 17zM19 9 19 17 17 19 13 19 16 16 16 12zM12 10 14 12 12 18 10 12Z" fill="currentColor"/></svg>',
+// );
+// const selectedIcon = ref();
+
+// const sampleText = loremIpsum();
+
+// function updateSvg(value) {
+//   console.log(value);
+//   if (!/^\<svg((.|\n)*)\<\/svg\>$/gm.test(value)) return;
+
+//   svg.value = value;
+// }
 </script>
 
 <template>
-  <Heading level="2">Editor</Heading>
+  <div class="grid grid-cols-1 gap-4">
+    <div class="border border-secondary rounded-lg p-4 sticky top-4 bg-background">
+      <button
+        :class="`text-sm leading-4 font-medium p-3 ${
+          outlined
+            ? 'text-foreground outline outline-1 -outline-offset-1 outline-primary hover:bg-primary hover:text-primary'
+            : 'bg-primary text-primary'
+        } rounded inline-flex items-center gap-2`"
+        @click="outlined = !outlined"
+      >
+        {{ outlined ? 'Outlined' : 'Solid' }}
+      </button>
+    </div>
+
+    <div class="border border-secondary rounded-lg p-4 grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))]">
+      <button
+        class="flex flex-col items-center justify-center gap-4 hover:bg-secondary cursor-pointer p-4 rounded"
+        v-for="item in loadedComponents"
+        @click="copyToClipboard(item.componentName)"
+      >
+        <component class="w-4 h-4 bg-secondary" :is="item.component" :outlined="outlined" />
+        <div class="w-full text-center text-xs text-ellipsis overflow-hidden">{{ item.componentName }}</div>
+      </button>
+    </div>
+  </div>
+  <!-- <Heading level="2">Editor</Heading>
 
   <IconEditor class="mb-4" @input="updateSvg" />
 
@@ -86,13 +158,13 @@ function updateSvg(value) {
   <Heading level="3">with Button</Heading>
   <div class="flex gap-2 mb-4">
     <div>
-      <Button size="small"><Icon :data="svg" /></Button>
+      <Button size="small"><component :is="svg" /></Button>
     </div>
     <div>
-      <Button size="normal"><Icon :data="svg" /></Button>
+      <Button size="normal"><component :is="svg" /></Button>
     </div>
     <div>
-      <Button size="large"><Icon :data="svg" /></Button>
+      <Button size="large"><component :is="svg" /></Button>
     </div>
   </div>
 
@@ -122,5 +194,5 @@ function updateSvg(value) {
       <Button size="small">Copy</Button>
       <Button size="small">Download</Button>
     </div>
-  </div>
+  </div> -->
 </template>

@@ -35,10 +35,10 @@ export const routes = [
         path: '/',
         component: Colors,
       },
-      // {
-      //   path: '/icons',
-      //   component: Icons,
-      // },
+      {
+        path: '/icons',
+        component: Icons,
+      },
       {
         path: '/svg',
         component: SvgEditor,
