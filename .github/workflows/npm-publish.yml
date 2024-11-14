@@ -21,7 +21,7 @@ jobs:
           scope: '@wal-li'
           always-auth: true
       - run: npm ci
-      - run: npm run build
+      - run: npm run build:lib
       - run: cd dist && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
