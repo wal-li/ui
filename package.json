@@ -1,13 +1,13 @@
 {
   "name": "@wal-li/ui",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "type": "module",
   "scripts": {
     "dev": "npm run generate:code && vite --host 0.0.0.0",
     "generate:code": "node ./scripts/generate-code.mjs",
     "generate:icon": "node ./scripts/generate-icon.mjs",
     "build:lib": "npm run generate:code && npm run generate:icon && rollup -c && node ./scripts/postbuild.mjs",
-    "build:example": "npm run generate:code && vite build"
+    "build:example": "npm run generate:code && npm run generate:icon && vite build"
   },
   "exports": {
     "./icons": {
