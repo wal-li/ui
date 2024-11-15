@@ -14,6 +14,9 @@ import Bars3Icon from './icons/Bars3Icon.vue';
 import ClipboardDocumentIcon from './icons/ClipboardDocumentIcon.vue';
 import PaintBrushIcon from './icons/PaintBrushIcon.vue';
 import StarIcon from './icons/StarIcon.vue';
+import Theme from './theme/theme.vue';
+import SunIcon from './icons/SunIcon.vue';
+import MoonIcon from './icons/MoonIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -174,6 +177,18 @@ const currentLabel = computed(() => {
         </button>
 
         <h1>{{ currentLabel }}</h1>
+
+        <div class="flex-1"></div>
+
+        <Theme v-slot="{ toggle, value }">
+          <button
+            class="text-sm leading-4 font-medium p-1.5 hover:bg-secondary text-foreground rounded inline-flex items-center gap-2"
+            @click="toggle"
+          >
+            <SunIcon class="w-5 h-5" v-if="value === 'dark'" />
+            <MoonIcon class="w-5 h-5" v-else />
+          </button>
+        </Theme>
       </div>
 
       <!-- content -->

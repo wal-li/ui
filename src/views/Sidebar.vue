@@ -5,6 +5,9 @@ import { computed } from 'vue';
 import ChartPieIcon from '../icons/ChartPieIcon.vue';
 import CommandLineIcon from '../icons/CommandLineIcon.vue';
 import Bars3Icon from '../icons/Bars3Icon.vue';
+import Theme from '../theme/theme.vue';
+import SunIcon from '../icons/SunIcon.vue';
+import MoonIcon from '../icons/MoonIcon.vue';
 
 const types = ['static', 'hidden', 'float'];
 const sizes = ['full', 'short'];
@@ -81,6 +84,18 @@ for (const from_type of types)
             </button>
 
             <h1>Dashboard</h1>
+
+            <div class="flex-1"></div>
+
+            <Theme v-slot="{ toggle, value }">
+              <button
+                class="text-sm leading-4 font-medium p-1.5 hover:bg-secondary text-foreground rounded inline-flex items-center gap-2"
+                @click="toggle"
+              >
+                <SunIcon class="w-5 h-5" v-if="value === 'dark'" />
+                <MoonIcon class="w-5 h-5" v-else />
+              </button>
+            </Theme>
           </div>
 
           <!-- content -->

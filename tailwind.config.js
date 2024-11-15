@@ -36,7 +36,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['"Poppins"', '"PoppinsVN"', 'sans-serif'],
+      sans: ['"Poppins"', 'sans-serif'],
       mono: ['monospace'],
       icon: ['primeicons'],
     },
