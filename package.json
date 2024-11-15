@@ -1,6 +1,6 @@
 {
   "name": "@wal-li/ui",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "type": "module",
   "scripts": {
     "dev": "npm run generate:code && vite --host 0.0.0.0",
@@ -30,8 +30,7 @@
         "require": "./*/index.cjs"
       },
       "default": "./*/index.mjs"
-    },
-    "./theme.css": "./theme.css"
+    }
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",

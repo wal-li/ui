@@ -2,6 +2,7 @@
 import Tabs from '../tabs/Tabs.vue';
 import CODE from '../code.ts';
 import { getCurrentInstance, onMounted } from 'vue';
+import CodePreview from './CodePreview.vue';
 
 defineProps(['id']);
 </script>
@@ -16,7 +17,9 @@ defineProps(['id']);
       </template>
 
       <template #Code v-if="id">
-        <pre class="p-4 p-4 bg-secondary">{{ CODE[id] }}</pre>
+        <CodePreview class="!rounded-none">
+          <pre>{{ CODE[id] }}</pre>
+        </CodePreview>
       </template>
     </Tabs>
   </div>

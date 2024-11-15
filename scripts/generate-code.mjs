@@ -40,4 +40,6 @@ for (const name of ls) {
   }
 }
 
+results['style.css'] = readFileSync('./src/style.css').toString();
+
 writeFileSync(resolvePath(__dirname, '../src/code.ts'), `export default ${JSON.stringify(results, null, 2)}`);

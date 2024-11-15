@@ -18,7 +18,7 @@ function updateValue(e) {
 <template>
   <div class="relative">
     <label
-      class="absolute w-10 h-full block border border-secondary-300 dark:border-secondary-700"
+      class="absolute w-10 h-full block border border-secondary-300 dark:border-secondary-700 rounded"
       :style="{ backgroundColor: model }"
     ></label>
     <input
@@ -28,7 +28,7 @@ function updateValue(e) {
       @input="updateValue"
     />
     <input
-      class="block border border-secondary-300 pl-12 pr-3 py-2 outline-0 w-full bg-white text-sm dark:bg-black dark:border-secondary-700 dark:outline-0"
+      class="pl-12 block outline outline-1 outline-offset-0 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
       type="text"
       v-model="model"
     />

@@ -10,7 +10,7 @@ const tmp = ref('');
   <div class="grid grid-cols-1 gap-4">
     <Playground id="text-input">
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="Text Input"
         spellcheck="false"
       />
@@ -19,7 +19,7 @@ const tmp = ref('');
     <Playground id="number-input">
       <input
         type="number"
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="Number Input"
       />
     </Playground>
@@ -27,7 +27,7 @@ const tmp = ref('');
     <Playground id="date-input">
       <input
         type="date"
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="Date Input"
       />
     </Playground>
@@ -35,14 +35,14 @@ const tmp = ref('');
     <Playground id="file-input">
       <input
         type="file"
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="File Input"
       />
     </Playground>
 
     <Playground id="mask-number-input">
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="Mask Number Input"
         v-mask="Number"
       />
@@ -50,7 +50,7 @@ const tmp = ref('');
 
     <Playground id="mask-number-input">
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="(+00) 000 000 000"
         v-mask="'(+00) 000 000 000'"
       />
@@ -58,7 +58,7 @@ const tmp = ref('');
 
     <Playground id="mask-date-input">
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="yyyy-mm-dd"
         v-mask="'yyyy-mm-dd'"
       />
@@ -66,7 +66,7 @@ const tmp = ref('');
 
     <Playground id="mask-time-input">
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="hh:ii:ss"
         v-mask="'hh:ii:ss'"
       />
@@ -74,7 +74,7 @@ const tmp = ref('');
 
     <Playground id="mask-regex-input">
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="Decimal and Space"
         v-mask="/^[\d\s]+$/"
       />
@@ -82,7 +82,7 @@ const tmp = ref('');
 
     <Playground id="mask-color-input">
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-foreground w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
         placeholder="Hex Color"
         v-mask="'#xxxxxx'"
       />

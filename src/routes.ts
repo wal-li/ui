@@ -1,39 +1,40 @@
 import Layout from './Layout.vue';
-import Buttons from './views/Buttons.vue';
+import Button from './views/Button.vue';
 import Headings from './views/Headings.vue';
 import Form from './views/Form.vue';
 import Colors from './views/Colors.vue';
-import Inputs from './views/Inputs.vue';
+import Input from './views/Input.vue';
 import Icons from './views/Icons.vue';
 import SvgEditor from './views/SvgEditor.vue';
 import Size from './views/Size.vue';
 import Dialog from './views/Dialog.vue';
 import Sidebar from './views/Sidebar.vue';
 import Toast from './views/Toast.vue';
+import Welcome from './views/Welcome.vue';
 
 export const routes = [
   {
     path: '/',
     component: Layout,
     children: [
-      // {
-      //   path: '/',
-      //   component: Charts,
-      // },
+      {
+        path: '/',
+        component: Welcome,
+      },
       {
         path: '/heading',
         component: Headings,
       },
       {
         path: '/button',
-        component: Buttons,
+        component: Button,
       },
       {
         path: '/form',
         component: Form,
       },
       {
-        path: '/',
+        path: '/colors',
         component: Colors,
       },
       {
@@ -46,7 +47,7 @@ export const routes = [
       },
       {
         path: '/input',
-        component: Inputs,
+        component: Input,
       },
       {
         path: '/size',

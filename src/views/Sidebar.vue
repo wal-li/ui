@@ -34,32 +34,34 @@ for (const from_type of types)
       >
         <!-- sidebar -->
         <div
-          class="w-[--sidebar-width] left-[--sidebar-offset] top-0 h-full absolute transition-all z-20 bg-background border-r border-secondary overflow-hidden flex flex-col p-1"
+          class="absolute w-[--sidebar-width] left-[--sidebar-offset] top-0 h-full transition-all z-20 bg-background border-r border-secondary overflow-x-hidden p-1 z-30"
         >
-          <Transition :name="ready ? 'slideUp' : ''">
-            <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">Overviews</label>
-          </Transition>
+          <div class="min-h-full flex flex-col">
+            <Transition :name="ready ? 'slideUp' : ''">
+              <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">Overviews</label>
+            </Transition>
 
-          <a
-            class="w-full text-sm leading-4 p-3 rounded cursor-pointer hover:bg-secondary overflow-hidden mb-1 font-bold bg-secondary"
-          >
-            <div class="w-[--sidebar-base] flex items-center gap-3">
-              <ChartPieIcon class="w-4 h-4" />
-              <span class="w-0">Statistics</span>
-            </div>
-          </a>
+            <a
+              class="w-full text-sm leading-4 p-2.5 rounded cursor-pointer overflow-hidden mb-1 hover:bg-secondary font-bold bg-secondary"
+            >
+              <div class="w-[--sidebar-base] flex items-center gap-2.5">
+                <ChartPieIcon class="w-5 h-5" />
+                <span class="w-0 whitespace-nowrap">Statistics</span>
+              </div>
+            </a>
 
-          <Transition :name="ready ? 'slideUp' : ''">
-            <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">Tools</label>
-          </Transition>
+            <Transition :name="ready ? 'slideUp' : ''">
+              <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">Tools</label>
+            </Transition>
 
-          <a class="w-full text-sm leading-4 p-3 rounded cursor-pointer hover:bg-secondary overflow-hidden mb-1">
-            <div class="w-[--sidebar-base] flex items-center gap-3">
-              <CommandLineIcon class="w-4 h-4" />
+            <a class="w-full text-sm leading-4 p-2.5 rounded cursor-pointer overflow-hidden mb-1 hover:bg-secondary">
+              <div class="w-[--sidebar-base] flex items-center gap-2.5">
+                <CommandLineIcon class="w-5 h-5" />
 
-              <span class="w-0">Playground</span>
-            </div>
-          </a>
+                <span class="w-0 whitespace-nowrap">Playground Chichi</span>
+              </div>
+            </a>
+          </div>
         </div>
 
         <!-- backdrop -->
@@ -70,17 +72,18 @@ for (const from_type of types)
         <!-- main -->
         <main class="pl-[--sidebar-padding] w-full h-full transition-all">
           <!-- topbar -->
-          <div class="p-2 flex items-center gap-2 text-sm">
+          <div class="p-2 flex items-center gap-2 text-sm sticky top-0 z-20 bg-background">
             <button
-              class="text-sm leading-4 font-medium p-2 hover:bg-secondary text-foreground rounded inline-flex items-center gap-2"
+              class="text-sm leading-4 font-medium p-1.5 hover:bg-secondary text-foreground rounded inline-flex items-center gap-2"
               @click="toggle"
             >
-              <Bars3Icon class="w-4 h-4" />
+              <Bars3Icon class="w-5 h-5" />
             </button>
 
             <h1>Dashboard</h1>
           </div>
 
+          <!-- content -->
           <div class="px-4 pb-4 grid grid-cols-3 gap-4">
             <div class="border border-secondary h-24 rounded-lg"></div>
             <div class="border border-secondary h-24 rounded-lg"></div>
@@ -97,8 +100,8 @@ for (const from_type of types)
       <div class="bg-sky-500/20 py-4">
         <Sidebar
           class="w-full h-32 relative"
-          width="64"
-          icon="24"
+          width="4"
+          icon="1.5"
           :lg="item"
           :sm="item"
           v-slot="{ ready, isFloat, toggle }"

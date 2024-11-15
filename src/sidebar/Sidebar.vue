@@ -18,9 +18,9 @@
  */
 import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from 'vue';
 
-const LG_WIDTH = 1024;
-const BASE_WIDTH = 256;
-const BASE_ICON = 48;
+const LG_WIDTH = 1024; // pixel
+const BASE_WIDTH = 16; // rem
+const BASE_ICON = 3; // rem
 const ICO_SM_STATES = [
   ['static', 'short'],
   ['static', 'full'],
@@ -73,10 +73,10 @@ const cssVariables = computed(() => {
   const width = size === 'short' ? iconWidth.value : sidebarWidth.value;
 
   return [
-    `--sidebar-base: ${sidebarWidth.value}px`,
-    `--sidebar-width: ${width}px`,
-    `--sidebar-offset: ${type === 'hidden' ? -width : 0}px`,
-    `--sidebar-padding: ${type === 'static' ? width : 0}px`,
+    `--sidebar-base: ${sidebarWidth.value}rem`,
+    `--sidebar-width: ${width}rem`,
+    `--sidebar-offset: ${type === 'hidden' ? -width : 0}rem`,
+    `--sidebar-padding: ${type === 'static' ? width : 0}rem`,
   ].join('; ');
 });
 

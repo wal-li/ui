@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, onMounted, shallowRef } from 'vue';
+import { ref, watch, onMounted, shallowRef, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
 // import Dashboard from './dashboard/Dashboard.vue';
@@ -12,6 +12,8 @@ import PuzzlePieceIcon from './icons/PuzzlePieceIcon.vue';
 import PencilSquareIcon from './icons/PencilSquareIcon.vue';
 import Bars3Icon from './icons/Bars3Icon.vue';
 import ClipboardDocumentIcon from './icons/ClipboardDocumentIcon.vue';
+import PaintBrushIcon from './icons/PaintBrushIcon.vue';
+import StarIcon from './icons/StarIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -22,9 +24,15 @@ function handleRouter(item) {
 
 const sideMenuItems = [
   {
+    section: 'Welcome',
+    label: 'Welcome',
+    url: '/',
+    command: handleRouter,
+    icon: StarIcon,
+  },
+  {
     label: 'Components',
   },
-
   {
     section: 'Components',
     label: 'Button',
@@ -67,25 +75,15 @@ const sideMenuItems = [
     command: handleRouter,
     icon: ClipboardDocumentIcon,
   },
-
-  {
-    label: '--- END ---',
-  },
   {
     label: 'Fundamental',
   },
-  // {
-  //   section: 'Fundamental',
-  //   label: 'Charts',
-  //   url: '/',
-  //   command: handleRouter,
-  //   icon: 'chart-bar',
-  // },
   {
     section: 'Fundamental',
     label: 'Colors',
-    url: '/',
+    url: '/colors',
     command: handleRouter,
+    icon: PaintBrushIcon,
   },
 
   {
@@ -118,6 +116,10 @@ const sideMenuItems = [
     command: handleRouter,
   },
 ];
+
+const currentLabel = computed(() => {
+  return sideMenuItems.filter((i) => i.url === route.path)[0]?.label;
+});
 </script>
 
 <template>
@@ -131,36 +133,51 @@ const sideMenuItems = [
   >
     <!-- sidebar -->
     <div
-      class="w-[--sidebar-width] left-[--sidebar-offset] top-0 h-full fixed transition-all z-20 bg-background border-r border-secondary overflow-hidden flex flex-col p-1"
+      class="fixed w-[--sidebar-width] left-[--sidebar-offset] top-0 h-full transition-all z-20 bg-background border-r border-secondary overflow-x-hidden p-1 z-30"
     >
-      <template v-for="item in sideMenuItems">
-        <Transition :name="ready ? 'slideUp' : ''" v-if="!item.command && !item.url">
-          <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">{{ item.label }}</label>
-        </Transition>
+      <div class="min-h-full flex flex-col">
+        <template v-for="item in sideMenuItems">
+          <Transition :name="ready ? 'slideUp' : ''" v-if="!item.command && !item.url">
+            <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">{{ item.label }}</label>
+          </Transition>
 
-        <a
-          v-else
-          :class="`w-full text-sm leading-4 p-3 rounded cursor-pointer overflow-hidden mb-1 ${
-            item.url === route.path ? 'font-bold bg-secondary' : 'hover:bg-secondary'
-          }`"
-          @click="item.command(item)"
-        >
-          <div class="w-[--sidebar-base] flex items-center gap-3">
-            <component class="w-4 h-4" :is="item.icon || DocumentIcon" :outlined="!(item.url === route.path)" />
-            <span class="w-0">{{ item.label }}</span>
-          </div>
-        </a>
-      </template>
+          <a
+            v-else
+            :class="`w-full text-sm leading-4 p-2.5 rounded cursor-pointer overflow-hidden mb-1 ${
+              item.url === route.path ? 'font-bold bg-secondary' : 'hover:bg-secondary'
+            }`"
+            @click="item.command(item)"
+          >
+            <div class="w-[--sidebar-base] flex items-center gap-2.5">
+              <component class="w-5 h-5" :is="item.icon || DocumentIcon" :outlined="!(item.url === route.path)" />
+              <span class="w-0 whitespace-nowrap">{{ item.label }}</span>
+            </div>
+          </a>
+        </template>
+      </div>
     </div>
 
     <!-- backdrop -->
     <Transition :name="ready ? 'fade' : ''">
-      <label v-if="isFloat" class="absolute top-0 left-0 w-full h-full z-10 bg-zinc-950/50" @click="toggle"></label>
+      <label v-if="isFloat" class="fixed top-0 left-0 w-full h-full z-10 bg-zinc-950/50" @click="toggle"></label>
     </Transition>
 
     <!-- main -->
     <main class="pl-[--sidebar-padding] w-full min-h-full transition-all">
-      <div class="p-4">
+      <!-- topbar -->
+      <div class="p-2 flex items-center gap-2 text-sm sticky top-0 z-20 bg-background">
+        <button
+          class="text-sm leading-4 font-medium p-1.5 hover:bg-secondary text-foreground rounded inline-flex items-center gap-2"
+          @click="toggle"
+        >
+          <Bars3Icon class="w-5 h-5" />
+        </button>
+
+        <h1>{{ currentLabel }}</h1>
+      </div>
+
+      <!-- content -->
+      <div class="px-4 pb-4">
         <RouterView></RouterView>
       </div>
     </main>

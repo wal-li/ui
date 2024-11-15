@@ -22,12 +22,8 @@ for (const name of data) {
   const componentName = camelcase(name, { pascalCase: true }) + 'Icon';
   let content = template;
 
-  let outline = readFileSync(join('./heroicons/optimized/24/outline', name + '.svg'))
-    .toString()
-    .replace('viewBox="0 0 24 24"', 'viewBox="2 2 20 20"');
-  let solid = readFileSync(join('./heroicons/optimized/24/solid', name + '.svg'))
-    .toString()
-    .replace('viewBox="0 0 24 24"', 'viewBox="2 2 20 20"');
+  let outline = readFileSync(join('./heroicons/optimized/24/outline', name + '.svg')).toString();
+  let solid = readFileSync(join('./heroicons/optimized/24/solid', name + '.svg')).toString();
 
   content = content.replace(`<!-- outline -->`, outline);
   content = content.replace(`<!-- solid -->`, solid);
