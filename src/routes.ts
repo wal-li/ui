@@ -9,6 +9,7 @@ import SvgEditor from './views/SvgEditor.vue';
 import Size from './views/Size.vue';
 import Dialog from './views/Dialog.vue';
 import Sidebar from './views/Sidebar.vue';
+import Toast from './views/Toast.vue';
 
 export const routes = [
   {
@@ -58,6 +59,10 @@ export const routes = [
       {
         path: '/sidebar',
         component: Sidebar,
+      },
+      {
+        path: '/toast',
+        component: Toast,
       },
     ],
   },

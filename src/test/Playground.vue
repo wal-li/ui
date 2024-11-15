@@ -16,7 +16,7 @@ defineProps(['id']);
       </template>
 
       <template #Code v-if="id">
-        <pre class="p-4 p-4 bg-secondary select-all">{{ CODE[id] }}</pre>
+        <pre class="p-4 p-4 bg-secondary">{{ CODE[id] }}</pre>
       </template>
     </Tabs>
   </div>

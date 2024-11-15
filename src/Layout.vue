@@ -11,17 +11,16 @@ import H1Icon from './icons/H1Icon.vue';
 import PuzzlePieceIcon from './icons/PuzzlePieceIcon.vue';
 import PencilSquareIcon from './icons/PencilSquareIcon.vue';
 import Bars3Icon from './icons/Bars3Icon.vue';
+import ClipboardDocumentIcon from './icons/ClipboardDocumentIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
-
-const currentItem = ref();
 
 function handleRouter(item) {
   router.push(item.url);
 }
 
-const sideMenuItems = shallowRef([
+const sideMenuItems = [
   {
     label: 'Components',
   },
@@ -56,10 +55,17 @@ const sideMenuItems = shallowRef([
   },
   {
     section: 'Components',
-    label: 'SideBar',
+    label: 'Sidebar',
     url: '/sidebar',
     command: handleRouter,
     icon: Bars3Icon,
+  },
+  {
+    section: 'Components',
+    label: 'Toast',
+    url: '/toast',
+    command: handleRouter,
+    icon: ClipboardDocumentIcon,
   },
 
   {
@@ -111,54 +117,10 @@ const sideMenuItems = shallowRef([
     url: '/form',
     command: handleRouter,
   },
-]);
-
-const topMenuItems = [];
-
-function handleActiveMenuItem() {
-  for (const item of sideMenuItems.value) {
-    item.active = false;
-    if (item.url === route.path) {
-      item.active = true;
-      currentItem.value = item;
-    }
-  }
-}
-
-watch(
-  () => route.path,
-  () => {
-    handleActiveMenuItem();
-  },
-);
-
-onMounted(() => {
-  handleActiveMenuItem();
-});
+];
 </script>
 
 <template>
-  <!-- <Dashboard :sideMenuItems="sideMenuItems" :topMenuItems="topMenuItems">
-    <template #logo>
-      <div class="flex gap-2 items-center text-primary">
-        <svg class="w-6 h-6" viewBox="0 0 24 24">
-          <path
-            d="M12 0Q0 0 0 13 0 24 12 24T24 12 12 0ZM5 5 7 5 11 9 9 11 5 7ZM19 5 19 7 15 11 13 9 17 5ZM12 4 14 6 12 8 10 6ZM5 9 8 12 8 16 11 19 7 19 5 17zM19 9 19 17 17 19 13 19 16 16 16 12zM12 10 14 12 12 18 10 12Z"
-            fill="currentColor"
-          />
-        </svg>
-        <span class="font-black">@wal-li/ui</span>
-      </div>
-    </template>
-
-    <div v-if="currentItem">
-      <div class="text-xs font-light uppercase mb-2">{{ currentItem.section }}</div>
-      <Heading>{{ currentItem.label }}</Heading>
-
-      <RouterView />
-    </div>
-  </Dashboard> -->
-
   <Sidebar
     class="w-full relative h-[100svh]"
     v-slot="{ ready, isShort, isFloat, toggle }"
@@ -179,21 +141,23 @@ onMounted(() => {
         <a
           v-else
           :class="`w-full text-sm leading-4 p-3 rounded cursor-pointer overflow-hidden mb-1 ${
-            item.active ? 'font-bold bg-secondary' : 'hover:bg-secondary'
+            item.url === route.path ? 'font-bold bg-secondary' : 'hover:bg-secondary'
           }`"
           @click="item.command(item)"
         >
           <div class="w-[--sidebar-base] flex items-center gap-3">
-            <component class="w-4 h-4" :is="item.icon || DocumentIcon" :outlined="!item.active" />
+            <component class="w-4 h-4" :is="item.icon || DocumentIcon" :outlined="!(item.url === route.path)" />
             <span class="w-0">{{ item.label }}</span>
           </div>
         </a>
       </template>
     </div>
+
     <!-- backdrop -->
     <Transition :name="ready ? 'fade' : ''">
       <label v-if="isFloat" class="absolute top-0 left-0 w-full h-full z-10 bg-zinc-950/50" @click="toggle"></label>
     </Transition>
+
     <!-- main -->
     <main class="pl-[--sidebar-padding] w-full min-h-full transition-all">
       <div class="p-4">

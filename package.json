@@ -1,6 +1,6 @@
 {
   "name": "@wal-li/ui",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "scripts": {
     "dev": "npm run generate:code && vite --host 0.0.0.0",
