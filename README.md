@@ -26,3 +26,7 @@ Special thanks to:
 
 - https://primevue.org/icons/
 - https://flowbite.com/icons/
+
+## Deployment
+
+`https://api.haova.me/webhooks/ui-deployment-24xt6driv3t5c7c9`
