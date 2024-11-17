@@ -19,6 +19,9 @@ import MoonIcon from './icons/MoonIcon.vue';
 import DocumentDuplicateIcon from './icons/DocumentDuplicateIcon.vue';
 
 import Theme from './theme/theme.vue';
+import CheckCircleIcon from './icons/CheckCircleIcon.vue';
+import FolderOpenIcon from './icons/FolderOpenIcon.vue';
+import TableCellsIcon from './icons/TableCellsIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -39,42 +42,48 @@ const sideMenuItems = [
     label: 'Components',
   },
   {
-    section: 'Components',
     label: 'Button',
     url: '/button',
     command: handleRouter,
     icon: StopIcon,
   },
   {
-    section: 'Components',
     label: 'Heading',
     url: '/heading',
     command: handleRouter,
     icon: H1Icon,
   },
   {
-    section: 'Components',
     label: 'Icons',
     url: '/icons',
     command: handleRouter,
     icon: PuzzlePieceIcon,
   },
   {
-    section: 'Components',
     label: 'Input',
     url: '/input',
     command: handleRouter,
     icon: PencilSquareIcon,
   },
   {
-    section: 'Components',
+    label: 'Popper',
+    url: Paths.POPPER,
+    command: handleRouter,
+    icon: FolderOpenIcon,
+  },
+  {
     label: 'Sidebar',
     url: '/sidebar',
     command: handleRouter,
     icon: Bars3Icon,
   },
   {
-    section: 'Components',
+    label: 'Table',
+    url: Paths.TABLE,
+    command: handleRouter,
+    icon: TableCellsIcon,
+  },
+  {
     label: 'Toast',
     url: '/toast',
     command: handleRouter,
@@ -84,43 +93,31 @@ const sideMenuItems = [
     label: 'Fundamental',
   },
   {
-    section: 'Fundamental',
     label: 'Colors',
     url: '/colors',
     command: handleRouter,
     icon: PaintBrushIcon,
   },
   {
-    section: 'Fundamental',
     label: 'Sidebar',
     url: Paths.SIDEBAR_FUND,
     command: handleRouter,
     icon: Bars3Icon,
   },
   {
-    section: 'Fundamental',
     label: 'Layers',
     url: Paths.LAYERS,
     command: handleRouter,
     icon: DocumentDuplicateIcon,
   },
   {
-    section: 'Fundamental',
     label: 'SVG',
     url: '/svg',
     command: handleRouter,
   },
   {
-    section: 'Fundamental',
     label: 'Size',
     url: '/size',
-    command: handleRouter,
-  },
-
-  {
-    section: 'Components',
-    label: 'Dialog',
-    url: '/dialog',
     command: handleRouter,
   },
 
@@ -128,7 +125,6 @@ const sideMenuItems = [
     label: 'Combination',
   },
   {
-    section: 'Combination',
     label: 'Form',
     url: '/form',
     command: handleRouter,
@@ -187,7 +183,7 @@ const currentLabel = computed(() => {
     </Transition>
 
     <!-- main -->
-    <main class="pl-[--sidebar-padding] w-full min-h-full transition-all relative z-0">
+    <main class="pl-[--sidebar-padding] w-full min-h-full transition-all relative">
       <!-- topbar -->
       <div
         :class="`${isTop ? 'static' : 'sticky border-b'} p-2 flex items-center gap-2 text-sm top-0 z-10 bg-background`"
@@ -215,7 +211,7 @@ const currentLabel = computed(() => {
       </div>
 
       <!-- content -->
-      <div class="px-4 pb-4 relative z-0">
+      <div class="px-4 pb-4">
         <RouterView></RouterView>
       </div>
     </main>

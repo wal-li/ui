@@ -7,13 +7,14 @@ import Input from './views/Input.vue';
 import Icons from './views/Icons.vue';
 import SvgEditor from './views/SvgEditor.vue';
 import Size from './views/Size.vue';
-import Dialog from './views/Dialog.vue';
 import Sidebar from './views/Sidebar.vue';
 import Toast from './views/Toast.vue';
 import Welcome from './views/Welcome.vue';
 import { Paths } from './constants';
 import SidebarFund from './views/SidebarFund.vue';
 import Layers from './views/Layers.vue';
+import Popper from './views/Popper.vue';
+import Table from './views/Table.vue';
 
 export const routes = [
   {
@@ -21,7 +22,7 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: '/',
+        path: Paths.HOME,
         component: Welcome,
       },
       {
@@ -57,10 +58,6 @@ export const routes = [
         component: Size,
       },
       {
-        path: '/dialog',
-        component: Dialog,
-      },
-      {
         path: '/sidebar',
         component: Sidebar,
       },
@@ -68,13 +65,22 @@ export const routes = [
         path: '/toast',
         component: Toast,
       },
+
+      {
+        path: Paths.LAYERS,
+        component: Layers,
+      },
+      {
+        path: Paths.POPPER,
+        component: Popper,
+      },
       {
         path: Paths.SIDEBAR_FUND,
         component: SidebarFund,
       },
       {
-        path: Paths.LAYERS,
-        component: Layers,
+        path: Paths.TABLE,
+        component: Table,
       },
     ],
   },

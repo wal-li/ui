@@ -79,3 +79,49 @@
   margin-bottom: 0;
   opacity: 0;
 }
+
+/* prose */
+.prose h1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.prose h4 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+.prose h5 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.prose h6 {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+.prose p {
+  margin-top: 0.5rem;
+}

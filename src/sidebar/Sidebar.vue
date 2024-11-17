@@ -177,7 +177,7 @@ watch(
     if (isFloat.value) {
       document.body.style.overflowY = 'hidden';
     } else {
-      document.body.style.overflowY = undefined;
+      document.body.style.overflowY = '';
     }
   },
 );

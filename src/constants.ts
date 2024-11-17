@@ -1,4 +1,7 @@
 export const Paths = {
-  SIDEBAR_FUND: '/sidebar-fund',
+  HOME: '/',
   LAYERS: '/layers',
+  POPPER: '/popper',
+  SIDEBAR_FUND: '/sidebar-fund',
+  TABLE: '/table',
 };
