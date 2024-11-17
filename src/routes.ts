@@ -11,6 +11,9 @@ import Dialog from './views/Dialog.vue';
 import Sidebar from './views/Sidebar.vue';
 import Toast from './views/Toast.vue';
 import Welcome from './views/Welcome.vue';
+import { Paths } from './constants';
+import SidebarFund from './views/SidebarFund.vue';
+import Layers from './views/Layers.vue';
 
 export const routes = [
   {
@@ -64,6 +67,14 @@ export const routes = [
       {
         path: '/toast',
         component: Toast,
+      },
+      {
+        path: Paths.SIDEBAR_FUND,
+        component: SidebarFund,
+      },
+      {
+        path: Paths.LAYERS,
+        component: Layers,
       },
     ],
   },

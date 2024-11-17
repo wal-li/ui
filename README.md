@@ -26,6 +26,7 @@ Special thanks to:
 
 - https://primevue.org/icons/
 - https://flowbite.com/icons/
+- https://heroicons.com/
 
 ## Deployment
 

@@ -33,7 +33,7 @@
 
 /* scroll bar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0.25rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -42,7 +42,16 @@
 
 ::-webkit-scrollbar-thumb {
   background: rgb(var(--secondary));
-  border-radius: 5px;
+  border-radius: 0.125rem;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
 }
 
 /* transition */

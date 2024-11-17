@@ -2,11 +2,18 @@
 import { ref } from 'vue';
 import DocumentDuplicateIcon from '../icons/DocumentDuplicateIcon.vue';
 import { copyToClipboard } from '../utils';
+import CheckIcon from '../icons/CheckIcon.vue';
 
 const codeRef = ref();
 
+const isCopied = ref(false);
+
 function copy(slots) {
   copyToClipboard(codeRef.value.querySelector('pre').innerText);
+  isCopied.value = true;
+  setTimeout(() => {
+    isCopied.value = false;
+  }, 1000);
 }
 </script>
 
@@ -20,7 +27,8 @@ function copy(slots) {
       class="text-sm leading-4 font-medium p-2 rounded inline-flex items-center gap-1.5 text-foreground outline outline-1 -outline-offset-1 outline-primary hover:bg-primary hover:text-background opacity-30 hover:opacity-100 absolute top-2 right-2"
       @click="copy($slots)"
     >
-      <DocumentDuplicateIcon class="w-4 h-4" />
+      <CheckIcon class="w-4 h-4" v-if="isCopied" />
+      <DocumentDuplicateIcon class="w-4 h-4" v-else />
     </button>
   </div>
 </template>

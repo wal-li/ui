@@ -6,7 +6,7 @@ const html = document.getElementsByTagName('html')[0];
 
 const props = defineProps(['prefer']);
 
-const value = ref(localStorage.getItem(STATE_KEY) ?? html.classList.contains('dark') ? 'dark' : undefined);
+const value = ref(localStorage.getItem(STATE_KEY) ?? (html.classList.contains('dark') ? 'dark' : undefined));
 
 function updateHtml() {
   if (value.value === 'dark') html.classList.remove('light');
