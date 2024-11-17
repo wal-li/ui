@@ -6,6 +6,21 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ls = readdirSync(resolvePath(__dirname, '../src/views'));
 
 const results = {};
+
+function removeTabs(code) {
+  const minTab = Math.min(
+    ...code
+      .split('\n')
+      .filter((i) => i.trim())
+      .map((line) => {
+        let i;
+        for (i = 0; i < line.length && line[i] === ' '; i++) {}
+        return i;
+      }),
+  );
+  return code.replace(new RegExp(`^\\s{${minTab}}`, 'gm'), '').trim();
+}
+
 for (const name of ls) {
   console.log(`Process: ${name}`);
   const filePath = resolvePath(__dirname, '../src/views', name);
@@ -26,20 +41,14 @@ for (const name of ls) {
 
     console.log(`+ Generate: ${id}`);
 
-    const minTab = Math.min(
-      ...code
-        .split('\n')
-        .filter((i) => i.trim())
-        .map((line) => {
-          let i;
-          for (i = 0; i < line.length && line[i] === ' '; i++) {}
-          return i;
-        }),
-    );
-    results[id] = code.replace(new RegExp(`^\\s{${minTab}}`, 'gm'), '').trim();
+    results[id] = removeTabs(code);
   }
 }
 
+// style.css
 results['style.css'] = readFileSync('./src/style.css').toString();
+
+// Layout.vue
+results['sidebar'] = removeTabs(/<Sidebar(.|\n)*<\/Sidebar>/gm.exec(readFileSync('./src/Layout.vue').toString())[0]);
 
 writeFileSync(resolvePath(__dirname, '../src/code.ts'), `export default ${JSON.stringify(results, null, 2)}`);

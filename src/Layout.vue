@@ -1,9 +1,9 @@
 <script setup>
-import { ref, watch, onMounted, shallowRef, computed } from 'vue';
+import { computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 
-// import Dashboard from './dashboard/Dashboard.vue';
-import Heading from './heading/Heading.vue';
+import { Paths } from './constants';
+
 import Sidebar from './sidebar/Sidebar.vue';
 import StopIcon from './icons/StopIcon.vue';
 import DocumentIcon from './icons/DocumentIcon.vue';
@@ -14,9 +14,11 @@ import Bars3Icon from './icons/Bars3Icon.vue';
 import ClipboardDocumentIcon from './icons/ClipboardDocumentIcon.vue';
 import PaintBrushIcon from './icons/PaintBrushIcon.vue';
 import StarIcon from './icons/StarIcon.vue';
-import Theme from './theme/theme.vue';
 import SunIcon from './icons/SunIcon.vue';
 import MoonIcon from './icons/MoonIcon.vue';
+import DocumentDuplicateIcon from './icons/DocumentDuplicateIcon.vue';
+
+import Theme from './theme/theme.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -88,7 +90,20 @@ const sideMenuItems = [
     command: handleRouter,
     icon: PaintBrushIcon,
   },
-
+  {
+    section: 'Fundamental',
+    label: 'Sidebar',
+    url: Paths.SIDEBAR_FUND,
+    command: handleRouter,
+    icon: Bars3Icon,
+  },
+  {
+    section: 'Fundamental',
+    label: 'Layers',
+    url: Paths.LAYERS,
+    command: handleRouter,
+    icon: DocumentDuplicateIcon,
+  },
   {
     section: 'Fundamental',
     label: 'SVG',
@@ -128,30 +143,36 @@ const currentLabel = computed(() => {
 <template>
   <Sidebar
     class="w-full relative h-[100svh]"
-    v-slot="{ ready, isShort, isFloat, toggle }"
+    v-slot="{ ready, isShort, isFloat, isTop, toggle }"
     :lg="[
       ['static', 'full'],
       ['static', 'short'],
     ]"
   >
-    <!-- sidebar -->
+    <!-- sidebar container -->
     <div
-      class="fixed w-[--sidebar-width] left-[--sidebar-offset] top-0 h-full transition-all z-20 bg-background border-r border-secondary overflow-x-hidden p-1 z-30"
+      class="fixed top-0 left-[--sidebar-offset] w-[--sidebar-float] overflow-x-hidden overflow-y-scroll h-full z-20 transition-all scroll-hidden"
+      @click.self="toggle"
     >
-      <div class="min-h-full flex flex-col">
+      <div class="w-[--sidebar-width] min-h-full p-1 bg-background border-r transition-all">
         <template v-for="item in sideMenuItems">
           <Transition :name="ready ? 'slideUp' : ''" v-if="!item.command && !item.url">
-            <label v-if="!isShort" class="text-muted text-xs font-medium leading-4 p-3 mb-1">{{ item.label }}</label>
+            <label v-if="!isShort" class="block text-muted text-xs font-medium leading-4 p-3 mb-1">{{
+              item.label
+            }}</label>
           </Transition>
 
           <a
             v-else
-            :class="`w-full text-sm leading-4 p-2.5 rounded cursor-pointer overflow-hidden mb-1 ${
+            :class="`block w-full text-sm leading-4 p-2.5 rounded cursor-pointer overflow-hidden mb-1 ${
               item.url === route.path ? 'font-bold bg-secondary' : 'hover:bg-secondary'
             }`"
-            @click="item.command(item)"
+            @click="
+              item.command(item);
+              isFloat && toggle();
+            "
           >
-            <div class="w-[--sidebar-base] flex items-center gap-2.5">
+            <div class="w-[calc(var(--sidebar-base)-2rem)] flex items-center gap-2.5">
               <component class="w-5 h-5" :is="item.icon || DocumentIcon" :outlined="!(item.url === route.path)" />
               <span class="w-0 whitespace-nowrap">{{ item.label }}</span>
             </div>
@@ -162,13 +183,15 @@ const currentLabel = computed(() => {
 
     <!-- backdrop -->
     <Transition :name="ready ? 'fade' : ''">
-      <label v-if="isFloat" class="fixed top-0 left-0 w-full h-full z-10 bg-zinc-950/50" @click="toggle"></label>
+      <label v-if="isFloat" class="fixed top-0 left-0 w-full h-full bg-zinc-950/50 z-10"></label>
     </Transition>
 
     <!-- main -->
-    <main class="pl-[--sidebar-padding] w-full min-h-full transition-all">
+    <main class="pl-[--sidebar-padding] w-full min-h-full transition-all relative z-0">
       <!-- topbar -->
-      <div class="p-2 flex items-center gap-2 text-sm sticky top-0 z-20 bg-background">
+      <div
+        :class="`${isTop ? 'static' : 'sticky border-b'} p-2 flex items-center gap-2 text-sm top-0 z-10 bg-background`"
+      >
         <button
           class="text-sm leading-4 font-medium p-1.5 hover:bg-secondary text-foreground rounded inline-flex items-center gap-2"
           @click="toggle"
@@ -192,7 +215,7 @@ const currentLabel = computed(() => {
       </div>
 
       <!-- content -->
-      <div class="px-4 pb-4">
+      <div class="px-4 pb-4 relative z-0">
         <RouterView></RouterView>
       </div>
     </main>

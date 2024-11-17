@@ -15,6 +15,7 @@
  * --sidebar-width: Current width of sidebar.
  * --sidebar-offset: Current base offset of sidebar.
  * --sidebar-padding: Main content padding.
+ * --sidebar-float: 100% when float, otherwise width.
  */
 import { computed, nextTick, onMounted, onUnmounted, reactive, ref, watch } from 'vue';
 
@@ -47,6 +48,7 @@ const props = defineProps(['width', 'icon', 'sm', 'lg']);
 
 const boolState = ref(false);
 const ready = ref(false);
+const isTop = ref(true);
 
 const windowSize = ref('sm');
 const states = reactive({
@@ -77,6 +79,7 @@ const cssVariables = computed(() => {
     `--sidebar-width: ${width}rem`,
     `--sidebar-offset: ${type === 'hidden' ? -width : 0}rem`,
     `--sidebar-padding: ${type === 'static' ? width : 0}rem`,
+    `--sidebar-float: ${type === 'float' ? '100%' : width + 'rem'}`,
   ].join('; ');
 });
 
@@ -138,15 +141,27 @@ function windowResize() {
   }
 }
 
+// scroll event
+function scrolling() {
+  if (window.scrollY < 48) {
+    isTop.value = true;
+  } else {
+    isTop.value = false;
+  }
+}
+
 onMounted(() => {
   init();
   windowResize();
+  scrolling();
 
   window.addEventListener('resize', windowResize);
+  window.addEventListener('scroll', scrolling);
 });
 
 onUnmounted(() => {
   window.removeEventListener('resize', windowResize);
+  window.removeEventListener('scroll', scrolling);
 });
 
 watch(
@@ -155,10 +170,21 @@ watch(
     init();
   },
 );
+
+watch(
+  () => isFloat.value,
+  () => {
+    if (isFloat.value) {
+      document.body.style.overflowY = 'hidden';
+    } else {
+      document.body.style.overflowY = undefined;
+    }
+  },
+);
 </script>
 
 <template>
   <div :style="cssVariables">
-    <slot v-bind="{ ready, isShort, isFloat, toggle }"></slot>
+    <slot v-bind="{ ready, isShort, isFloat, isTop, toggle }"></slot>
   </div>
 </template>
