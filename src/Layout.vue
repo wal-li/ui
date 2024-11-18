@@ -22,6 +22,7 @@ import Theme from './theme/theme.vue';
 import CheckCircleIcon from './icons/CheckCircleIcon.vue';
 import FolderOpenIcon from './icons/FolderOpenIcon.vue';
 import TableCellsIcon from './icons/TableCellsIcon.vue';
+import CheckIcon from './icons/CheckIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -46,6 +47,12 @@ const sideMenuItems = [
     url: '/button',
     command: handleRouter,
     icon: StopIcon,
+  },
+  {
+    label: 'Checkbox',
+    url: Paths.CHECKBOX,
+    command: handleRouter,
+    icon: CheckIcon,
   },
   {
     label: 'Heading',

@@ -15,6 +15,7 @@ import SidebarFund from './views/SidebarFund.vue';
 import Layers from './views/Layers.vue';
 import Popper from './views/Popper.vue';
 import Table from './views/Table.vue';
+import Checkbox from './views/Checkbox.vue';
 
 export const routes = [
   {
@@ -66,6 +67,10 @@ export const routes = [
         component: Toast,
       },
 
+      {
+        path: Paths.CHECKBOX,
+        component: Checkbox,
+      },
       {
         path: Paths.LAYERS,
         component: Layers,
