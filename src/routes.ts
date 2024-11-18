@@ -16,6 +16,8 @@ import Layers from './views/Layers.vue';
 import Popper from './views/Popper.vue';
 import Table from './views/Table.vue';
 import Checkbox from './views/Checkbox.vue';
+import Pagination from './views/Pagination.vue';
+import Menubar from './views/Menubar.vue';
 
 export const routes = [
   {
@@ -74,6 +76,14 @@ export const routes = [
       {
         path: Paths.LAYERS,
         component: Layers,
+      },
+      {
+        path: Paths.MENUBAR,
+        component: Menubar,
+      },
+      {
+        path: Paths.PAGINATION,
+        component: Pagination,
       },
       {
         path: Paths.POPPER,

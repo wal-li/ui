@@ -1,7 +1,10 @@
 export const Paths = {
   HOME: '/',
   CHECKBOX: '/checkbox',
+  FORM: '/form',
   LAYERS: '/layers',
+  MENUBAR: '/menubar',
+  PAGINATION: '/pagination',
   POPPER: '/popper',
   SIDEBAR_FUND: '/sidebar-fund',
   TABLE: '/table',

@@ -23,6 +23,10 @@ import CheckCircleIcon from './icons/CheckCircleIcon.vue';
 import FolderOpenIcon from './icons/FolderOpenIcon.vue';
 import TableCellsIcon from './icons/TableCellsIcon.vue';
 import CheckIcon from './icons/CheckIcon.vue';
+import EllipsisHorizontalIcon from './icons/EllipsisHorizontalIcon.vue';
+import DocumentTextIcon from './icons/DocumentTextIcon.vue';
+import Bars2Icon from './icons/Bars2Icon.vue';
+import PhotoIcon from './icons/PhotoIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -32,6 +36,7 @@ function handleRouter(item) {
 }
 
 const sideMenuItems = [
+  // Welcome
   {
     section: 'Welcome',
     label: 'Welcome',
@@ -39,6 +44,8 @@ const sideMenuItems = [
     command: handleRouter,
     icon: StarIcon,
   },
+
+  // Components
   {
     label: 'Components',
   },
@@ -73,6 +80,18 @@ const sideMenuItems = [
     icon: PencilSquareIcon,
   },
   {
+    label: 'Menubar',
+    url: Paths.MENUBAR,
+    command: handleRouter,
+    icon: Bars2Icon,
+  },
+  {
+    label: 'Pagination',
+    url: Paths.PAGINATION,
+    command: handleRouter,
+    icon: EllipsisHorizontalIcon,
+  },
+  {
     label: 'Popper',
     url: Paths.POPPER,
     command: handleRouter,
@@ -96,6 +115,19 @@ const sideMenuItems = [
     command: handleRouter,
     icon: ClipboardDocumentIcon,
   },
+
+  // Combination
+  {
+    label: 'Combination',
+  },
+  {
+    label: 'Form',
+    url: Paths.FORM,
+    command: handleRouter,
+    icon: DocumentTextIcon,
+  },
+
+  // Fundamental
   {
     label: 'Fundamental',
   },
@@ -121,20 +153,7 @@ const sideMenuItems = [
     label: 'SVG',
     url: '/svg',
     command: handleRouter,
-  },
-  {
-    label: 'Size',
-    url: '/size',
-    command: handleRouter,
-  },
-
-  {
-    label: 'Combination',
-  },
-  {
-    label: 'Form',
-    url: '/form',
-    command: handleRouter,
+    icon: PhotoIcon,
   },
 ];
 

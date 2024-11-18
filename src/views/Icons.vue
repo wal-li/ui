@@ -243,30 +243,33 @@ onBeforeMount(async () => {
   </Toast>
 
   <div class="grid grid-cols-1 gap-4">
-    <!-- toolbar -->
-
-    <div class="border border-secondary rounded-lg p-4 sticky top-4 bg-background flex gap-4">
-      <!-- search input -->
-
+    <!-- MENUBAR -->
+    <div
+      class="outline outline-1 -outline-offset-1 outline-secondary rounded-lg p-2 flex items-center gap-2 text-sm top-0 z-10 bg-background"
+    >
+      <!-- TEXT INPUT -->
       <input
-        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
+        class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-1 text-sm leading-6 rounded"
         spellcheck="false"
         v-model="searchText"
       />
-
-      <!-- icon styles -->
-
+      <!-- END TEXT INPUT -->
+      <!-- OUTLINE SECONDARY BUTTON -->
       <button
-        :class="`text-sm leading-4 font-medium p-3 ${
+        :class="`${
           outlined
-            ? 'text-foreground outline outline-1 -outline-offset-1 outline-primary hover:bg-primary hover:text-background'
+            ? 'outline outline-1 -outline-offset-1 outline-primary text-foreground'
             : 'bg-primary text-background'
-        } rounded inline-flex items-center gap-2`"
+        } text-sm leading-4 font-medium p-1.5 rounded inline-flex items-center gap-1.5`"
         @click="outlined = !outlined"
       >
-        {{ outlined ? 'Outlined' : 'Solid' }}
+        <span class="inline-block p-0.5">
+          {{ outlined ? 'Solid' : 'Outlined' }}
+        </span>
       </button>
+      <!-- END OUTLINE SECONDARY BUTTON -->
     </div>
+    <!-- END MENUBAR -->
 
     <!-- list -->
 
@@ -279,7 +282,7 @@ onBeforeMount(async () => {
           toast.push('Copied');
         "
       >
-        <component class="w-5 h-5 bg-secondary" :is="item.component" :outlined="outlined" />
+        <component class="w-6 h-6 bg-secondary" :is="item.component" :outlined="outlined" />
         <div class="w-full text-center text-xs text-ellipsis overflow-hidden">{{ item.componentName }}</div>
       </button>
     </div>
