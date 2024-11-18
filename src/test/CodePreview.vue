@@ -24,7 +24,7 @@ function copy(slots) {
     </div>
 
     <button
-      class="text-sm leading-4 font-medium p-2 rounded inline-flex items-center gap-1.5 text-foreground outline outline-1 -outline-offset-1 outline-primary hover:bg-primary hover:text-background opacity-30 hover:opacity-100 absolute top-2 right-2"
+      class="text-sm leading-4 font-medium p-1 rounded inline-flex items-center gap-1.5 text-foreground outline outline-1 -outline-offset-1 outline-primary hover:bg-primary hover:text-background opacity-10 hover:opacity-100 absolute top-1 right-1"
       @click="copy($slots)"
     >
       <CheckIcon class="w-4 h-4" v-if="isCopied" />
