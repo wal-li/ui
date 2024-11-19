@@ -5,21 +5,26 @@ import CodePreview from '../test/CodePreview.vue';
 import Playground from '../test/Playground.vue';
 import CheckIcon from '../icons/CheckIcon.vue';
 import { ref } from 'vue';
-import PencilIcon from '../icons/PencilIcon.vue';
-import TrashIcon from '../icons/TrashIcon.vue';
+import Checkbox from '../components/Checkbox.vue';
+import Button from '../components/Button.vue';
+import PencilSquareIcon from '../icons/PencilSquareIcon.vue';
+import XMarkIcon from '../icons/XMarkIcon.vue';
+import vDragable from '../dragable/dragable';
 
 const data = [];
 
-for (let i = 0; i < 10; i++)
+for (let i = 0; i < 20; i++)
   data.push({
     id: faker.string.nanoid(),
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
-    bio: faker.person.bio(),
     age: faker.number.int({
       min: 18,
       max: 80,
     }),
+    bio: faker.person.bio(),
+    address: faker.location.streetAddress(),
+    avatar: faker.image.avatar(),
     tools: true,
   });
 
@@ -48,80 +53,37 @@ function toggleSelectAll(e) {
 
     <Playground id="data-table">
       <!-- DATA TABLE -->
-      <div class="overflow-x-auto">
-        <DataTable class="text-sm leading-4 w-full" :value="data">
+      <div class="overflow-x-auto h-[40rem] select-none" v-dragable>
+        <DataTable class="leading-4 w-full" :value="data">
           <template #head-cell="{ label }">
-            <th class="border p-2.5">
+            <th class="border p-2.5 whitespace-nowrap text-ellipsis">
               <span class="inline-block p-0.5">{{ label }}</span>
             </th>
           </template>
 
           <template #head-cell[id]="">
             <td class="border p-2.5 w-10">
-              <!-- CHECKBOX -->
-              <div class="text-sm leading-4 inline-flex items-center">
-                <!-- VALUE -->
-                <input id="thcbxall" class="peer hidden" type="checkbox" @change="toggleSelectAll" />
-                <!-- END VALUE -->
-                <label
-                  for="thcbxall"
-                  class="inline-block peer-checked:hidden border border-primary w-4 h-4 rounded m-0.5"
-                >
-                </label>
-                <label
-                  for="thcbxall"
-                  class="hidden peer-checked:inline-block border border-primary bg-primary text-background w-4 h-4 rounded m-0.5"
-                >
-                  <CheckIcon class="w-3.5 h-3.5" />
-                </label>
-              </div>
-              <!-- END CHECKBOX -->
+              <Checkbox @change="toggleSelectAll" />
             </td>
           </template>
 
           <template #cell="{ value, name }">
-            <td :class="`border p-2.5 ${name === 'age' ? 'text-center' : ''}`">
+            <td :class="`border p-2.5 whitespace-nowrap text-ellipsis ${name === 'age' ? 'text-center' : ''}`">
               <span class="inline-block p-0.5">{{ value }}</span>
             </td>
           </template>
 
           <template #cell[id]="{ name, value }">
             <td class="border p-2.5 w-10">
-              <!-- CHECKBOX -->
-              <div class="text-sm leading-4 inline-flex items-center">
-                <!-- VALUE -->
-                <input :id="`tdcbx-${value}`" class="peer hidden" type="checkbox" :value="value" v-model="selected" />
-                <!-- END VALUE -->
-                <label
-                  :for="`tdcbx-${value}`"
-                  class="inline-block peer-checked:hidden border border-primary w-4 h-4 rounded m-0.5"
-                >
-                </label>
-                <label
-                  :for="`tdcbx-${value}`"
-                  class="hidden peer-checked:inline-block border border-primary bg-primary text-background w-4 h-4 rounded m-0.5"
-                >
-                  <CheckIcon class="w-3.5 h-3.5" />
-                </label>
-              </div>
-              <!-- END CHECKBOX -->
+              <Checkbox :value="value" v-model="selected" />
             </td>
           </template>
 
           <template #cell[tools]="{ name, value }">
-            <td class="border p-2.5 w-10">
-              <div class="flex gap-2.5">
-                <!-- ICON BUTTON -->
-                <button class="text-sm leading-4 font-medium rounded inline-flex items-center p-0.5 hover:bg-secondary">
-                  <PencilIcon class="w-4 h-4" />
-                </button>
-                <!-- END ICON BUTTON -->
-
-                <!-- ICON BUTTON -->
-                <button class="text-sm leading-4 font-medium rounded inline-flex items-center p-0.5 hover:bg-secondary">
-                  <TrashIcon class="w-4 h-4" />
-                </button>
-                <!-- END ICON BUTTON -->
+            <td class="border p-1.5 w-10">
+              <div class="flex">
+                <Button size="sm" variant="secondary" :icon="PencilSquareIcon" ghosted />
+                <Button size="sm" variant="secondary" :icon="XMarkIcon" ghosted />
               </div>
             </td>
           </template>

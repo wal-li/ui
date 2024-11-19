@@ -5,24 +5,19 @@ import Popper from '../popper/Popper.vue';
 import XMarkIcon from '../icons/XMarkIcon.vue';
 
 import { faker } from '@faker-js/faker';
-
-// import Button from '../button/Button.vue';
+import Button from '../components/Button.vue';
 
 const visible = ref(false);
+const dialogRef = ref();
 </script>
 
 <template>
   <div class="grid grid-cols-1 gap-4">
     <Playground id="simple-dialog">
-      <!-- DIALOG -->
-      <Popper v-slot="{ isShow, toggle }">
-        <button
-          class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 bg-primary text-background"
-          @click="toggle"
-        >
-          <span class="inline-block p-0.5">Dialog</span>
-        </button>
+      <Button label="Button" @click="() => dialogRef.toggle()" />
 
+      <!-- DIALOG -->
+      <Popper ref="dialogRef" v-slot="{ isShow, toggle }">
         <Transition name="fade">
           <div
             class="fixed z-30 w-full h-full top-0 left-0 overflow-x-hidden overflow-y-auto bg-zinc-950/50"
@@ -77,12 +72,7 @@ const visible = ref(false);
     <Playground id="dropdown">
       <!-- DROPDOWN -->
       <Popper class="inline-block" v-slot="{ isShow, toggle }">
-        <button
-          class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 bg-primary text-background"
-          @click="toggle"
-        >
-          <span class="inline-block p-0.5">Dropdown</span>
-        </button>
+        <Button label="Dropdown" @click="toggle" />
 
         <Transition name="fade">
           <div class="fixed z-30 w-full h-full top-0 left-0 overflow-hidden" v-if="isShow" @click.self="toggle">

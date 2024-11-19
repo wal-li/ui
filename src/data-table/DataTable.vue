@@ -34,8 +34,8 @@ function toLabel(name) {
     </thead>
     <tbody>
       <tr v-for="row in value">
-        <slot :name="`cell[${col.name}]`" v-for="col in cols" v-bind="{ value: row[col.name], ...col }">
-          <slot name="cell" v-bind="{ value: row[col.name], ...col }">
+        <slot :name="`cell[${col.name}]`" v-for="col in cols" v-bind="{ value: row[col.name], ...col, row }">
+          <slot name="cell" v-bind="{ value: row[col.name], ...col, row }">
             <td>{{ row[col] }}</td>
           </slot>
         </slot>

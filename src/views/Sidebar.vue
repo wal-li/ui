@@ -4,7 +4,7 @@ import CodePreview from '../test/CodePreview.vue';
 </script>
 
 <template>
-  <div class="grid grid-cols-1 gap-4 mb-4">
+  <div class="grid grid-cols-1 gap-4">
     <CodePreview>
       <pre>
 import { computed } from 'vue';

@@ -1,6 +1,4 @@
 <script setup>
-// @todo: remote toggle
-
 import { computed, ref, watch } from 'vue';
 
 const popperRef = ref();
@@ -27,6 +25,10 @@ const cssVariables = computed(() => {
 function toggle() {
   isShow.value = !isShow.value;
 }
+
+defineExpose({
+  toggle,
+});
 
 watch(
   () => isShow.value,
