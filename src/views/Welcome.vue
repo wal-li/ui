@@ -4,6 +4,7 @@ import codes from '../code';
 import CodePreview from '../test/CodePreview.vue';
 import vMask from '../mask/mask';
 import ColorPicker from '../color-picker/ColorPicker.vue';
+import CheckIcon from '../icons/CheckIcon.vue';
 
 const colors = [
   '#ef3c44',
@@ -25,6 +26,7 @@ const colors = [
 ];
 
 const primaryColor = ref('');
+const compactMode = ref(false);
 
 function hexToRgb(str) {
   str = str
@@ -64,13 +66,17 @@ cd app</pre
       <CodePreview><pre>npx tailwindcss init -p</pre></CodePreview>
 
       <p>Update <code class="font-mono bg-secondary rounded p-1 select-all">tailwind.config.js</code></p>
-      <CodePreview>
-        <pre>
+
+      <div class="flex flex-col gap-4 items-start lg:flex-row">
+        <CodePreview>
+          <pre>
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",{{
+              compactMode ? '\n    ./node_modules/@wal-li/ui/components/**/*.{cjs,mjs}' : ''
+            }}
   ],
   safelist: [
     'bg-background',
@@ -109,8 +115,28 @@ export default {
   },
   plugins: [],
 }</pre
-        >
-      </CodePreview>
+          >
+        </CodePreview>
+
+        <div class="top-4 flex flex-col gap-4 order-first bg-background w-full lg:sticky lg:w-[11rem] lg:order-last">
+          <!-- CHECKBOX -->
+          <span class="text-sm leading-4 inline-flex items-center">
+            <!-- VALUE -->
+            <input id="cbx01" class="peer hidden" type="checkbox" v-model="compactMode" />
+            <!-- END VALUE -->
+            <label for="cbx01" class="inline-block peer-checked:hidden border border-primary w-4 h-4 rounded m-0.5">
+            </label>
+            <label
+              for="cbx01"
+              class="hidden peer-checked:inline-block border border-primary bg-primary text-background w-4 h-4 rounded m-0.5"
+            >
+              <CheckIcon class="w-3.5 h-3.5" />
+            </label>
+            <label for="cbx01" class="inline-block p-0.5 pl-1.5">Compact</label>
+          </span>
+          <!-- END CHECKBOX -->
+        </div>
+      </div>
 
       <p>Edit <code class="font-mono bg-secondary rounded p-1 select-all">src/style.css</code></p>
       <div class="flex flex-col gap-4 items-start lg:flex-row">

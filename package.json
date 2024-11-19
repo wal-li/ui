@@ -1,12 +1,13 @@
 {
   "name": "@wal-li/ui",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "type": "module",
   "scripts": {
     "dev": "npm run generate && vite --host 0.0.0.0",
-    "generate": "npm run generate:code && npm run generate:icon",
+    "generate": "npm run generate:code && npm run generate:icon && npm run generate:component",
     "generate:code": "node ./scripts/generate-code.mjs",
     "generate:icon": "node ./scripts/generate-icon.mjs",
+    "generate:component": "node ./scripts/generate-component.mjs",
     "build:lib": "npm run generate && rollup -c && node ./scripts/postbuild.mjs",
     "build:example": "npm run generate && vite build"
   },
@@ -24,6 +25,20 @@
         "require": "./icons/*.cjs"
       },
       "default": "./icons/*.mjs"
+    },
+    "./components": {
+      "node": {
+        "import": "./components/index.mjs",
+        "require": "./components/index.cjs"
+      },
+      "default": "./components/index.mjs"
+    },
+    "./components/*": {
+      "node": {
+        "import": "./components/*.mjs",
+        "require": "./components/*.cjs"
+      },
+      "default": "./components/*.mjs"
     },
     "./*": {
       "node": {
