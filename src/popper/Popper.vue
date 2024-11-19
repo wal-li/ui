@@ -1,4 +1,6 @@
 <script setup>
+// @todo: remote toggle
+
 import { computed, ref, watch } from 'vue';
 
 const popperRef = ref();

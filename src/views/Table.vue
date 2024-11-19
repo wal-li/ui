@@ -90,15 +90,15 @@ function toggleSelectAll(e) {
               <!-- CHECKBOX -->
               <div class="text-sm leading-4 inline-flex items-center">
                 <!-- VALUE -->
-                <input :id="`tdcbx-${name}`" class="peer hidden" type="checkbox" :value="value" v-model="selected" />
+                <input :id="`tdcbx-${value}`" class="peer hidden" type="checkbox" :value="value" v-model="selected" />
                 <!-- END VALUE -->
                 <label
-                  :for="`tdcbx-${name}`"
+                  :for="`tdcbx-${value}`"
                   class="inline-block peer-checked:hidden border border-primary w-4 h-4 rounded m-0.5"
                 >
                 </label>
                 <label
-                  :for="`tdcbx-${name}`"
+                  :for="`tdcbx-${value}`"
                   class="hidden peer-checked:inline-block border border-primary bg-primary text-background w-4 h-4 rounded m-0.5"
                 >
                   <CheckIcon class="w-3.5 h-3.5" />
