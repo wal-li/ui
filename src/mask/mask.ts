@@ -39,10 +39,9 @@ export default {
     }
 
     // skip invalif mask
-    if (!mask) {
-      console.warn(`Invalid mask type ${maskType}`);
-      return;
-    }
+    if (!mask) return;
+
+    el._lastValue = el.value;
 
     function formatValue(insertMode = true) {
       let currentSelectionStart = el.selectionStart;
@@ -61,7 +60,7 @@ export default {
         }
 
         // skip decimal part
-        let i = currentValue.indexOf('.') - 1;
+        let i = currentValue.indexOf('.');
         if (i < 0) i = currentValue.length;
 
         let c = 0;
@@ -171,6 +170,7 @@ export default {
       }
 
       el.value = currentValue;
+      el._lastValue = currentValue;
       el.setSelectionRange(currentSelectionStart, currentSelectionStart);
     }
 
@@ -264,6 +264,14 @@ export default {
       e.preventDefault();
     };
 
+    // format init
+    formatValue();
+
+    // format when outer changes
+    el._interval = setInterval(() => {
+      if (el.value !== el._lastValue) formatValue();
+    }, 100);
+
     // prevent changable by other methods
     el.addEventListener('keydown', el._keydown);
     el.addEventListener('input', el._prevent);
@@ -273,6 +281,8 @@ export default {
   },
 
   beforeUnmount(el) {
+    clearInterval(el._interval);
+
     el.removeEventListener('keydown', el._keydown);
     el.removeEventListener('input', el._prevent);
     el.removeEventListener('drop', el._prevent);

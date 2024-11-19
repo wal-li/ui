@@ -75,7 +75,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",{{
-              compactMode ? '\n    ./node_modules/@wal-li/ui/components/**/*.{cjs,mjs}' : ''
+              compactMode ? '\n    "./node_modules/@wal-li/ui/components/**/*.{cjs,mjs}",' : ''
             }}
   ],
   safelist: [

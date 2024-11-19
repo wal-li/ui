@@ -8,7 +8,6 @@
 
 import { ref, computed, onMounted } from 'vue';
 import Heading from '../heading/Heading.vue';
-import Input from '../input/Input.vue';
 import Field from '../field/Field.vue';
 import ColorPicker from '../color-picker/ColorPicker.vue';
 
