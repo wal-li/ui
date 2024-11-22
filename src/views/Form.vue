@@ -2,8 +2,9 @@
 import ArrowRightCircleIcon from '../icons/ArrowRightCircleIcon.vue';
 import CheckIcon from '../icons/CheckIcon.vue';
 import Playground from '../test/Playground.vue';
-
-// @todo: test form
+import Input from '../components/Input.vue';
+import Field from '../components/Field.vue';
+import Checkbox from '../components/Checkbox.vue';
 </script>
 
 <template>
@@ -39,10 +40,10 @@ import Playground from '../test/Playground.vue';
         <!-- END FIELD -->
         <!-- FIELD -->
         <div class="flex flex-col gap-2">
-          <label for="inp01" class="text-sm leading-4 font-medium">Label</label>
+          <label for="inp02" class="text-sm leading-4 font-medium">Label</label>
           <!-- INPUT -->
           <input
-            id="inp01"
+            id="inp02"
             class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
             placeholder="Text Input"
             spellcheck="false"
@@ -82,6 +83,18 @@ import Playground from '../test/Playground.vue';
         <!-- END FIELD -->
       </div>
       <!-- END FORM -->
+    </Playground>
+
+    <Playground id="form-2">
+      <div class="flex flex-col gap-4">
+        <Field label="Password" v-slot="{ id }">
+          <Input :id="id" type="password" />
+        </Field>
+        <Checkbox label="Remember Me" />
+        <Field label="Details" v-slot="{ id }">
+          <Input :id="id" type="password" rows="3" textarea />
+        </Field>
+      </div>
     </Playground>
   </div>
 </template>

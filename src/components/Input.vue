@@ -3,22 +3,16 @@
  * [parent] -> modelValue -> localValue -> ... ->
  * updateValue -> localValue -> emit:modelValue -> [parent] -> modelValue -> localValue
  */
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import vMask from '../mask/mask';
 
-const props = defineProps(['modelValue', 'mask']);
+const props = defineProps(['modelValue', 'mask', 'textarea']);
 const emit = defineEmits(['update:modelValue']);
-
-// const model = defineModel({
-//   set(value) {
-//     if (props.mask === Number) return parseFloat(value.replace(/[^\d]/g, ''));
-
-//     return value;
-//   },
-// });
 
 const localValue = ref(props.modelValue);
 let emitValue;
+
+const isTextarea = computed(() => props.textarea !== undefined && props.textarea !== false);
 
 watch(
   () => localValue.value,
@@ -44,7 +38,8 @@ watch(
 </script>
 
 <template>
-  <input
+  <component
+    :is="isTextarea ? 'textarea' : 'input'"
     class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
     spellcheck="false"
     v-model="localValue"

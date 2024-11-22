@@ -1,5 +1,4 @@
 <script setup>
-import Heading from '../heading/Heading.vue';
 import Playground from '../test/Playground.vue';
 </script>
 
