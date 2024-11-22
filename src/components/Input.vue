@@ -4,7 +4,7 @@
  * updateValue -> localValue -> emit:modelValue -> [parent] -> modelValue -> localValue
  */
 import { computed, ref, watch } from 'vue';
-import vMask from '../mask/mask';
+import vMask from '../mask/mask.ts';
 
 const props = defineProps(['modelValue', 'mask', 'textarea']);
 const emit = defineEmits(['update:modelValue']);
