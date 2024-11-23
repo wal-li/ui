@@ -13,42 +13,50 @@ const tmp = ref();
       <div>
         <h2 class="text-2xl leading-8 font-bold tracking-wider">Original</h2>
       </div>
-      <Playground id="text-input">
+      <Playground id="text-input" v-slot="{ value, update }">
         <!-- TEXT INPUT -->
         <input
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="Text Input"
           spellcheck="false"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END TEXT INPUT -->
       </Playground>
 
-      <Playground id="number-input">
+      <Playground id="number-input" v-slot="{ value, update }">
         <!-- NUMBER INPUT -->
         <input
           type="number"
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="Number Input"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END NUMBER INPUT -->
       </Playground>
 
-      <Playground id="date-input">
+      <Playground id="date-input" v-slot="{ value, update }">
         <!-- DATE INPUT -->
         <input
           type="date"
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="Date Input"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END DATE INPUT -->
       </Playground>
 
-      <Playground id="file-input">
+      <Playground id="file-input" v-slot="{ value, update }">
         <!-- FILE INPUT -->
         <input
           type="file"
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="File Input"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END FILE INPUT -->
       </Playground>
@@ -119,44 +127,49 @@ const tmp = ref();
         <h2 class="text-2xl leading-8 font-bold tracking-wider">Compact</h2>
       </div>
 
-      <Playground id="def-text-input">
-        <Input placeholder="Text Input" />
+      <Playground id="def-text-input" v-slot="{ value, update }">
+        <Input placeholder="Text Input" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-number-input">
-        <Input type="number" placeholder="Number Input" />
+      <Playground id="def-number-input" v-slot="{ value, update }">
+        <Input type="number" placeholder="Number Input" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-date-input">
-        <Input type="date" placeholder="Date Input" />
+      <Playground id="def-date-input" v-slot="{ value, update }">
+        <Input type="date" placeholder="Date Input" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-file-input">
-        <Input type="file" placeholder="File Input" />
+      <Playground id="def-file-input" v-slot="{ value, update }">
+        <Input type="file" placeholder="File Input" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-mask-number-input">
-        <Input placeholder="Mask Number Input" :mask="Number" />
+      <Playground id="def-mask-number-input" v-slot="{ value, update }">
+        <Input placeholder="Mask Number Input" :mask="Number" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-mask-number-2-input">
-        <Input placeholder="(+00) 000 000 000" mask="(+00) 000 000 000" />
+      <Playground id="def-mask-number-2-input" v-slot="{ value, update }">
+        <Input
+          placeholder="(+00) 000 000 000"
+          mask="(+00) 000 000 000"
+          :modelValue="value"
+          @update:modelValue="update"
+        />
       </Playground>
 
-      <Playground id="def-mask-date-input">
-        <Input placeholder="yyyy-mm-dd" mask="yyyy-mm-dd" />
+      <Playground id="def-mask-date-input" v-slot="{ value, update }">
+        <Input placeholder="yyyy-mm-dd" mask="yyyy-mm-dd" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-mask-time-input">
-        <Input placeholder="hh:ii:ss" mask="hh:ii:ss" />
+      <Playground id="def-mask-time-input" v-slot="{ value, update }">
+        <Input placeholder="hh:ii:ss" mask="hh:ii:ss" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-mask-regex-input">
-        <Input placeholder="Decimal and Space" :mask="/^[\d\s]+$/" />
+      <Playground id="def-mask-regex-input" v-slot="{ value, update }">
+        <Input placeholder="Decimal and Space" :mask="/^[\d\s]+$/" :modelValue="value" @update:modelValue="update" />
       </Playground>
 
-      <Playground id="def-mask-color-input">
-        <Input placeholder="Hex Color" mask="#xxxxxx" />
+      <Playground id="def-mask-color-input" v-slot="{ value, update }">
+        <Input placeholder="Hex Color" mask="#xxxxxx" :modelValue="value" @update:modelValue="update" />
       </Playground>
     </div>
   </div>

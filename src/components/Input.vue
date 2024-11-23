@@ -38,13 +38,19 @@ watch(
 </script>
 
 <template>
-  <div>
-    <component
-      :is="isTextarea ? 'textarea' : 'input'"
-      class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
-      spellcheck="false"
-      v-model="localValue"
-      v-mask="mask"
-    />
-  </div>
+  <textarea
+    v-if="isTextarea"
+    class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
+    spellcheck="false"
+    v-model="localValue"
+    v-mask="mask"
+  ></textarea>
+
+  <input
+    v-else
+    class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
+    spellcheck="false"
+    v-model="localValue"
+    v-mask="mask"
+  />
 </template>
