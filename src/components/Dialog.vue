@@ -21,7 +21,7 @@ defineExpose({
         <!-- outter -->
         <div class="p-4 min-h-full flex flex-col items-center justify-center" @click.self="toggle">
           <!-- main -->
-          <div class="relative bg-background text-foreground w-full max-w-96 h-min rounded-lg p-4 prose border">
+          <div class="relative bg-background text-foreground w-full max-w-fit h-min rounded-lg p-4 prose border">
             <!-- close button -->
             <button
               class="absolute top-1 right-1 text-sm leading-4 font-medium p-1 rounded inline-flex items-center gap-1.5"

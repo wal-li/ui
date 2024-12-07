@@ -33,7 +33,7 @@ const dialogRef = ref();
               <!-- outter -->
               <div class="p-4 min-h-full flex flex-col items-center justify-center" @click.self="toggle">
                 <!-- main -->
-                <div class="relative bg-background text-foreground w-full max-w-96 h-min rounded-lg p-4 prose border">
+                <div class="relative bg-background text-foreground w-full max-w-fit h-min rounded-lg p-4 prose border">
                   <!-- close button -->
                   <button
                     class="absolute top-1 right-1 text-sm leading-4 font-medium p-1 rounded inline-flex items-center gap-1.5"
@@ -42,31 +42,33 @@ const dialogRef = ref();
                     <XMarkIcon class="w-4 h-4" />
                   </button>
 
-                  <!-- title -->
-                  <h4>
-                    {{ faker.lorem.sentence(3) }}
-                  </h4>
+                  <div class="w-[30rem]">
+                    <!-- title -->
+                    <h4>
+                      {{ faker.lorem.sentence(3) }}
+                    </h4>
 
-                  <!-- content -->
-                  <p>{{ faker.lorem.paragraph() }}</p>
-                  <p>{{ faker.lorem.paragraph() }}</p>
-                  <p>{{ faker.lorem.paragraph() }}</p>
+                    <!-- content -->
+                    <p>{{ faker.lorem.paragraph() }}</p>
+                    <p>{{ faker.lorem.paragraph() }}</p>
+                    <p>{{ faker.lorem.paragraph() }}</p>
 
-                  <!-- actions -->
-                  <div class="flex gap-4 mt-4">
-                    <button
-                      class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 bg-primary text-background"
-                      @click="toggle"
-                    >
-                      <span class="inline-block p-0.5">Confirm</span>
-                    </button>
+                    <!-- actions -->
+                    <div class="flex gap-4 mt-4">
+                      <button
+                        class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 bg-primary text-background"
+                        @click="toggle"
+                      >
+                        <span class="inline-block p-0.5">Confirm</span>
+                      </button>
 
-                    <button
-                      class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 text-foreground outline outline-1 -outline-offset-1 outline-secondary hover:bg-secondary"
-                      @click="toggle"
-                    >
-                      <span class="inline-block p-0.5">Cancel</span>
-                    </button>
+                      <button
+                        class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 text-foreground outline outline-1 -outline-offset-1 outline-secondary hover:bg-secondary"
+                        @click="toggle"
+                      >
+                        <span class="inline-block p-0.5">Cancel</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,31 +110,33 @@ const dialogRef = ref();
           </template>
 
           <template v-slot="{ toggle }">
-            <!-- title -->
-            <h4>
-              {{ faker.lorem.sentence(3) }}
-            </h4>
+            <div class="w-[30rem]">
+              <!-- title -->
+              <h4>
+                {{ faker.lorem.sentence(3) }}
+              </h4>
 
-            <!-- content -->
-            <p>{{ faker.lorem.paragraph() }}</p>
-            <p>{{ faker.lorem.paragraph() }}</p>
-            <p>{{ faker.lorem.paragraph() }}</p>
+              <!-- content -->
+              <p>{{ faker.lorem.paragraph() }}</p>
+              <p>{{ faker.lorem.paragraph() }}</p>
+              <p>{{ faker.lorem.paragraph() }}</p>
 
-            <!-- actions -->
-            <div class="flex gap-4 mt-4">
-              <button
-                class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 bg-primary text-background"
-                @click="toggle"
-              >
-                <span class="inline-block p-0.5">Confirm</span>
-              </button>
+              <!-- actions -->
+              <div class="flex gap-4 mt-4">
+                <button
+                  class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 bg-primary text-background"
+                  @click="toggle"
+                >
+                  <span class="inline-block p-0.5">Confirm</span>
+                </button>
 
-              <button
-                class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 text-foreground outline outline-1 -outline-offset-1 outline-secondary hover:bg-secondary"
-                @click="toggle"
-              >
-                <span class="inline-block p-0.5">Cancel</span>
-              </button>
+                <button
+                  class="text-sm leading-4 font-medium p-2.5 rounded inline-flex items-center gap-1.5 text-foreground outline outline-1 -outline-offset-1 outline-secondary hover:bg-secondary"
+                  @click="toggle"
+                >
+                  <span class="inline-block p-0.5">Cancel</span>
+                </button>
+              </div>
             </div>
           </template>
         </Dialog>
