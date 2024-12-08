@@ -29,6 +29,8 @@ import Bars2Icon from './icons/Bars2Icon.vue';
 import PhotoIcon from './icons/PhotoIcon.vue';
 import DocumentCheckIcon from './icons/DocumentCheckIcon.vue';
 import HomeIcon from './icons/HomeIcon.vue';
+import ArrowTurnDownRightIcon from './icons/ArrowTurnDownRightIcon.vue';
+import ArrowPathIcon from './icons/ArrowPathIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -97,6 +99,12 @@ const sideMenuItems = [
     icon: PencilSquareIcon,
   },
   {
+    label: 'Loading',
+    url: Paths.LOADING,
+    command: handleRouter,
+    icon: ArrowPathIcon,
+  },
+  {
     label: 'Menubar',
     url: Paths.MENUBAR,
     command: handleRouter,
@@ -131,6 +139,12 @@ const sideMenuItems = [
     url: '/toast',
     command: handleRouter,
     icon: ClipboardDocumentIcon,
+  },
+  {
+    label: 'Tree',
+    url: Paths.TREE,
+    command: handleRouter,
+    icon: ArrowTurnDownRightIcon,
   },
 
   // Combination

@@ -20,6 +20,8 @@ import Menubar from './views/Menubar.vue';
 import Editor from './views/Editor.vue';
 import Overview from './views/Overview.vue';
 import Install from './views/Install.vue';
+import Tree from './views/Tree.vue';
+import Loading from './views/Loading.vue';
 
 export const routes = [
   {
@@ -106,6 +108,14 @@ export const routes = [
       {
         path: Paths.OVERVIEW,
         component: Overview,
+      },
+      {
+        path: Paths.TREE,
+        component: Tree,
+      },
+      {
+        path: Paths.LOADING,
+        component: Loading,
       },
     ],
   },

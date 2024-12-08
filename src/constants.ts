@@ -11,4 +11,6 @@ export const Paths = {
   EDITOR: '/editor',
   OVERVIEW: '/',
   INSTALL: '/install',
+  TREE: '/tree',
+  LOADING: '/loading',
 };
