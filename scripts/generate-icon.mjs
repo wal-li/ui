@@ -3,13 +3,29 @@ import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync
 
 import { basename, extname, join } from 'node:path';
 
-function getIcons() {
-  const ls = readdirSync(`./heroicons/optimized/24/solid`);
+function getIcons(dir) {
+  const ls = readdirSync(dir);
 
   return ls.map((i) => basename(i, extname(i)));
 }
 
-const data = getIcons();
+// heroicons
+const data = [
+  ...getIcons(`./heroicons/optimized/24/solid`).map((name) => {
+    return {
+      name,
+      solid: join('./heroicons/optimized/24/outline', name + '.svg'),
+      outline: join('./heroicons/optimized/24/solid', name + '.svg'),
+    };
+  }),
+  ...getIcons(`./custom-icons`).map((name) => {
+    return {
+      name,
+      solid: join('./custom-icons', name + '.svg'),
+      outline: join('./custom-icons', name + '.svg'),
+    };
+  }),
+];
 const template = readFileSync('./templates/Icon.vue').toString();
 
 if (!existsSync('./src/icons')) mkdirSync('./src/icons', { recursive: true });
@@ -18,12 +34,13 @@ const result = [];
 let cjsIndex = '';
 let mjsIndex = '';
 
-for (const name of data) {
+for (const item of data) {
+  const { name } = item;
   const componentName = camelcase(name, { pascalCase: true }) + 'Icon';
   let content = template;
 
-  let outline = readFileSync(join('./heroicons/optimized/24/outline', name + '.svg')).toString();
-  let solid = readFileSync(join('./heroicons/optimized/24/solid', name + '.svg')).toString();
+  const outline = readFileSync(item.outline).toString();
+  const solid = readFileSync(item.solid).toString();
 
   content = content.replace(`<!-- outline -->`, outline);
   content = content.replace(`<!-- solid -->`, solid);
