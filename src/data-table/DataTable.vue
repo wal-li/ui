@@ -1,9 +1,18 @@
 <script setup>
 import { computed } from 'vue';
 
-const props = defineProps(['value']);
+const props = defineProps(['value', 'fields']);
 
 const cols = computed(() => {
+  // user-defined fields
+  if (Array.isArray(props.fields)) {
+    return props.fields.map((cfg) => ({
+      name: typeof cfg === 'string' ? cfg : cfg.name,
+      label: typeof cfg === 'string' ? toLabel(cfg) : cfg.label,
+    }));
+  }
+
+  // auto fields
   if (!props.value || !Array.isArray(props.value)) return [];
 
   const colSet = new Set();

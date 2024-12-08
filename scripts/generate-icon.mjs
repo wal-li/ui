@@ -14,8 +14,8 @@ const data = [
   ...getIcons(`./heroicons/optimized/24/solid`).map((name) => {
     return {
       name,
-      solid: join('./heroicons/optimized/24/outline', name + '.svg'),
-      outline: join('./heroicons/optimized/24/solid', name + '.svg'),
+      solid: join('./heroicons/optimized/24/solid', name + '.svg'),
+      outline: join('./heroicons/optimized/24/outline', name + '.svg'),
     };
   }),
   ...getIcons(`./custom-icons`).map((name) => {
