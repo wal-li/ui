@@ -9,4 +9,6 @@ export const Paths = {
   SIDEBAR_FUND: '/sidebar-fund',
   TABLE: '/table',
   EDITOR: '/editor',
+  OVERVIEW: '/',
+  INSTALL: '/install',
 };

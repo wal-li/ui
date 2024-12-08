@@ -28,6 +28,7 @@ import DocumentTextIcon from './icons/DocumentTextIcon.vue';
 import Bars2Icon from './icons/Bars2Icon.vue';
 import PhotoIcon from './icons/PhotoIcon.vue';
 import DocumentCheckIcon from './icons/DocumentCheckIcon.vue';
+import HomeIcon from './icons/HomeIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -46,12 +47,12 @@ const sideMenuItems = [
     label: 'Overview',
     url: '/',
     command: handleRouter,
-    icon: StarIcon,
+    icon: HomeIcon,
   },
   {
     section: 'Introduce',
     label: 'Install',
-    url: '/',
+    url: '/install',
     command: handleRouter,
     icon: StarIcon,
   },

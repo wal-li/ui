@@ -110,7 +110,7 @@ const dialogRef = ref();
           </template>
 
           <template v-slot="{ toggle }">
-            <div class="w-[30rem]">
+            <div class="w-full max-w-[30rem]">
               <!-- title -->
               <h4>
                 {{ faker.lorem.sentence(3) }}

@@ -9,7 +9,6 @@ import SvgEditor from './views/SvgEditor.vue';
 import Size from './views/Size.vue';
 import Sidebar from './views/Sidebar.vue';
 import Toast from './views/Toast.vue';
-import Welcome from './views/Welcome.vue';
 import { Paths } from './constants';
 import SidebarFund from './views/SidebarFund.vue';
 import Layers from './views/Layers.vue';
@@ -19,6 +18,8 @@ import Checkbox from './views/Checkbox.vue';
 import Pagination from './views/Pagination.vue';
 import Menubar from './views/Menubar.vue';
 import Editor from './views/Editor.vue';
+import Overview from './views/Overview.vue';
+import Install from './views/Install.vue';
 
 export const routes = [
   {
@@ -26,8 +27,8 @@ export const routes = [
     component: Layout,
     children: [
       {
-        path: Paths.HOME,
-        component: Welcome,
+        path: Paths.INSTALL,
+        component: Install,
       },
       {
         path: '/heading',
@@ -101,6 +102,10 @@ export const routes = [
       {
         path: Paths.EDITOR,
         component: Editor,
+      },
+      {
+        path: Paths.OVERVIEW,
+        component: Overview,
       },
     ],
   },
