@@ -120,6 +120,14 @@ const tmp = ref();
         />
         <!-- END MASKED INPUT -->
       </Playground>
+
+      <Playground id="textarea">
+        <!-- MASKED INPUT -->
+        <textarea
+          class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded resize-none"
+        ></textarea>
+        <!-- END MASKED INPUT -->
+      </Playground>
     </div>
 
     <div class="flex flex-col gap-4">
@@ -170,6 +178,12 @@ const tmp = ref();
 
       <Playground id="def-mask-color-input" v-slot="{ value, update }">
         <Input placeholder="Hex Color" mask="#xxxxxx" :modelValue="value" @update:modelValue="update" />
+      </Playground>
+
+      <Playground id="def-textarea" v-slot="{ value, update }">
+        <!-- MASKED INPUT -->
+        <Input class="resize-none" textarea :modelValue="value" @update:modelValue="update" />
+        <!-- END MASKED INPUT -->
       </Playground>
     </div>
   </div>

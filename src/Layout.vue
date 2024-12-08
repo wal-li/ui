@@ -27,6 +27,7 @@ import EllipsisHorizontalIcon from './icons/EllipsisHorizontalIcon.vue';
 import DocumentTextIcon from './icons/DocumentTextIcon.vue';
 import Bars2Icon from './icons/Bars2Icon.vue';
 import PhotoIcon from './icons/PhotoIcon.vue';
+import DocumentCheckIcon from './icons/DocumentCheckIcon.vue';
 
 const router = useRouter();
 const route = useRoute();
@@ -36,15 +37,24 @@ function handleRouter(item) {
 }
 
 const sideMenuItems = [
-  // Welcome
+  // Introduce
   {
-    section: 'Welcome',
-    label: 'Welcome',
+    label: 'Introduce',
+  },
+  {
+    section: 'Introduce',
+    label: 'Overview',
     url: '/',
     command: handleRouter,
     icon: StarIcon,
   },
-
+  {
+    section: 'Introduce',
+    label: 'Install',
+    url: '/',
+    command: handleRouter,
+    icon: StarIcon,
+  },
   // Components
   {
     label: 'Components',
@@ -60,6 +70,12 @@ const sideMenuItems = [
     url: Paths.CHECKBOX,
     command: handleRouter,
     icon: CheckIcon,
+  },
+  {
+    label: 'Editor',
+    url: Paths.EDITOR,
+    command: handleRouter,
+    icon: DocumentTextIcon,
   },
   {
     label: 'Heading',
@@ -124,7 +140,7 @@ const sideMenuItems = [
     label: 'Form',
     url: Paths.FORM,
     command: handleRouter,
-    icon: DocumentTextIcon,
+    icon: DocumentCheckIcon,
   },
 
   // Fundamental

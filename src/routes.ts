@@ -18,6 +18,7 @@ import Table from './views/Table.vue';
 import Checkbox from './views/Checkbox.vue';
 import Pagination from './views/Pagination.vue';
 import Menubar from './views/Menubar.vue';
+import Editor from './views/Editor.vue';
 
 export const routes = [
   {
@@ -96,6 +97,10 @@ export const routes = [
       {
         path: Paths.TABLE,
         component: Table,
+      },
+      {
+        path: Paths.EDITOR,
+        component: Editor,
       },
     ],
   },

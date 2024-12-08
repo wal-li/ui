@@ -8,4 +8,5 @@ export const Paths = {
   POPPER: '/popper',
   SIDEBAR_FUND: '/sidebar-fund',
   TABLE: '/table',
+  EDITOR: '/editor',
 };
