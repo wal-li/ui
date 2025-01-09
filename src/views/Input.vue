@@ -1,10 +1,25 @@
 <script setup>
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import Playground from '../test/Playground.vue';
 import Input from '../components/Input.vue';
 import vMask from '../mask/mask';
 
-const tmp = ref();
+function randomValue() {
+  return Math.floor(Math.random() * 1000000000 - 500000000) / 100;
+}
+
+const maskModelValue = ref(randomValue());
+let loop;
+
+onMounted(() => {
+  loop = setInterval(() => {
+    maskModelValue.value = randomValue();
+  }, 5000);
+});
+
+onUnmounted(() => {
+  clearInterval(loop);
+});
 </script>
 
 <template>
@@ -61,70 +76,83 @@ const tmp = ref();
         <!-- END FILE INPUT -->
       </Playground>
 
-      <Playground id="mask-number-input">
+      <Playground id="mask-number-input" v-slot="{ value, update }">
         <!-- MASKED INPUT -->
         <input
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="Mask Number Input"
           v-mask="Number"
+          v-model="maskModelValue"
         />
         <!-- END MASKED INPUT -->
       </Playground>
 
-      <Playground id="mask-number-2-input">
+      <Playground id="mask-number-2-input" v-slot="{ value, update }">
         <!-- MASKED INPUT -->
         <input
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="(+00) 000 000 000"
           v-mask="'(+00) 000 000 000'"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END MASKED INPUT -->
       </Playground>
 
-      <Playground id="mask-date-input">
+      <Playground id="mask-date-input" v-slot="{ value, update }">
         <!-- MASKED INPUT -->
         <input
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="yyyy-mm-dd"
           v-mask="'yyyy-mm-dd'"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END MASKED INPUT -->
       </Playground>
 
-      <Playground id="mask-time-input">
+      <Playground id="mask-time-input" v-slot="{ value, update }">
         <!-- MASKED INPUT -->
         <input
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="hh:ii:ss"
           v-mask="'hh:ii:ss'"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END MASKED INPUT -->
       </Playground>
 
-      <Playground id="mask-regex-input">
+      <Playground id="mask-regex-input" v-slot="{ value, update }">
         <!-- MASKED INPUT -->
         <input
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="Decimal and Space"
           v-mask="/^[\d\s]+$/"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END MASKED INPUT -->
       </Playground>
 
-      <Playground id="mask-color-input">
+      <Playground id="mask-color-input" v-slot="{ value, update }">
         <!-- MASKED INPUT -->
         <input
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded"
           placeholder="Hex Color"
           v-mask="'#xxxxxx'"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         />
         <!-- END MASKED INPUT -->
       </Playground>
 
-      <Playground id="textarea">
+      <Playground id="textarea" v-slot="{ value, update }">
         <!-- MASKED INPUT -->
         <textarea
           class="outline outline-1 -outline-offset-1 bg-background focus:outline-muted w-full px-3 py-2 text-sm leading-6 rounded resize-none"
+          :value="value"
+          @input="(e) => update(e.target.value)"
         ></textarea>
         <!-- END MASKED INPUT -->
       </Playground>
@@ -152,7 +180,7 @@ const tmp = ref();
       </Playground>
 
       <Playground id="def-mask-number-input" v-slot="{ value, update }">
-        <Input placeholder="Mask Number Input" :mask="Number" :modelValue="value" @update:modelValue="update" />
+        <Input placeholder="Mask Number Input" :mask="Number" v-model="maskModelValue" />
       </Playground>
 
       <Playground id="def-mask-number-2-input" v-slot="{ value, update }">

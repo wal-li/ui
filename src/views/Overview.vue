@@ -53,8 +53,8 @@ function toggleSelectAll(e) {
     </div>
   </Dialog>
 
-  <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
-    <div class="border rounded-lg p-4 flex flex-col gap-4">
+  <div class="grid grid-cols-3 gap-4">
+    <div class="border rounded-lg p-4 flex flex-col gap-4 col-span-3 lg:col-span-1">
       <Field v-slot="{ id }" label="Username">
         <Input :id="id" v-model="form.username" />
       </Field>
@@ -72,7 +72,7 @@ function toggleSelectAll(e) {
       </div>
     </div>
 
-    <div class="border rounded-lg p-4 flex flex-col gap-4">
+    <div class="border rounded-lg p-4 flex flex-col gap-4 col-span-3 lg:col-span-1">
       <!-- MENUBAR -->
       <div
         class="outline outline-1 -outline-offset-1 outline-secondary rounded-lg p-2 flex items-center text-sm top-0 z-10 bg-background"
@@ -83,7 +83,7 @@ function toggleSelectAll(e) {
       <!-- END MENUBAR -->
     </div>
 
-    <div class="border rounded-lg p-4 flex flex-col gap-4">
+    <div class="border rounded-lg p-4 flex flex-col gap-4 col-span-3 lg:col-span-1">
       <!-- PAGINATION -->
       <Pagination
         class="flex flex-wrap gap-2 items-center justify-center"
@@ -97,7 +97,7 @@ function toggleSelectAll(e) {
       <!-- END PAGINATION -->
     </div>
 
-    <div class="border rounded-lg p-4 flex flex-col gap-4 col-span-4">
+    <div class="border rounded-lg p-4 flex flex-col gap-4 col-span-3">
       <!-- DATA TABLE -->
       <div class="overflow-x-auto select-none" v-dragable>
         <DataTable class="leading-4 w-full" :value="data">
