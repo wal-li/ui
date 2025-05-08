@@ -1,16 +1,9 @@
-export const Paths = {
+export const PATHS = {
+  BASE: '/',
   HOME: '/',
-  CHECKBOX: '/checkbox',
-  FORM: '/form',
-  LAYERS: '/layers',
-  MENUBAR: '/menubar',
-  PAGINATION: '/pagination',
-  POPPER: '/popper',
-  SIDEBAR_FUND: '/sidebar-fund',
-  TABLE: '/table',
-  EDITOR: '/editor',
-  OVERVIEW: '/',
-  INSTALL: '/install',
-  TREE: '/tree',
-  LOADING: '/loading',
+  COLORS: '/colors',
+  TYPEFACES: '/typefaces',
+  LAYOUT: '/layout',
+  COMPONENT: '/components',
+  ADMIN_LAYOUT: '/admin-layout',
 };

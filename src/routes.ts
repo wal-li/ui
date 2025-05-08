@@ -1,122 +1,58 @@
-import Layout from './Layout.vue';
-import Button from './views/Button.vue';
-import Headings from './views/Headings.vue';
-import Form from './views/Form.vue';
-import Colors from './views/Colors.vue';
-import Input from './views/Input.vue';
-import Icons from './views/Icons.vue';
-import SvgEditor from './views/SvgEditor.vue';
-import Size from './views/Size.vue';
-import Sidebar from './views/Sidebar.vue';
-import Toast from './views/Toast.vue';
-import { Paths } from './constants';
-import SidebarFund from './views/SidebarFund.vue';
-import Layers from './views/Layers.vue';
-import Popper from './views/Popper.vue';
-import Table from './views/Table.vue';
-import Checkbox from './views/Checkbox.vue';
-import Pagination from './views/Pagination.vue';
-import Menubar from './views/Menubar.vue';
-import Editor from './views/Editor.vue';
-import Overview from './views/Overview.vue';
-import Install from './views/Install.vue';
-import Tree from './views/Tree.vue';
-import Loading from './views/Loading.vue';
+import { PATHS } from '@/constants';
+
+import BasicLayout from '@/layouts/Basic.vue';
+
+import HomeView from '@/views/basic/Home.vue';
+import ColorView from '@/views/basic/Color.vue';
+import TypefaceView from '@/views/basic/Typeface.vue';
+import LayoutView from '@/views/basic/Layout.vue';
+import AdminLayoutView from '@/views/singles/AdminLayout.vue';
+import ComponentView from '@/views/basic/Component.vue';
+import HomeIcon from '@/icons/HomeIcon.vue';
+import SwatchIcon from '@/icons/SwatchIcon.vue';
+import H1Icon from '@/icons/H1Icon.vue';
+import SquaresIcon from '@/icons/SquaresIcon.vue';
+import ChatBubbleIcon from '@/icons/ChatBubbleIcon.vue';
 
 export const routes = [
   {
-    path: '/',
-    component: Layout,
+    path: PATHS.BASE,
+    component: BasicLayout,
     children: [
       {
-        path: Paths.INSTALL,
-        component: Install,
+        label: 'Home',
+        path: PATHS.HOME,
+        icon: HomeIcon,
+        component: HomeView,
       },
       {
-        path: '/heading',
-        component: Headings,
+        label: 'Colors',
+        path: PATHS.COLORS,
+        icon: SwatchIcon,
+        component: ColorView,
       },
       {
-        path: '/button',
-        component: Button,
+        label: 'Typefaces',
+        path: PATHS.TYPEFACES,
+        icon: H1Icon,
+        component: TypefaceView,
       },
       {
-        path: '/form',
-        component: Form,
+        label: 'Layout',
+        path: PATHS.LAYOUT,
+        icon: SquaresIcon,
+        component: LayoutView,
       },
       {
-        path: '/colors',
-        component: Colors,
-      },
-      {
-        path: '/icons',
-        component: Icons,
-      },
-      {
-        path: '/svg',
-        component: SvgEditor,
-      },
-      {
-        path: '/input',
-        component: Input,
-      },
-      {
-        path: '/size',
-        component: Size,
-      },
-      {
-        path: '/sidebar',
-        component: Sidebar,
-      },
-      {
-        path: '/toast',
-        component: Toast,
-      },
-
-      {
-        path: Paths.CHECKBOX,
-        component: Checkbox,
-      },
-      {
-        path: Paths.LAYERS,
-        component: Layers,
-      },
-      {
-        path: Paths.MENUBAR,
-        component: Menubar,
-      },
-      {
-        path: Paths.PAGINATION,
-        component: Pagination,
-      },
-      {
-        path: Paths.POPPER,
-        component: Popper,
-      },
-      {
-        path: Paths.SIDEBAR_FUND,
-        component: SidebarFund,
-      },
-      {
-        path: Paths.TABLE,
-        component: Table,
-      },
-      {
-        path: Paths.EDITOR,
-        component: Editor,
-      },
-      {
-        path: Paths.OVERVIEW,
-        component: Overview,
-      },
-      {
-        path: Paths.TREE,
-        component: Tree,
-      },
-      {
-        path: Paths.LOADING,
-        component: Loading,
+        label: 'Component',
+        path: PATHS.COMPONENT,
+        icon: ChatBubbleIcon,
+        component: ComponentView,
       },
     ],
+  },
+  {
+    path: PATHS.ADMIN_LAYOUT,
+    component: AdminLayoutView,
   },
 ];

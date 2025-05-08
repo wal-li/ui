@@ -1,4 +1,118 @@
-@import 'tailwindcss';
+<script setup>
+import Input from '@/components/Input.vue';
+import ViewSource from '@/components/ViewSource.vue';
+</script>
+
+<template>
+  <div class="flex flex-col min-h-[25vh] justify-center gap-2 items-center">
+    <h1 class="text-heading-1 font-black text-center">
+      Walli
+      <span
+        class="relative before:content-[' '] before:absolute before:w-full before:h-3/5 before:top-1/5 before:z-[-1] before:bg-primary"
+        >UI</span
+      >
+    </h1>
+    <div class="uppercase tracking-widest font-lighter text-sm lg:text-base 2xl:text-lg text-center">
+      UI Builder for Vite + Vue3 + TailwindCSS
+    </div>
+  </div>
+
+  <div class="prose">
+    <h2>Install</h2>
+
+    <p>Run an installation command:</p>
+
+    <pre class="select-all">npm i -D vue vite @tailwindcss/vite @vitejs/plugin-vue tailwindcss</pre>
+
+    <p>Then create/edit following files:</p>
+
+    <ViewSource
+      src="package.json"
+      content='{
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  }
+}'
+    />
+
+    <ViewSource
+      src="tsconfig.json"
+      content='{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* alias */
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src", "src/**/*.d.ts"],
+  "exclude": ["dist", "node_modules", "example", "**/*.test.*"]
+}
+'
+    ></ViewSource>
+
+    <ViewSource
+      src="vite.config.ts"
+      content="import { resolve } from 'path';
+import vue from '@vitejs/plugin-vue';
+import tailwindcss from '@tailwindcss/vite';
+
+/** @type {import('vite').UserConfig} */
+export default {
+  plugins: [vue(), tailwindcss()],
+  resolve: {
+    alias: {
+      '@': resolve('./src'),
+    },
+  },
+};
+"
+    />
+
+    <ViewSource
+      src="src/main.ts"
+      content="import { createApp } from 'vue';
+
+import '@/style.css';
+
+import App from '@/App.vue';
+
+const app = createApp(App);
+app.mount('#app');
+"
+    />
+
+    <ViewSource
+      src="src/style.css"
+      content="@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -116,3 +230,7 @@
   --color-surface: oklch(28% 0 0);
   --color-adaptive: oklch(98% 0 0);
 }
+"
+    />
+  </div>
+</template>

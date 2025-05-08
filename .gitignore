@@ -5,6 +5,5 @@ coverage
 .npmrc
 example
 src/code.ts
-src/icons
-src/icons.ts
 labs
+scripts

@@ -1,23 +1,48 @@
 <script setup>
-import { computed } from 'vue';
+import { useTheme } from '@/theme';
+import Color from '@/views/basic/Color.vue';
+import { computed, onMounted } from 'vue';
 
-const props = defineProps(['icon', 'label', 'outlined', 'variant', 'size', 'ghosted']);
+const props = defineProps({
+  size: {
+    default: 'base',
+  },
+  variant: {
+    default: 'primary',
+  },
+  outlined: {
+    default: false,
+  },
+  ghosted: {
+    default: false,
+  },
+});
 
-const isOutlined = computed(() => props.outlined !== undefined && props.outlined !== false);
-const isGhosted = computed(() => props.ghosted !== undefined && props.ghosted !== false);
-const currentVariant = computed(() => props.variant ?? 'primary');
-const textColor = computed(() => (props.variant === 'secondary' ? 'text-foreground' : 'text-background'));
+const SIZES = {
+  xs: 'text-xs h-6 px-1.5',
+  sm: 'text-sm h-8 px-2',
+  base: 'text-base h-10 px-3',
+};
+
+const theme = useTheme();
+
+const currentStyles = computed(() => {
+  const variantColor = theme.getColor(props.variant);
+  return `--color-adaptive: ${theme.adaptColor(variantColor)}`;
+});
 </script>
 
 <template>
   <button
-    :class="`text-sm leading-4 font-medium rounded inline-flex items-center gap-1.5 outline-1 -outline-offset-1 ${
-      isGhosted || isOutlined
-        ? `text-foreground text-foreground hover:bg-${currentVariant} hover:${textColor}`
-        : `bg-${currentVariant}`
-    } ${isOutlined ? `outline` : ''} outline-${currentVariant} ${textColor} ${size === 'sm' ? 'p-1.5' : 'p-2.5'}`"
+    :style="currentStyles"
+    :class="`cursor-pointer ${
+      outlined !== false
+        ? `border border-${variant} text-${variant} hover:bg-${variant} hover:text-adaptive`
+        : ghosted !== false
+        ? `text-${variant} hover:text-foreground hover:bg-${variant}`
+        : `bg-${variant} text-adaptive`
+    } ${SIZES[size]}`"
   >
-    <component :is="icon" class="w-5 h-5" v-if="icon" />
-    <span class="inline-block p-0.5" v-if="label">{{ label }}</span>
+    <slot></slot>
   </button>
 </template>
