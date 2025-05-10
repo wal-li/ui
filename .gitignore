@@ -1,9 +1,9 @@
 node_modules
 *.local
 dist
-coverage
 .npmrc
-example
-src/code.ts
-labs
-scripts
+web/src/icons
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
