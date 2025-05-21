@@ -316,6 +316,14 @@ async function start() {
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
   const icons: Record<string, any> = {};
+  let allIconsContent: string = `
+<script setup lang="ts">
+defineProps(['name', 'outlined']);
+</script>
+
+<template>
+<template v-if="false"></template>
+`;
 
   for (const item of data) {
     const { name } = item;
@@ -329,6 +337,15 @@ async function start() {
     content = content.replace(`<!-- outline -->`, outline);
     content = content.replace(`<!-- solid -->`, solid);
 
+    allIconsContent += `
+<template v-else-if="(name === '${name}' || name === '${componentName}') && (outlined !== undefined && outlined !== false)">
+  ${outline}
+</template>
+<template v-else-if="(name === '${name}' || name === '${componentName}') && (outlined === undefined || outlined === false)">
+  ${solid}
+</template>
+`;
+
     writeFileSync(join(OUTPUT_DIR, componentName + '.vue'), content);
 
     icons[name] = {
@@ -337,7 +354,12 @@ async function start() {
     };
   }
 
-  writeFileSync(`./web/src/icons.json`, JSON.stringify(icons));
+  allIconsContent += `
+<template v-else></template>
+</template>`;
+
+  writeFileSync(join(OUTPUT_DIR, 'Icon.vue'), allIconsContent);
+  writeFileSync(`./web/src/icons.json`, JSON.stringify(icons, null, 2));
 }
 
 start();

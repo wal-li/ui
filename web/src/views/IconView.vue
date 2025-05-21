@@ -2,6 +2,7 @@
 import { onMounted, onBeforeMount, ref, shallowRef, computed } from 'vue';
 
 import ICONS from '@/icons.json';
+import Icon from '@/icons/Icon.vue';
 
 import Input from '@/components/ui/Input.vue';
 import Button from '@/components/ui/Button.vue';
@@ -44,7 +45,6 @@ onBeforeMount(async () => {
       name,
       keywords: item.keywords || [],
       componentName: item.component,
-      component: (await import(`@/icons/${item.component}.vue`)).default,
     });
   }
   loadedComponents.value = res;
@@ -84,7 +84,7 @@ onBeforeMount(async () => {
         v-for="item in filteredComponents"
         @click="selectedIcon = selectedIcon === item ? null : item"
       >
-        <component class="w-6 h-6" :is="item.component" :outlined="outlined" />
+        <Icon class="w-6 h-6" :name="item.name" :outlined="outlined" />
         <div class="w-full text-center text-xs text-ellipsis overflow-hidden">
           {{ item.componentName }}
         </div>
@@ -100,9 +100,9 @@ onBeforeMount(async () => {
         :variant="selectedSize === 'base' ? 'primary' : 'none'"
         @click="selectedSize = 'base'"
       >
-        <component
+        <Icon
           class="w-6 h-6 -mx-1"
-          :is="selectedIcon.component"
+          :name="selectedIcon.name"
           :outlined="outlined"
         />
       </Button>
@@ -112,9 +112,9 @@ onBeforeMount(async () => {
         :variant="selectedSize === 'sm' ? 'primary' : 'none'"
         @click="selectedSize = 'sm'"
       >
-        <component
+        <Icon
           class="w-5 h-5 -mx-0.5"
-          :is="selectedIcon.component"
+          :name="selectedIcon.name"
           :outlined="outlined"
         />
       </Button>
@@ -124,9 +124,9 @@ onBeforeMount(async () => {
         :variant="selectedSize === 'xs' ? 'primary' : 'none'"
         @click="selectedSize = 'xs'"
       >
-        <component
+        <Icon
           class="w-4 h-4 -mx-0.5"
-          :is="selectedIcon.component"
+          :name="selectedIcon.name"
           :outlined="outlined"
         />
       </Button>

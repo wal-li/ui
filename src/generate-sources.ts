@@ -86,7 +86,7 @@ async function start() {
     );
   }
 
-  const output = JSON.stringify(result);
+  const output = JSON.stringify(result, null, 2);
   writeFileSync(resolve('./web/src/sources.json'), output);
   writeFileSync(resolve('./cli/src/sources.json'), output);
 }

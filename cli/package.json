@@ -1,6 +1,6 @@
 {
   "name": "@wal-li/ui",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "dist/wui.js",
   "types": "dist/wui.d.ts",
   "type": "commonjs",

@@ -1,1 +1,2010 @@
-{"academic-cap":{"component":"AcademicCapIcon","keywords":["degree","diploma","graduation","hat","school","university"]},"adjustments-horizontal":{"component":"AdjustmentsHorizontalIcon","keywords":["filter","settings","sliders"]},"adjustments-vertical":{"component":"AdjustmentsVerticalIcon","keywords":["filter","settings","sliders"]},"archive-box-arrow-down":{"component":"ArchiveBoxArrowDownIcon","keywords":["box","download","store"]},"archive-box-x-mark":{"component":"ArchiveBoxXMarkIcon","keywords":["box","cancel","delete","remove","store"]},"archive-box":{"component":"ArchiveBoxIcon","keywords":["box","store"]},"arrow-down-circle":{"component":"ArrowDownCircleIcon","keywords":""},"arrow-down-left":{"component":"ArrowDownLeftIcon","keywords":""},"arrow-down-on-square-stack":{"component":"ArrowDownOnSquareStackIcon","keywords":["download"]},"arrow-down-on-square":{"component":"ArrowDownOnSquareIcon","keywords":["download"]},"arrow-down-right":{"component":"ArrowDownRightIcon","keywords":""},"arrow-down-tray":{"component":"ArrowDownTrayIcon","keywords":["download"]},"arrow-down":{"component":"ArrowDownIcon","keywords":""},"arrow-left-circle":{"component":"ArrowLeftCircleIcon","keywords":""},"arrow-left-end-on-rectangle":{"component":"ArrowLeftEndOnRectangleIcon","keywords":""},"arrow-left-on-rectangle":{"component":"ArrowLeftOnRectangleIcon","keywords":["logout","sign-out"]},"arrow-left-start-on-rectangle":{"component":"ArrowLeftStartOnRectangleIcon","keywords":""},"arrow-left":{"component":"ArrowLeftIcon","keywords":""},"arrow-long-down":{"component":"ArrowLongDownIcon","keywords":""},"arrow-long-left":{"component":"ArrowLongLeftIcon","keywords":""},"arrow-long-right":{"component":"ArrowLongRightIcon","keywords":""},"arrow-long-up":{"component":"ArrowLongUpIcon","keywords":""},"arrow-path-rounded-square":{"component":"ArrowPathRoundedSquareIcon","keywords":""},"arrow-path":{"component":"ArrowPathIcon","keywords":["refresh","reload","restart","update"]},"arrow-right-circle":{"component":"ArrowRightCircleIcon","keywords":""},"arrow-right-end-on-rectangle":{"component":"ArrowRightEndOnRectangleIcon","keywords":""},"arrow-right-on-rectangle":{"component":"ArrowRightOnRectangleIcon","keywords":["login","sign-in"]},"arrow-right-start-on-rectangle":{"component":"ArrowRightStartOnRectangleIcon","keywords":""},"arrow-right":{"component":"ArrowRightIcon","keywords":""},"arrow-small-down":{"component":"ArrowSmallDownIcon","keywords":""},"arrow-small-left":{"component":"ArrowSmallLeftIcon","keywords":""},"arrow-small-right":{"component":"ArrowSmallRightIcon","keywords":""},"arrow-small-up":{"component":"ArrowSmallUpIcon","keywords":""},"arrow-top-right-on-square":{"component":"ArrowTopRightOnSquareIcon","keywords":["external"]},"arrow-trending-down":{"component":"ArrowTrendingDownIcon","keywords":["analytics","decrease"]},"arrow-trending-up":{"component":"ArrowTrendingUpIcon","keywords":["analytics","increase"]},"arrow-turn-down-left":{"component":"ArrowTurnDownLeftIcon","keywords":""},"arrow-turn-down-right":{"component":"ArrowTurnDownRightIcon","keywords":""},"arrow-turn-left-down":{"component":"ArrowTurnLeftDownIcon","keywords":""},"arrow-turn-left-up":{"component":"ArrowTurnLeftUpIcon","keywords":""},"arrow-turn-right-down":{"component":"ArrowTurnRightDownIcon","keywords":""},"arrow-turn-right-up":{"component":"ArrowTurnRightUpIcon","keywords":""},"arrow-turn-up-left":{"component":"ArrowTurnUpLeftIcon","keywords":""},"arrow-turn-up-right":{"component":"ArrowTurnUpRightIcon","keywords":""},"arrow-up-circle":{"component":"ArrowUpCircleIcon","keywords":""},"arrow-up-left":{"component":"ArrowUpLeftIcon","keywords":""},"arrow-up-on-square-stack":{"component":"ArrowUpOnSquareStackIcon","keywords":["upload"]},"arrow-up-on-square":{"component":"ArrowUpOnSquareIcon","keywords":["upload"]},"arrow-up-right":{"component":"ArrowUpRightIcon","keywords":""},"arrow-up-tray":{"component":"ArrowUpTrayIcon","keywords":["upload"]},"arrow-up":{"component":"ArrowUpIcon","keywords":""},"arrow-uturn-down":{"component":"ArrowUturnDownIcon","keywords":""},"arrow-uturn-left":{"component":"ArrowUturnLeftIcon","keywords":["back","previous"]},"arrow-uturn-right":{"component":"ArrowUturnRightIcon","keywords":["forward","next"]},"arrow-uturn-up":{"component":"ArrowUturnUpIcon","keywords":""},"arrows-pointing-in":{"component":"ArrowsPointingInIcon","keywords":["collapse"]},"arrows-pointing-out":{"component":"ArrowsPointingOutIcon","keywords":["expand"]},"arrows-right-left":{"component":"ArrowsRightLeftIcon","keywords":["switch"]},"arrows-up-down":{"component":"ArrowsUpDownIcon","keywords":["switch"]},"at-symbol":{"component":"AtSymbolIcon","keywords":["@","email"]},"backspace":{"component":"BackspaceIcon","keywords":["delete","remove"]},"backward":{"component":"BackwardIcon","keywords":["previous","rewind"]},"banknotes":{"component":"BanknotesIcon","keywords":["bill","cash","money","payment","price"]},"bars-2":{"component":"Bars2Icon","keywords":["hamburger","menu"]},"bars-3-bottom-left":{"component":"Bars3BottomLeftIcon","keywords":""},"bars-3-bottom-right":{"component":"Bars3BottomRightIcon","keywords":""},"bars-3-center-left":{"component":"Bars3CenterLeftIcon","keywords":""},"bars-3":{"component":"Bars3Icon","keywords":["hamburger","menu"]},"bars-4":{"component":"Bars4Icon","keywords":["hamburger","menu"]},"bars-arrow-down":{"component":"BarsArrowDownIcon","keywords":""},"bars-arrow-up":{"component":"BarsArrowUpIcon","keywords":""},"battery-0":{"component":"Battery0Icon","keywords":""},"battery-100":{"component":"Battery100Icon","keywords":""},"battery-50":{"component":"Battery50Icon","keywords":""},"beaker":{"component":"BeakerIcon","keywords":["chemical","chemistry","formula","potion","science"]},"bell-alert":{"component":"BellAlertIcon","keywords":["notification"]},"bell-slash":{"component":"BellSlashIcon","keywords":["notification","silence"]},"bell-snooze":{"component":"BellSnoozeIcon","keywords":["notification","silence"]},"bell":{"component":"BellIcon","keywords":["alert","notification"]},"bold":{"component":"BoldIcon","keywords":""},"bolt-slash":{"component":"BoltSlashIcon","keywords":["electric","electricity","flash","lightning","power","zap"]},"bolt":{"component":"BoltIcon","keywords":["electric","electricity","flash","lightning","power","zap"]},"book-open":{"component":"BookOpenIcon","keywords":""},"bookmark-slash":{"component":"BookmarkSlashIcon","keywords":["delete","favorite","remove","save"]},"bookmark-square":{"component":"BookmarkSquareIcon","keywords":["favorite","save"]},"bookmark":{"component":"BookmarkIcon","keywords":["favorite","save"]},"briefcase":{"component":"BriefcaseIcon","keywords":["business","job","office","work"]},"bug-ant":{"component":"BugAntIcon","keywords":""},"building-library":{"component":"BuildingLibraryIcon","keywords":["administration","institution"]},"building-office-2":{"component":"BuildingOffice2Icon","keywords":["apartment","flat","skyscraper","work"]},"building-office":{"component":"BuildingOfficeIcon","keywords":["apartment","flat","skyscraper","work"]},"building-storefront":{"component":"BuildingStorefrontIcon","keywords":["shop"]},"cake":{"component":"CakeIcon","keywords":["birthday","celebrate","party"]},"calculator":{"component":"CalculatorIcon","keywords":["mathematics","maths","numbers"]},"calendar-date-range":{"component":"CalendarDateRangeIcon","keywords":""},"calendar-days":{"component":"CalendarDaysIcon","keywords":["date","event","month","year"]},"calendar":{"component":"CalendarIcon","keywords":["date","day","event","month","year"]},"camera":{"component":"CameraIcon","keywords":["photo","picture"]},"chart-bar-square":{"component":"ChartBarSquareIcon","keywords":["analytics","graph","statistics","stats"]},"chart-bar":{"component":"ChartBarIcon","keywords":["analytics","graph","statistics","stats"]},"chart-pie":{"component":"ChartPieIcon","keywords":["analytics","graph","statistics","stats"]},"chat-bubble-bottom-center-text":{"component":"ChatBubbleBottomCenterTextIcon","keywords":["bubble","comment","discussion","message","response","speech"]},"chat-bubble-bottom-center":{"component":"ChatBubbleBottomCenterIcon","keywords":["bubble","comment","discussion","message","response","speech"]},"chat-bubble-left-ellipsis":{"component":"ChatBubbleLeftEllipsisIcon","keywords":["bubble","comment","discussion","message","response","speech"]},"chat-bubble-left-right":{"component":"ChatBubbleLeftRightIcon","keywords":["bubble","comment","discussion","message","response","speech"]},"chat-bubble-left":{"component":"ChatBubbleLeftIcon","keywords":["bubble","comment","discussion","message","response","speech"]},"chat-bubble-oval-left-ellipsis":{"component":"ChatBubbleOvalLeftEllipsisIcon","keywords":["bubble","comment","discussion","message","response","speech"]},"chat-bubble-oval-left":{"component":"ChatBubbleOvalLeftIcon","keywords":["bubble","comment","discussion","message","response","speech"]},"check-badge":{"component":"CheckBadgeIcon","keywords":["confirm","correct","tick","verified"]},"check-circle":{"component":"CheckCircleIcon","keywords":["confirm","correct","tick","verified"]},"check":{"component":"CheckIcon","keywords":["confirm","correct","ok","tick","valid","verified"]},"chevron-double-down":{"component":"ChevronDoubleDownIcon","keywords":["arrow-double-down"]},"chevron-double-left":{"component":"ChevronDoubleLeftIcon","keywords":["arrow-double-left"]},"chevron-double-right":{"component":"ChevronDoubleRightIcon","keywords":["arrow-double-right"]},"chevron-double-up":{"component":"ChevronDoubleUpIcon","keywords":["arrow-double-up"]},"chevron-down":{"component":"ChevronDownIcon","keywords":["arrow-down","caret-down"]},"chevron-left":{"component":"ChevronLeftIcon","keywords":["arrow-left","caret-left"]},"chevron-right":{"component":"ChevronRightIcon","keywords":["arrow-right","caret-right"]},"chevron-up-down":{"component":"ChevronUpDownIcon","keywords":["select","option"]},"chevron-up":{"component":"ChevronUpIcon","keywords":["arrow-up","caret-up"]},"circle-stack":{"component":"CircleStackIcon","keywords":["collection","database","storage"]},"clipboard-document-check":{"component":"ClipboardDocumentCheckIcon","keywords":["clipboard-tick"]},"clipboard-document-list":{"component":"ClipboardDocumentListIcon","keywords":["copy","cut","paste"]},"clipboard-document":{"component":"ClipboardDocumentIcon","keywords":["copy","cut","paste"]},"clipboard":{"component":"ClipboardIcon","keywords":["copy","cut","paste"]},"clock":{"component":"ClockIcon","keywords":["time","watch"]},"cloud-arrow-down":{"component":"CloudArrowDownIcon","keywords":""},"cloud-arrow-up":{"component":"CloudArrowUpIcon","keywords":""},"cloud":{"component":"CloudIcon","keywords":""},"code-bracket-square":{"component":"CodeBracketSquareIcon","keywords":""},"code-bracket":{"component":"CodeBracketIcon","keywords":""},"cog-6-tooth":{"component":"Cog6ToothIcon","keywords":["gear","settings"]},"cog-8-tooth":{"component":"Cog8ToothIcon","keywords":["gear","settings"]},"cog":{"component":"CogIcon","keywords":["gear","settings"]},"command-line":{"component":"CommandLineIcon","keywords":["cli","code","console","terminal"]},"computer-desktop":{"component":"ComputerDesktopIcon","keywords":["mac","monitor","pc","windows"]},"cpu-chip":{"component":"CpuChipIcon","keywords":["computer","electronics","pc"]},"credit-card":{"component":"CreditCardIcon","keywords":["debit","money","payment","price"]},"cube-transparent":{"component":"CubeTransparentIcon","keywords":""},"cube":{"component":"CubeIcon","keywords":["3d"]},"currency-bangladeshi":{"component":"CurrencyBangladeshiIcon","keywords":""},"currency-dollar":{"component":"CurrencyDollarIcon","keywords":["money","payment","price","usd"]},"currency-euro":{"component":"CurrencyEuroIcon","keywords":["eur","euro","money","payment","price"]},"currency-pound":{"component":"CurrencyPoundIcon","keywords":["gbp","money","payment","price"]},"currency-rupee":{"component":"CurrencyRupeeIcon","keywords":["inr","money","payment","price"]},"currency-yen":{"component":"CurrencyYenIcon","keywords":["money","payment","price"]},"cursor-arrow-rays":{"component":"CursorArrowRaysIcon","keywords":["cursor-pointer","mouse-click"]},"cursor-arrow-ripple":{"component":"CursorArrowRippleIcon","keywords":["cursor-pointer","mouse-click"]},"device-phone-mobile":{"component":"DevicePhoneMobileIcon","keywords":["android","iphone","phone","smartphone"]},"device-tablet":{"component":"DeviceTabletIcon","keywords":["ipad","kindle"]},"divide":{"component":"DivideIcon","keywords":""},"document-arrow-down":{"component":"DocumentArrowDownIcon","keywords":""},"document-arrow-up":{"component":"DocumentArrowUpIcon","keywords":""},"document-chart-bar":{"component":"DocumentChartBarIcon","keywords":""},"document-check":{"component":"DocumentCheckIcon","keywords":""},"document-currency-bangladeshi":{"component":"DocumentCurrencyBangladeshiIcon","keywords":""},"document-currency-dollar":{"component":"DocumentCurrencyDollarIcon","keywords":""},"document-currency-euro":{"component":"DocumentCurrencyEuroIcon","keywords":""},"document-currency-pound":{"component":"DocumentCurrencyPoundIcon","keywords":""},"document-currency-rupee":{"component":"DocumentCurrencyRupeeIcon","keywords":""},"document-currency-yen":{"component":"DocumentCurrencyYenIcon","keywords":""},"document-duplicate":{"component":"DocumentDuplicateIcon","keywords":["clone","copy"]},"document-magnifying-glass":{"component":"DocumentMagnifyingGlassIcon","keywords":["search"]},"document-minus":{"component":"DocumentMinusIcon","keywords":["document-delete"]},"document-plus":{"component":"DocumentPlusIcon","keywords":""},"document-text":{"component":"DocumentTextIcon","keywords":""},"document":{"component":"DocumentIcon","keywords":["pdf","sim"]},"ellipsis-horizontal-circle":{"component":"EllipsisHorizontalCircleIcon","keywords":["more","options"]},"ellipsis-horizontal":{"component":"EllipsisHorizontalIcon","keywords":["meatballs","more"]},"ellipsis-vertical":{"component":"EllipsisVerticalIcon","keywords":["kebab","more"]},"envelope-open":{"component":"EnvelopeOpenIcon","keywords":["letter","mail","message"]},"envelope":{"component":"EnvelopeIcon","keywords":["letter","mail","message"]},"equals":{"component":"EqualsIcon","keywords":""},"exclamation-circle":{"component":"ExclamationCircleIcon","keywords":["caution","error","warning"]},"exclamation-triangle":{"component":"ExclamationTriangleIcon","keywords":["caution","error","warning"]},"eye-dropper":{"component":"EyeDropperIcon","keywords":""},"eye-slash":{"component":"EyeSlashIcon","keywords":["hidden","invisible","private","unseen"]},"eye":{"component":"EyeIcon","keywords":["public","seen","visible"]},"face-frown":{"component":"FaceFrownIcon","keywords":["emoji","sad"]},"face-smile":{"component":"FaceSmileIcon","keywords":["emoji","happy"]},"film":{"component":"FilmIcon","keywords":["cinema","movie"]},"finger-print":{"component":"FingerPrintIcon","keywords":["touch-id"]},"fire":{"component":"FireIcon","keywords":["burn","flame","hot","lit"]},"flag":{"component":"FlagIcon","keywords":["report"]},"folder-arrow-down":{"component":"FolderArrowDownIcon","keywords":["folder-download"]},"folder-minus":{"component":"FolderMinusIcon","keywords":["folder-delete","folder-remove"]},"folder-open":{"component":"FolderOpenIcon","keywords":""},"folder-plus":{"component":"FolderPlusIcon","keywords":["folder-add","folder-new"]},"folder":{"component":"FolderIcon","keywords":""},"forward":{"component":"ForwardIcon","keywords":["fast-forward","next","skip"]},"funnel":{"component":"FunnelIcon","keywords":["adjustments","filter"]},"gif":{"component":"GifIcon","keywords":["animation","image"]},"gift-top":{"component":"GiftTopIcon","keywords":["present","reward"]},"gift":{"component":"GiftIcon","keywords":["present","reward"]},"globe-alt":{"component":"GlobeAltIcon","keywords":["earth","planet","website","world","www"]},"globe-americas":{"component":"GlobeAmericasIcon","keywords":["earth","planet","website","world","www"]},"globe-asia-australia":{"component":"GlobeAsiaAustraliaIcon","keywords":["earth","planet","website","world","www"]},"globe-europe-africa":{"component":"GlobeEuropeAfricaIcon","keywords":["earth","planet","website","world","www"]},"h1":{"component":"H1Icon","keywords":""},"h2":{"component":"H2Icon","keywords":""},"h3":{"component":"H3Icon","keywords":""},"hand-raised":{"component":"HandRaisedIcon","keywords":["grab"]},"hand-thumb-down":{"component":"HandThumbDownIcon","keywords":["dislike"]},"hand-thumb-up":{"component":"HandThumbUpIcon","keywords":["like"]},"hashtag":{"component":"HashtagIcon","keywords":["octothorp","pound-sign"]},"heart":{"component":"HeartIcon","keywords":["love","relationship"]},"home-modern":{"component":"HomeModernIcon","keywords":["building","house"]},"home":{"component":"HomeIcon","keywords":["building","house"]},"identification":{"component":"IdentificationIcon","keywords":""},"inbox-arrow-down":{"component":"InboxArrowDownIcon","keywords":["email","message"]},"inbox-stack":{"component":"InboxStackIcon","keywords":["email","message"]},"inbox":{"component":"InboxIcon","keywords":["email","message"]},"information-circle":{"component":"InformationCircleIcon","keywords":["help"]},"italic":{"component":"ItalicIcon","keywords":""},"key":{"component":"KeyIcon","keywords":""},"language":{"component":"LanguageIcon","keywords":["i18n","international","intl","l10n","translate"]},"lifebuoy":{"component":"LifebuoyIcon","keywords":["help","life-ring","overboard"]},"light-bulb":{"component":"LightBulbIcon","keywords":["insight"]},"link-slash":{"component":"LinkSlashIcon","keywords":""},"link":{"component":"LinkIcon","keywords":["attachment","connect","url"]},"list-bullet":{"component":"ListBulletIcon","keywords":""},"lock-closed":{"component":"LockClosedIcon","keywords":["secure","security"]},"lock-open":{"component":"LockOpenIcon","keywords":["security","unlock"]},"magnifying-glass-circle":{"component":"MagnifyingGlassCircleIcon","keywords":["search"]},"magnifying-glass-minus":{"component":"MagnifyingGlassMinusIcon","keywords":["zoom-out"]},"magnifying-glass-plus":{"component":"MagnifyingGlassPlusIcon","keywords":["zoom-in"]},"magnifying-glass":{"component":"MagnifyingGlassIcon","keywords":["search"]},"map-pin":{"component":"MapPinIcon","keywords":["location","marker"]},"map":{"component":"MapIcon","keywords":""},"megaphone":{"component":"MegaphoneIcon","keywords":""},"microphone":{"component":"MicrophoneIcon","keywords":["audio","podcast","record"]},"minus-circle":{"component":"MinusCircleIcon","keywords":["delete","remove","subtract"]},"minus-small":{"component":"MinusSmallIcon","keywords":""},"minus":{"component":"MinusIcon","keywords":["delete","remove","subtract"]},"moon":{"component":"MoonIcon","keywords":["dark","night"]},"musical-note":{"component":"MusicalNoteIcon","keywords":["song"]},"newspaper":{"component":"NewspaperIcon","keywords":""},"no-symbol":{"component":"NoSymbolIcon","keywords":["bad","block","end","halt","not-allowed","stop","unauthorized"]},"numbered-list":{"component":"NumberedListIcon","keywords":""},"paint-brush":{"component":"PaintBrushIcon","keywords":""},"paper-airplane":{"component":"PaperAirplaneIcon","keywords":["send"]},"paper-clip":{"component":"PaperClipIcon","keywords":["attachment","document","link"]},"pause-circle":{"component":"PauseCircleIcon","keywords":""},"pause":{"component":"PauseIcon","keywords":""},"pencil-square":{"component":"PencilSquareIcon","keywords":["edit","note","write"]},"pencil":{"component":"PencilIcon","keywords":["edit","note","write"]},"percent-badge":{"component":"PercentBadgeIcon","keywords":""},"phone-arrow-down-left":{"component":"PhoneArrowDownLeftIcon","keywords":""},"phone-arrow-up-right":{"component":"PhoneArrowUpRightIcon","keywords":""},"phone-x-mark":{"component":"PhoneXMarkIcon","keywords":""},"phone":{"component":"PhoneIcon","keywords":""},"photo":{"component":"PhotoIcon","keywords":["gallery","image","picture"]},"play-circle":{"component":"PlayCircleIcon","keywords":""},"play-pause":{"component":"PlayPauseIcon","keywords":""},"play":{"component":"PlayIcon","keywords":""},"plus-circle":{"component":"PlusCircleIcon","keywords":["add","create"]},"plus-small":{"component":"PlusSmallIcon","keywords":""},"plus":{"component":"PlusIcon","keywords":["add","create","new"]},"power":{"component":"PowerIcon","keywords":""},"presentation-chart-bar":{"component":"PresentationChartBarIcon","keywords":""},"presentation-chart-line":{"component":"PresentationChartLineIcon","keywords":""},"printer":{"component":"PrinterIcon","keywords":""},"puzzle-piece":{"component":"PuzzlePieceIcon","keywords":["add-on","addon","game","jigsaw"]},"qr-code":{"component":"QrCodeIcon","keywords":""},"question-mark-circle":{"component":"QuestionMarkCircleIcon","keywords":["help"]},"queue-list":{"component":"QueueListIcon","keywords":""},"radio":{"component":"RadioIcon","keywords":""},"receipt-percent":{"component":"ReceiptPercentIcon","keywords":""},"receipt-refund":{"component":"ReceiptRefundIcon","keywords":""},"rectangle-group":{"component":"RectangleGroupIcon","keywords":""},"rectangle-stack":{"component":"RectangleStackIcon","keywords":""},"rocket-launch":{"component":"RocketLaunchIcon","keywords":""},"rss":{"component":"RssIcon","keywords":""},"scale":{"component":"ScaleIcon","keywords":["balance","weigh"]},"scissors":{"component":"ScissorsIcon","keywords":["cut"]},"server-stack":{"component":"ServerStackIcon","keywords":""},"server":{"component":"ServerIcon","keywords":""},"share":{"component":"ShareIcon","keywords":""},"shield-check":{"component":"ShieldCheckIcon","keywords":["secure","shield-tick"]},"shield-exclamation":{"component":"ShieldExclamationIcon","keywords":["shield-error","shield-warning"]},"shopping-bag":{"component":"ShoppingBagIcon","keywords":["cart"]},"shopping-cart":{"component":"ShoppingCartIcon","keywords":""},"signal-slash":{"component":"SignalSlashIcon","keywords":""},"signal":{"component":"SignalIcon","keywords":""},"slash":{"component":"SlashIcon","keywords":""},"sparkles":{"component":"SparklesIcon","keywords":["glitter","stars"]},"speaker-wave":{"component":"SpeakerWaveIcon","keywords":["audio","loud","sound","unmute","volume"]},"speaker-x-mark":{"component":"SpeakerXMarkIcon","keywords":["audio","mute","quiet","sound","volume"]},"square-2-stack":{"component":"Square2StackIcon","keywords":""},"square-3-stack-3d":{"component":"Square3Stack3dIcon","keywords":""},"squares-2x2":{"component":"Squares2x2Icon","keywords":""},"squares-plus":{"component":"SquaresPlusIcon","keywords":""},"star":{"component":"StarIcon","keywords":["achievement","favorite","rating","score"]},"stop-circle":{"component":"StopCircleIcon","keywords":""},"stop":{"component":"StopIcon","keywords":""},"strikethrough":{"component":"StrikethroughIcon","keywords":""},"sun":{"component":"SunIcon","keywords":["brightness","day","light"]},"swatch":{"component":"SwatchIcon","keywords":["colors","palette"]},"table-cells":{"component":"TableCellsIcon","keywords":["data","grid","spreadsheet"]},"tag":{"component":"TagIcon","keywords":["category","group","label"]},"ticket":{"component":"TicketIcon","keywords":""},"trash":{"component":"TrashIcon","keywords":["bin","delete","garbage","remove","rubbish"]},"trophy":{"component":"TrophyIcon","keywords":""},"truck":{"component":"TruckIcon","keywords":["lorry","vehicle"]},"tv":{"component":"TvIcon","keywords":""},"underline":{"component":"UnderlineIcon","keywords":""},"user-circle":{"component":"UserCircleIcon","keywords":["account","person","profile"]},"user-group":{"component":"UserGroupIcon","keywords":""},"user-minus":{"component":"UserMinusIcon","keywords":["account","person","profile","user-delete","user-remove"]},"user-plus":{"component":"UserPlusIcon","keywords":["account","person","profile","user-add"]},"user":{"component":"UserIcon","keywords":["account","person","profile"]},"users":{"component":"UsersIcon","keywords":""},"variable":{"component":"VariableIcon","keywords":""},"video-camera-slash":{"component":"VideoCameraSlashIcon","keywords":["movie","record","stop"]},"video-camera":{"component":"VideoCameraIcon","keywords":["movie","record"]},"view-columns":{"component":"ViewColumnsIcon","keywords":""},"viewfinder-circle":{"component":"ViewfinderCircleIcon","keywords":""},"wallet":{"component":"WalletIcon","keywords":""},"wifi":{"component":"WifiIcon","keywords":["connection","online","signal","wireless"]},"window":{"component":"WindowIcon","keywords":""},"wrench-screwdriver":{"component":"WrenchScrewdriverIcon","keywords":["options","settings","tool"]},"wrench":{"component":"WrenchIcon","keywords":["options","settings","tool"]},"x-circle":{"component":"XCircleIcon","keywords":["cancel","close","delete","remove","stop"]},"x-mark":{"component":"XMarkIcon","keywords":["cancel","close","delete","remove","stop"]}}
+{
+  "academic-cap": {
+    "component": "AcademicCapIcon",
+    "keywords": [
+      "degree",
+      "diploma",
+      "graduation",
+      "hat",
+      "school",
+      "university"
+    ]
+  },
+  "adjustments-horizontal": {
+    "component": "AdjustmentsHorizontalIcon",
+    "keywords": [
+      "filter",
+      "settings",
+      "sliders"
+    ]
+  },
+  "adjustments-vertical": {
+    "component": "AdjustmentsVerticalIcon",
+    "keywords": [
+      "filter",
+      "settings",
+      "sliders"
+    ]
+  },
+  "archive-box-arrow-down": {
+    "component": "ArchiveBoxArrowDownIcon",
+    "keywords": [
+      "box",
+      "download",
+      "store"
+    ]
+  },
+  "archive-box-x-mark": {
+    "component": "ArchiveBoxXMarkIcon",
+    "keywords": [
+      "box",
+      "cancel",
+      "delete",
+      "remove",
+      "store"
+    ]
+  },
+  "archive-box": {
+    "component": "ArchiveBoxIcon",
+    "keywords": [
+      "box",
+      "store"
+    ]
+  },
+  "arrow-down-circle": {
+    "component": "ArrowDownCircleIcon",
+    "keywords": ""
+  },
+  "arrow-down-left": {
+    "component": "ArrowDownLeftIcon",
+    "keywords": ""
+  },
+  "arrow-down-on-square-stack": {
+    "component": "ArrowDownOnSquareStackIcon",
+    "keywords": [
+      "download"
+    ]
+  },
+  "arrow-down-on-square": {
+    "component": "ArrowDownOnSquareIcon",
+    "keywords": [
+      "download"
+    ]
+  },
+  "arrow-down-right": {
+    "component": "ArrowDownRightIcon",
+    "keywords": ""
+  },
+  "arrow-down-tray": {
+    "component": "ArrowDownTrayIcon",
+    "keywords": [
+      "download"
+    ]
+  },
+  "arrow-down": {
+    "component": "ArrowDownIcon",
+    "keywords": ""
+  },
+  "arrow-left-circle": {
+    "component": "ArrowLeftCircleIcon",
+    "keywords": ""
+  },
+  "arrow-left-end-on-rectangle": {
+    "component": "ArrowLeftEndOnRectangleIcon",
+    "keywords": ""
+  },
+  "arrow-left-on-rectangle": {
+    "component": "ArrowLeftOnRectangleIcon",
+    "keywords": [
+      "logout",
+      "sign-out"
+    ]
+  },
+  "arrow-left-start-on-rectangle": {
+    "component": "ArrowLeftStartOnRectangleIcon",
+    "keywords": ""
+  },
+  "arrow-left": {
+    "component": "ArrowLeftIcon",
+    "keywords": ""
+  },
+  "arrow-long-down": {
+    "component": "ArrowLongDownIcon",
+    "keywords": ""
+  },
+  "arrow-long-left": {
+    "component": "ArrowLongLeftIcon",
+    "keywords": ""
+  },
+  "arrow-long-right": {
+    "component": "ArrowLongRightIcon",
+    "keywords": ""
+  },
+  "arrow-long-up": {
+    "component": "ArrowLongUpIcon",
+    "keywords": ""
+  },
+  "arrow-path-rounded-square": {
+    "component": "ArrowPathRoundedSquareIcon",
+    "keywords": ""
+  },
+  "arrow-path": {
+    "component": "ArrowPathIcon",
+    "keywords": [
+      "refresh",
+      "reload",
+      "restart",
+      "update"
+    ]
+  },
+  "arrow-right-circle": {
+    "component": "ArrowRightCircleIcon",
+    "keywords": ""
+  },
+  "arrow-right-end-on-rectangle": {
+    "component": "ArrowRightEndOnRectangleIcon",
+    "keywords": ""
+  },
+  "arrow-right-on-rectangle": {
+    "component": "ArrowRightOnRectangleIcon",
+    "keywords": [
+      "login",
+      "sign-in"
+    ]
+  },
+  "arrow-right-start-on-rectangle": {
+    "component": "ArrowRightStartOnRectangleIcon",
+    "keywords": ""
+  },
+  "arrow-right": {
+    "component": "ArrowRightIcon",
+    "keywords": ""
+  },
+  "arrow-small-down": {
+    "component": "ArrowSmallDownIcon",
+    "keywords": ""
+  },
+  "arrow-small-left": {
+    "component": "ArrowSmallLeftIcon",
+    "keywords": ""
+  },
+  "arrow-small-right": {
+    "component": "ArrowSmallRightIcon",
+    "keywords": ""
+  },
+  "arrow-small-up": {
+    "component": "ArrowSmallUpIcon",
+    "keywords": ""
+  },
+  "arrow-top-right-on-square": {
+    "component": "ArrowTopRightOnSquareIcon",
+    "keywords": [
+      "external"
+    ]
+  },
+  "arrow-trending-down": {
+    "component": "ArrowTrendingDownIcon",
+    "keywords": [
+      "analytics",
+      "decrease"
+    ]
+  },
+  "arrow-trending-up": {
+    "component": "ArrowTrendingUpIcon",
+    "keywords": [
+      "analytics",
+      "increase"
+    ]
+  },
+  "arrow-turn-down-left": {
+    "component": "ArrowTurnDownLeftIcon",
+    "keywords": ""
+  },
+  "arrow-turn-down-right": {
+    "component": "ArrowTurnDownRightIcon",
+    "keywords": ""
+  },
+  "arrow-turn-left-down": {
+    "component": "ArrowTurnLeftDownIcon",
+    "keywords": ""
+  },
+  "arrow-turn-left-up": {
+    "component": "ArrowTurnLeftUpIcon",
+    "keywords": ""
+  },
+  "arrow-turn-right-down": {
+    "component": "ArrowTurnRightDownIcon",
+    "keywords": ""
+  },
+  "arrow-turn-right-up": {
+    "component": "ArrowTurnRightUpIcon",
+    "keywords": ""
+  },
+  "arrow-turn-up-left": {
+    "component": "ArrowTurnUpLeftIcon",
+    "keywords": ""
+  },
+  "arrow-turn-up-right": {
+    "component": "ArrowTurnUpRightIcon",
+    "keywords": ""
+  },
+  "arrow-up-circle": {
+    "component": "ArrowUpCircleIcon",
+    "keywords": ""
+  },
+  "arrow-up-left": {
+    "component": "ArrowUpLeftIcon",
+    "keywords": ""
+  },
+  "arrow-up-on-square-stack": {
+    "component": "ArrowUpOnSquareStackIcon",
+    "keywords": [
+      "upload"
+    ]
+  },
+  "arrow-up-on-square": {
+    "component": "ArrowUpOnSquareIcon",
+    "keywords": [
+      "upload"
+    ]
+  },
+  "arrow-up-right": {
+    "component": "ArrowUpRightIcon",
+    "keywords": ""
+  },
+  "arrow-up-tray": {
+    "component": "ArrowUpTrayIcon",
+    "keywords": [
+      "upload"
+    ]
+  },
+  "arrow-up": {
+    "component": "ArrowUpIcon",
+    "keywords": ""
+  },
+  "arrow-uturn-down": {
+    "component": "ArrowUturnDownIcon",
+    "keywords": ""
+  },
+  "arrow-uturn-left": {
+    "component": "ArrowUturnLeftIcon",
+    "keywords": [
+      "back",
+      "previous"
+    ]
+  },
+  "arrow-uturn-right": {
+    "component": "ArrowUturnRightIcon",
+    "keywords": [
+      "forward",
+      "next"
+    ]
+  },
+  "arrow-uturn-up": {
+    "component": "ArrowUturnUpIcon",
+    "keywords": ""
+  },
+  "arrows-pointing-in": {
+    "component": "ArrowsPointingInIcon",
+    "keywords": [
+      "collapse"
+    ]
+  },
+  "arrows-pointing-out": {
+    "component": "ArrowsPointingOutIcon",
+    "keywords": [
+      "expand"
+    ]
+  },
+  "arrows-right-left": {
+    "component": "ArrowsRightLeftIcon",
+    "keywords": [
+      "switch"
+    ]
+  },
+  "arrows-up-down": {
+    "component": "ArrowsUpDownIcon",
+    "keywords": [
+      "switch"
+    ]
+  },
+  "at-symbol": {
+    "component": "AtSymbolIcon",
+    "keywords": [
+      "@",
+      "email"
+    ]
+  },
+  "backspace": {
+    "component": "BackspaceIcon",
+    "keywords": [
+      "delete",
+      "remove"
+    ]
+  },
+  "backward": {
+    "component": "BackwardIcon",
+    "keywords": [
+      "previous",
+      "rewind"
+    ]
+  },
+  "banknotes": {
+    "component": "BanknotesIcon",
+    "keywords": [
+      "bill",
+      "cash",
+      "money",
+      "payment",
+      "price"
+    ]
+  },
+  "bars-2": {
+    "component": "Bars2Icon",
+    "keywords": [
+      "hamburger",
+      "menu"
+    ]
+  },
+  "bars-3-bottom-left": {
+    "component": "Bars3BottomLeftIcon",
+    "keywords": ""
+  },
+  "bars-3-bottom-right": {
+    "component": "Bars3BottomRightIcon",
+    "keywords": ""
+  },
+  "bars-3-center-left": {
+    "component": "Bars3CenterLeftIcon",
+    "keywords": ""
+  },
+  "bars-3": {
+    "component": "Bars3Icon",
+    "keywords": [
+      "hamburger",
+      "menu"
+    ]
+  },
+  "bars-4": {
+    "component": "Bars4Icon",
+    "keywords": [
+      "hamburger",
+      "menu"
+    ]
+  },
+  "bars-arrow-down": {
+    "component": "BarsArrowDownIcon",
+    "keywords": ""
+  },
+  "bars-arrow-up": {
+    "component": "BarsArrowUpIcon",
+    "keywords": ""
+  },
+  "battery-0": {
+    "component": "Battery0Icon",
+    "keywords": ""
+  },
+  "battery-100": {
+    "component": "Battery100Icon",
+    "keywords": ""
+  },
+  "battery-50": {
+    "component": "Battery50Icon",
+    "keywords": ""
+  },
+  "beaker": {
+    "component": "BeakerIcon",
+    "keywords": [
+      "chemical",
+      "chemistry",
+      "formula",
+      "potion",
+      "science"
+    ]
+  },
+  "bell-alert": {
+    "component": "BellAlertIcon",
+    "keywords": [
+      "notification"
+    ]
+  },
+  "bell-slash": {
+    "component": "BellSlashIcon",
+    "keywords": [
+      "notification",
+      "silence"
+    ]
+  },
+  "bell-snooze": {
+    "component": "BellSnoozeIcon",
+    "keywords": [
+      "notification",
+      "silence"
+    ]
+  },
+  "bell": {
+    "component": "BellIcon",
+    "keywords": [
+      "alert",
+      "notification"
+    ]
+  },
+  "bold": {
+    "component": "BoldIcon",
+    "keywords": ""
+  },
+  "bolt-slash": {
+    "component": "BoltSlashIcon",
+    "keywords": [
+      "electric",
+      "electricity",
+      "flash",
+      "lightning",
+      "power",
+      "zap"
+    ]
+  },
+  "bolt": {
+    "component": "BoltIcon",
+    "keywords": [
+      "electric",
+      "electricity",
+      "flash",
+      "lightning",
+      "power",
+      "zap"
+    ]
+  },
+  "book-open": {
+    "component": "BookOpenIcon",
+    "keywords": ""
+  },
+  "bookmark-slash": {
+    "component": "BookmarkSlashIcon",
+    "keywords": [
+      "delete",
+      "favorite",
+      "remove",
+      "save"
+    ]
+  },
+  "bookmark-square": {
+    "component": "BookmarkSquareIcon",
+    "keywords": [
+      "favorite",
+      "save"
+    ]
+  },
+  "bookmark": {
+    "component": "BookmarkIcon",
+    "keywords": [
+      "favorite",
+      "save"
+    ]
+  },
+  "briefcase": {
+    "component": "BriefcaseIcon",
+    "keywords": [
+      "business",
+      "job",
+      "office",
+      "work"
+    ]
+  },
+  "bug-ant": {
+    "component": "BugAntIcon",
+    "keywords": ""
+  },
+  "building-library": {
+    "component": "BuildingLibraryIcon",
+    "keywords": [
+      "administration",
+      "institution"
+    ]
+  },
+  "building-office-2": {
+    "component": "BuildingOffice2Icon",
+    "keywords": [
+      "apartment",
+      "flat",
+      "skyscraper",
+      "work"
+    ]
+  },
+  "building-office": {
+    "component": "BuildingOfficeIcon",
+    "keywords": [
+      "apartment",
+      "flat",
+      "skyscraper",
+      "work"
+    ]
+  },
+  "building-storefront": {
+    "component": "BuildingStorefrontIcon",
+    "keywords": [
+      "shop"
+    ]
+  },
+  "cake": {
+    "component": "CakeIcon",
+    "keywords": [
+      "birthday",
+      "celebrate",
+      "party"
+    ]
+  },
+  "calculator": {
+    "component": "CalculatorIcon",
+    "keywords": [
+      "mathematics",
+      "maths",
+      "numbers"
+    ]
+  },
+  "calendar-date-range": {
+    "component": "CalendarDateRangeIcon",
+    "keywords": ""
+  },
+  "calendar-days": {
+    "component": "CalendarDaysIcon",
+    "keywords": [
+      "date",
+      "event",
+      "month",
+      "year"
+    ]
+  },
+  "calendar": {
+    "component": "CalendarIcon",
+    "keywords": [
+      "date",
+      "day",
+      "event",
+      "month",
+      "year"
+    ]
+  },
+  "camera": {
+    "component": "CameraIcon",
+    "keywords": [
+      "photo",
+      "picture"
+    ]
+  },
+  "chart-bar-square": {
+    "component": "ChartBarSquareIcon",
+    "keywords": [
+      "analytics",
+      "graph",
+      "statistics",
+      "stats"
+    ]
+  },
+  "chart-bar": {
+    "component": "ChartBarIcon",
+    "keywords": [
+      "analytics",
+      "graph",
+      "statistics",
+      "stats"
+    ]
+  },
+  "chart-pie": {
+    "component": "ChartPieIcon",
+    "keywords": [
+      "analytics",
+      "graph",
+      "statistics",
+      "stats"
+    ]
+  },
+  "chat-bubble-bottom-center-text": {
+    "component": "ChatBubbleBottomCenterTextIcon",
+    "keywords": [
+      "bubble",
+      "comment",
+      "discussion",
+      "message",
+      "response",
+      "speech"
+    ]
+  },
+  "chat-bubble-bottom-center": {
+    "component": "ChatBubbleBottomCenterIcon",
+    "keywords": [
+      "bubble",
+      "comment",
+      "discussion",
+      "message",
+      "response",
+      "speech"
+    ]
+  },
+  "chat-bubble-left-ellipsis": {
+    "component": "ChatBubbleLeftEllipsisIcon",
+    "keywords": [
+      "bubble",
+      "comment",
+      "discussion",
+      "message",
+      "response",
+      "speech"
+    ]
+  },
+  "chat-bubble-left-right": {
+    "component": "ChatBubbleLeftRightIcon",
+    "keywords": [
+      "bubble",
+      "comment",
+      "discussion",
+      "message",
+      "response",
+      "speech"
+    ]
+  },
+  "chat-bubble-left": {
+    "component": "ChatBubbleLeftIcon",
+    "keywords": [
+      "bubble",
+      "comment",
+      "discussion",
+      "message",
+      "response",
+      "speech"
+    ]
+  },
+  "chat-bubble-oval-left-ellipsis": {
+    "component": "ChatBubbleOvalLeftEllipsisIcon",
+    "keywords": [
+      "bubble",
+      "comment",
+      "discussion",
+      "message",
+      "response",
+      "speech"
+    ]
+  },
+  "chat-bubble-oval-left": {
+    "component": "ChatBubbleOvalLeftIcon",
+    "keywords": [
+      "bubble",
+      "comment",
+      "discussion",
+      "message",
+      "response",
+      "speech"
+    ]
+  },
+  "check-badge": {
+    "component": "CheckBadgeIcon",
+    "keywords": [
+      "confirm",
+      "correct",
+      "tick",
+      "verified"
+    ]
+  },
+  "check-circle": {
+    "component": "CheckCircleIcon",
+    "keywords": [
+      "confirm",
+      "correct",
+      "tick",
+      "verified"
+    ]
+  },
+  "check": {
+    "component": "CheckIcon",
+    "keywords": [
+      "confirm",
+      "correct",
+      "ok",
+      "tick",
+      "valid",
+      "verified"
+    ]
+  },
+  "chevron-double-down": {
+    "component": "ChevronDoubleDownIcon",
+    "keywords": [
+      "arrow-double-down"
+    ]
+  },
+  "chevron-double-left": {
+    "component": "ChevronDoubleLeftIcon",
+    "keywords": [
+      "arrow-double-left"
+    ]
+  },
+  "chevron-double-right": {
+    "component": "ChevronDoubleRightIcon",
+    "keywords": [
+      "arrow-double-right"
+    ]
+  },
+  "chevron-double-up": {
+    "component": "ChevronDoubleUpIcon",
+    "keywords": [
+      "arrow-double-up"
+    ]
+  },
+  "chevron-down": {
+    "component": "ChevronDownIcon",
+    "keywords": [
+      "arrow-down",
+      "caret-down"
+    ]
+  },
+  "chevron-left": {
+    "component": "ChevronLeftIcon",
+    "keywords": [
+      "arrow-left",
+      "caret-left"
+    ]
+  },
+  "chevron-right": {
+    "component": "ChevronRightIcon",
+    "keywords": [
+      "arrow-right",
+      "caret-right"
+    ]
+  },
+  "chevron-up-down": {
+    "component": "ChevronUpDownIcon",
+    "keywords": [
+      "select",
+      "option"
+    ]
+  },
+  "chevron-up": {
+    "component": "ChevronUpIcon",
+    "keywords": [
+      "arrow-up",
+      "caret-up"
+    ]
+  },
+  "circle-stack": {
+    "component": "CircleStackIcon",
+    "keywords": [
+      "collection",
+      "database",
+      "storage"
+    ]
+  },
+  "clipboard-document-check": {
+    "component": "ClipboardDocumentCheckIcon",
+    "keywords": [
+      "clipboard-tick"
+    ]
+  },
+  "clipboard-document-list": {
+    "component": "ClipboardDocumentListIcon",
+    "keywords": [
+      "copy",
+      "cut",
+      "paste"
+    ]
+  },
+  "clipboard-document": {
+    "component": "ClipboardDocumentIcon",
+    "keywords": [
+      "copy",
+      "cut",
+      "paste"
+    ]
+  },
+  "clipboard": {
+    "component": "ClipboardIcon",
+    "keywords": [
+      "copy",
+      "cut",
+      "paste"
+    ]
+  },
+  "clock": {
+    "component": "ClockIcon",
+    "keywords": [
+      "time",
+      "watch"
+    ]
+  },
+  "cloud-arrow-down": {
+    "component": "CloudArrowDownIcon",
+    "keywords": ""
+  },
+  "cloud-arrow-up": {
+    "component": "CloudArrowUpIcon",
+    "keywords": ""
+  },
+  "cloud": {
+    "component": "CloudIcon",
+    "keywords": ""
+  },
+  "code-bracket-square": {
+    "component": "CodeBracketSquareIcon",
+    "keywords": ""
+  },
+  "code-bracket": {
+    "component": "CodeBracketIcon",
+    "keywords": ""
+  },
+  "cog-6-tooth": {
+    "component": "Cog6ToothIcon",
+    "keywords": [
+      "gear",
+      "settings"
+    ]
+  },
+  "cog-8-tooth": {
+    "component": "Cog8ToothIcon",
+    "keywords": [
+      "gear",
+      "settings"
+    ]
+  },
+  "cog": {
+    "component": "CogIcon",
+    "keywords": [
+      "gear",
+      "settings"
+    ]
+  },
+  "command-line": {
+    "component": "CommandLineIcon",
+    "keywords": [
+      "cli",
+      "code",
+      "console",
+      "terminal"
+    ]
+  },
+  "computer-desktop": {
+    "component": "ComputerDesktopIcon",
+    "keywords": [
+      "mac",
+      "monitor",
+      "pc",
+      "windows"
+    ]
+  },
+  "cpu-chip": {
+    "component": "CpuChipIcon",
+    "keywords": [
+      "computer",
+      "electronics",
+      "pc"
+    ]
+  },
+  "credit-card": {
+    "component": "CreditCardIcon",
+    "keywords": [
+      "debit",
+      "money",
+      "payment",
+      "price"
+    ]
+  },
+  "cube-transparent": {
+    "component": "CubeTransparentIcon",
+    "keywords": ""
+  },
+  "cube": {
+    "component": "CubeIcon",
+    "keywords": [
+      "3d"
+    ]
+  },
+  "currency-bangladeshi": {
+    "component": "CurrencyBangladeshiIcon",
+    "keywords": ""
+  },
+  "currency-dollar": {
+    "component": "CurrencyDollarIcon",
+    "keywords": [
+      "money",
+      "payment",
+      "price",
+      "usd"
+    ]
+  },
+  "currency-euro": {
+    "component": "CurrencyEuroIcon",
+    "keywords": [
+      "eur",
+      "euro",
+      "money",
+      "payment",
+      "price"
+    ]
+  },
+  "currency-pound": {
+    "component": "CurrencyPoundIcon",
+    "keywords": [
+      "gbp",
+      "money",
+      "payment",
+      "price"
+    ]
+  },
+  "currency-rupee": {
+    "component": "CurrencyRupeeIcon",
+    "keywords": [
+      "inr",
+      "money",
+      "payment",
+      "price"
+    ]
+  },
+  "currency-yen": {
+    "component": "CurrencyYenIcon",
+    "keywords": [
+      "money",
+      "payment",
+      "price"
+    ]
+  },
+  "cursor-arrow-rays": {
+    "component": "CursorArrowRaysIcon",
+    "keywords": [
+      "cursor-pointer",
+      "mouse-click"
+    ]
+  },
+  "cursor-arrow-ripple": {
+    "component": "CursorArrowRippleIcon",
+    "keywords": [
+      "cursor-pointer",
+      "mouse-click"
+    ]
+  },
+  "device-phone-mobile": {
+    "component": "DevicePhoneMobileIcon",
+    "keywords": [
+      "android",
+      "iphone",
+      "phone",
+      "smartphone"
+    ]
+  },
+  "device-tablet": {
+    "component": "DeviceTabletIcon",
+    "keywords": [
+      "ipad",
+      "kindle"
+    ]
+  },
+  "divide": {
+    "component": "DivideIcon",
+    "keywords": ""
+  },
+  "document-arrow-down": {
+    "component": "DocumentArrowDownIcon",
+    "keywords": ""
+  },
+  "document-arrow-up": {
+    "component": "DocumentArrowUpIcon",
+    "keywords": ""
+  },
+  "document-chart-bar": {
+    "component": "DocumentChartBarIcon",
+    "keywords": ""
+  },
+  "document-check": {
+    "component": "DocumentCheckIcon",
+    "keywords": ""
+  },
+  "document-currency-bangladeshi": {
+    "component": "DocumentCurrencyBangladeshiIcon",
+    "keywords": ""
+  },
+  "document-currency-dollar": {
+    "component": "DocumentCurrencyDollarIcon",
+    "keywords": ""
+  },
+  "document-currency-euro": {
+    "component": "DocumentCurrencyEuroIcon",
+    "keywords": ""
+  },
+  "document-currency-pound": {
+    "component": "DocumentCurrencyPoundIcon",
+    "keywords": ""
+  },
+  "document-currency-rupee": {
+    "component": "DocumentCurrencyRupeeIcon",
+    "keywords": ""
+  },
+  "document-currency-yen": {
+    "component": "DocumentCurrencyYenIcon",
+    "keywords": ""
+  },
+  "document-duplicate": {
+    "component": "DocumentDuplicateIcon",
+    "keywords": [
+      "clone",
+      "copy"
+    ]
+  },
+  "document-magnifying-glass": {
+    "component": "DocumentMagnifyingGlassIcon",
+    "keywords": [
+      "search"
+    ]
+  },
+  "document-minus": {
+    "component": "DocumentMinusIcon",
+    "keywords": [
+      "document-delete"
+    ]
+  },
+  "document-plus": {
+    "component": "DocumentPlusIcon",
+    "keywords": ""
+  },
+  "document-text": {
+    "component": "DocumentTextIcon",
+    "keywords": ""
+  },
+  "document": {
+    "component": "DocumentIcon",
+    "keywords": [
+      "pdf",
+      "sim"
+    ]
+  },
+  "ellipsis-horizontal-circle": {
+    "component": "EllipsisHorizontalCircleIcon",
+    "keywords": [
+      "more",
+      "options"
+    ]
+  },
+  "ellipsis-horizontal": {
+    "component": "EllipsisHorizontalIcon",
+    "keywords": [
+      "meatballs",
+      "more"
+    ]
+  },
+  "ellipsis-vertical": {
+    "component": "EllipsisVerticalIcon",
+    "keywords": [
+      "kebab",
+      "more"
+    ]
+  },
+  "envelope-open": {
+    "component": "EnvelopeOpenIcon",
+    "keywords": [
+      "letter",
+      "mail",
+      "message"
+    ]
+  },
+  "envelope": {
+    "component": "EnvelopeIcon",
+    "keywords": [
+      "letter",
+      "mail",
+      "message"
+    ]
+  },
+  "equals": {
+    "component": "EqualsIcon",
+    "keywords": ""
+  },
+  "exclamation-circle": {
+    "component": "ExclamationCircleIcon",
+    "keywords": [
+      "caution",
+      "error",
+      "warning"
+    ]
+  },
+  "exclamation-triangle": {
+    "component": "ExclamationTriangleIcon",
+    "keywords": [
+      "caution",
+      "error",
+      "warning"
+    ]
+  },
+  "eye-dropper": {
+    "component": "EyeDropperIcon",
+    "keywords": ""
+  },
+  "eye-slash": {
+    "component": "EyeSlashIcon",
+    "keywords": [
+      "hidden",
+      "invisible",
+      "private",
+      "unseen"
+    ]
+  },
+  "eye": {
+    "component": "EyeIcon",
+    "keywords": [
+      "public",
+      "seen",
+      "visible"
+    ]
+  },
+  "face-frown": {
+    "component": "FaceFrownIcon",
+    "keywords": [
+      "emoji",
+      "sad"
+    ]
+  },
+  "face-smile": {
+    "component": "FaceSmileIcon",
+    "keywords": [
+      "emoji",
+      "happy"
+    ]
+  },
+  "film": {
+    "component": "FilmIcon",
+    "keywords": [
+      "cinema",
+      "movie"
+    ]
+  },
+  "finger-print": {
+    "component": "FingerPrintIcon",
+    "keywords": [
+      "touch-id"
+    ]
+  },
+  "fire": {
+    "component": "FireIcon",
+    "keywords": [
+      "burn",
+      "flame",
+      "hot",
+      "lit"
+    ]
+  },
+  "flag": {
+    "component": "FlagIcon",
+    "keywords": [
+      "report"
+    ]
+  },
+  "folder-arrow-down": {
+    "component": "FolderArrowDownIcon",
+    "keywords": [
+      "folder-download"
+    ]
+  },
+  "folder-minus": {
+    "component": "FolderMinusIcon",
+    "keywords": [
+      "folder-delete",
+      "folder-remove"
+    ]
+  },
+  "folder-open": {
+    "component": "FolderOpenIcon",
+    "keywords": ""
+  },
+  "folder-plus": {
+    "component": "FolderPlusIcon",
+    "keywords": [
+      "folder-add",
+      "folder-new"
+    ]
+  },
+  "folder": {
+    "component": "FolderIcon",
+    "keywords": ""
+  },
+  "forward": {
+    "component": "ForwardIcon",
+    "keywords": [
+      "fast-forward",
+      "next",
+      "skip"
+    ]
+  },
+  "funnel": {
+    "component": "FunnelIcon",
+    "keywords": [
+      "adjustments",
+      "filter"
+    ]
+  },
+  "gif": {
+    "component": "GifIcon",
+    "keywords": [
+      "animation",
+      "image"
+    ]
+  },
+  "gift-top": {
+    "component": "GiftTopIcon",
+    "keywords": [
+      "present",
+      "reward"
+    ]
+  },
+  "gift": {
+    "component": "GiftIcon",
+    "keywords": [
+      "present",
+      "reward"
+    ]
+  },
+  "globe-alt": {
+    "component": "GlobeAltIcon",
+    "keywords": [
+      "earth",
+      "planet",
+      "website",
+      "world",
+      "www"
+    ]
+  },
+  "globe-americas": {
+    "component": "GlobeAmericasIcon",
+    "keywords": [
+      "earth",
+      "planet",
+      "website",
+      "world",
+      "www"
+    ]
+  },
+  "globe-asia-australia": {
+    "component": "GlobeAsiaAustraliaIcon",
+    "keywords": [
+      "earth",
+      "planet",
+      "website",
+      "world",
+      "www"
+    ]
+  },
+  "globe-europe-africa": {
+    "component": "GlobeEuropeAfricaIcon",
+    "keywords": [
+      "earth",
+      "planet",
+      "website",
+      "world",
+      "www"
+    ]
+  },
+  "h1": {
+    "component": "H1Icon",
+    "keywords": ""
+  },
+  "h2": {
+    "component": "H2Icon",
+    "keywords": ""
+  },
+  "h3": {
+    "component": "H3Icon",
+    "keywords": ""
+  },
+  "hand-raised": {
+    "component": "HandRaisedIcon",
+    "keywords": [
+      "grab"
+    ]
+  },
+  "hand-thumb-down": {
+    "component": "HandThumbDownIcon",
+    "keywords": [
+      "dislike"
+    ]
+  },
+  "hand-thumb-up": {
+    "component": "HandThumbUpIcon",
+    "keywords": [
+      "like"
+    ]
+  },
+  "hashtag": {
+    "component": "HashtagIcon",
+    "keywords": [
+      "octothorp",
+      "pound-sign"
+    ]
+  },
+  "heart": {
+    "component": "HeartIcon",
+    "keywords": [
+      "love",
+      "relationship"
+    ]
+  },
+  "home-modern": {
+    "component": "HomeModernIcon",
+    "keywords": [
+      "building",
+      "house"
+    ]
+  },
+  "home": {
+    "component": "HomeIcon",
+    "keywords": [
+      "building",
+      "house"
+    ]
+  },
+  "identification": {
+    "component": "IdentificationIcon",
+    "keywords": ""
+  },
+  "inbox-arrow-down": {
+    "component": "InboxArrowDownIcon",
+    "keywords": [
+      "email",
+      "message"
+    ]
+  },
+  "inbox-stack": {
+    "component": "InboxStackIcon",
+    "keywords": [
+      "email",
+      "message"
+    ]
+  },
+  "inbox": {
+    "component": "InboxIcon",
+    "keywords": [
+      "email",
+      "message"
+    ]
+  },
+  "information-circle": {
+    "component": "InformationCircleIcon",
+    "keywords": [
+      "help"
+    ]
+  },
+  "italic": {
+    "component": "ItalicIcon",
+    "keywords": ""
+  },
+  "key": {
+    "component": "KeyIcon",
+    "keywords": ""
+  },
+  "language": {
+    "component": "LanguageIcon",
+    "keywords": [
+      "i18n",
+      "international",
+      "intl",
+      "l10n",
+      "translate"
+    ]
+  },
+  "lifebuoy": {
+    "component": "LifebuoyIcon",
+    "keywords": [
+      "help",
+      "life-ring",
+      "overboard"
+    ]
+  },
+  "light-bulb": {
+    "component": "LightBulbIcon",
+    "keywords": [
+      "insight"
+    ]
+  },
+  "link-slash": {
+    "component": "LinkSlashIcon",
+    "keywords": ""
+  },
+  "link": {
+    "component": "LinkIcon",
+    "keywords": [
+      "attachment",
+      "connect",
+      "url"
+    ]
+  },
+  "list-bullet": {
+    "component": "ListBulletIcon",
+    "keywords": ""
+  },
+  "lock-closed": {
+    "component": "LockClosedIcon",
+    "keywords": [
+      "secure",
+      "security"
+    ]
+  },
+  "lock-open": {
+    "component": "LockOpenIcon",
+    "keywords": [
+      "security",
+      "unlock"
+    ]
+  },
+  "magnifying-glass-circle": {
+    "component": "MagnifyingGlassCircleIcon",
+    "keywords": [
+      "search"
+    ]
+  },
+  "magnifying-glass-minus": {
+    "component": "MagnifyingGlassMinusIcon",
+    "keywords": [
+      "zoom-out"
+    ]
+  },
+  "magnifying-glass-plus": {
+    "component": "MagnifyingGlassPlusIcon",
+    "keywords": [
+      "zoom-in"
+    ]
+  },
+  "magnifying-glass": {
+    "component": "MagnifyingGlassIcon",
+    "keywords": [
+      "search"
+    ]
+  },
+  "map-pin": {
+    "component": "MapPinIcon",
+    "keywords": [
+      "location",
+      "marker"
+    ]
+  },
+  "map": {
+    "component": "MapIcon",
+    "keywords": ""
+  },
+  "megaphone": {
+    "component": "MegaphoneIcon",
+    "keywords": ""
+  },
+  "microphone": {
+    "component": "MicrophoneIcon",
+    "keywords": [
+      "audio",
+      "podcast",
+      "record"
+    ]
+  },
+  "minus-circle": {
+    "component": "MinusCircleIcon",
+    "keywords": [
+      "delete",
+      "remove",
+      "subtract"
+    ]
+  },
+  "minus-small": {
+    "component": "MinusSmallIcon",
+    "keywords": ""
+  },
+  "minus": {
+    "component": "MinusIcon",
+    "keywords": [
+      "delete",
+      "remove",
+      "subtract"
+    ]
+  },
+  "moon": {
+    "component": "MoonIcon",
+    "keywords": [
+      "dark",
+      "night"
+    ]
+  },
+  "musical-note": {
+    "component": "MusicalNoteIcon",
+    "keywords": [
+      "song"
+    ]
+  },
+  "newspaper": {
+    "component": "NewspaperIcon",
+    "keywords": ""
+  },
+  "no-symbol": {
+    "component": "NoSymbolIcon",
+    "keywords": [
+      "bad",
+      "block",
+      "end",
+      "halt",
+      "not-allowed",
+      "stop",
+      "unauthorized"
+    ]
+  },
+  "numbered-list": {
+    "component": "NumberedListIcon",
+    "keywords": ""
+  },
+  "paint-brush": {
+    "component": "PaintBrushIcon",
+    "keywords": ""
+  },
+  "paper-airplane": {
+    "component": "PaperAirplaneIcon",
+    "keywords": [
+      "send"
+    ]
+  },
+  "paper-clip": {
+    "component": "PaperClipIcon",
+    "keywords": [
+      "attachment",
+      "document",
+      "link"
+    ]
+  },
+  "pause-circle": {
+    "component": "PauseCircleIcon",
+    "keywords": ""
+  },
+  "pause": {
+    "component": "PauseIcon",
+    "keywords": ""
+  },
+  "pencil-square": {
+    "component": "PencilSquareIcon",
+    "keywords": [
+      "edit",
+      "note",
+      "write"
+    ]
+  },
+  "pencil": {
+    "component": "PencilIcon",
+    "keywords": [
+      "edit",
+      "note",
+      "write"
+    ]
+  },
+  "percent-badge": {
+    "component": "PercentBadgeIcon",
+    "keywords": ""
+  },
+  "phone-arrow-down-left": {
+    "component": "PhoneArrowDownLeftIcon",
+    "keywords": ""
+  },
+  "phone-arrow-up-right": {
+    "component": "PhoneArrowUpRightIcon",
+    "keywords": ""
+  },
+  "phone-x-mark": {
+    "component": "PhoneXMarkIcon",
+    "keywords": ""
+  },
+  "phone": {
+    "component": "PhoneIcon",
+    "keywords": ""
+  },
+  "photo": {
+    "component": "PhotoIcon",
+    "keywords": [
+      "gallery",
+      "image",
+      "picture"
+    ]
+  },
+  "play-circle": {
+    "component": "PlayCircleIcon",
+    "keywords": ""
+  },
+  "play-pause": {
+    "component": "PlayPauseIcon",
+    "keywords": ""
+  },
+  "play": {
+    "component": "PlayIcon",
+    "keywords": ""
+  },
+  "plus-circle": {
+    "component": "PlusCircleIcon",
+    "keywords": [
+      "add",
+      "create"
+    ]
+  },
+  "plus-small": {
+    "component": "PlusSmallIcon",
+    "keywords": ""
+  },
+  "plus": {
+    "component": "PlusIcon",
+    "keywords": [
+      "add",
+      "create",
+      "new"
+    ]
+  },
+  "power": {
+    "component": "PowerIcon",
+    "keywords": ""
+  },
+  "presentation-chart-bar": {
+    "component": "PresentationChartBarIcon",
+    "keywords": ""
+  },
+  "presentation-chart-line": {
+    "component": "PresentationChartLineIcon",
+    "keywords": ""
+  },
+  "printer": {
+    "component": "PrinterIcon",
+    "keywords": ""
+  },
+  "puzzle-piece": {
+    "component": "PuzzlePieceIcon",
+    "keywords": [
+      "add-on",
+      "addon",
+      "game",
+      "jigsaw"
+    ]
+  },
+  "qr-code": {
+    "component": "QrCodeIcon",
+    "keywords": ""
+  },
+  "question-mark-circle": {
+    "component": "QuestionMarkCircleIcon",
+    "keywords": [
+      "help"
+    ]
+  },
+  "queue-list": {
+    "component": "QueueListIcon",
+    "keywords": ""
+  },
+  "radio": {
+    "component": "RadioIcon",
+    "keywords": ""
+  },
+  "receipt-percent": {
+    "component": "ReceiptPercentIcon",
+    "keywords": ""
+  },
+  "receipt-refund": {
+    "component": "ReceiptRefundIcon",
+    "keywords": ""
+  },
+  "rectangle-group": {
+    "component": "RectangleGroupIcon",
+    "keywords": ""
+  },
+  "rectangle-stack": {
+    "component": "RectangleStackIcon",
+    "keywords": ""
+  },
+  "rocket-launch": {
+    "component": "RocketLaunchIcon",
+    "keywords": ""
+  },
+  "rss": {
+    "component": "RssIcon",
+    "keywords": ""
+  },
+  "scale": {
+    "component": "ScaleIcon",
+    "keywords": [
+      "balance",
+      "weigh"
+    ]
+  },
+  "scissors": {
+    "component": "ScissorsIcon",
+    "keywords": [
+      "cut"
+    ]
+  },
+  "server-stack": {
+    "component": "ServerStackIcon",
+    "keywords": ""
+  },
+  "server": {
+    "component": "ServerIcon",
+    "keywords": ""
+  },
+  "share": {
+    "component": "ShareIcon",
+    "keywords": ""
+  },
+  "shield-check": {
+    "component": "ShieldCheckIcon",
+    "keywords": [
+      "secure",
+      "shield-tick"
+    ]
+  },
+  "shield-exclamation": {
+    "component": "ShieldExclamationIcon",
+    "keywords": [
+      "shield-error",
+      "shield-warning"
+    ]
+  },
+  "shopping-bag": {
+    "component": "ShoppingBagIcon",
+    "keywords": [
+      "cart"
+    ]
+  },
+  "shopping-cart": {
+    "component": "ShoppingCartIcon",
+    "keywords": ""
+  },
+  "signal-slash": {
+    "component": "SignalSlashIcon",
+    "keywords": ""
+  },
+  "signal": {
+    "component": "SignalIcon",
+    "keywords": ""
+  },
+  "slash": {
+    "component": "SlashIcon",
+    "keywords": ""
+  },
+  "sparkles": {
+    "component": "SparklesIcon",
+    "keywords": [
+      "glitter",
+      "stars"
+    ]
+  },
+  "speaker-wave": {
+    "component": "SpeakerWaveIcon",
+    "keywords": [
+      "audio",
+      "loud",
+      "sound",
+      "unmute",
+      "volume"
+    ]
+  },
+  "speaker-x-mark": {
+    "component": "SpeakerXMarkIcon",
+    "keywords": [
+      "audio",
+      "mute",
+      "quiet",
+      "sound",
+      "volume"
+    ]
+  },
+  "square-2-stack": {
+    "component": "Square2StackIcon",
+    "keywords": ""
+  },
+  "square-3-stack-3d": {
+    "component": "Square3Stack3dIcon",
+    "keywords": ""
+  },
+  "squares-2x2": {
+    "component": "Squares2x2Icon",
+    "keywords": ""
+  },
+  "squares-plus": {
+    "component": "SquaresPlusIcon",
+    "keywords": ""
+  },
+  "star": {
+    "component": "StarIcon",
+    "keywords": [
+      "achievement",
+      "favorite",
+      "rating",
+      "score"
+    ]
+  },
+  "stop-circle": {
+    "component": "StopCircleIcon",
+    "keywords": ""
+  },
+  "stop": {
+    "component": "StopIcon",
+    "keywords": ""
+  },
+  "strikethrough": {
+    "component": "StrikethroughIcon",
+    "keywords": ""
+  },
+  "sun": {
+    "component": "SunIcon",
+    "keywords": [
+      "brightness",
+      "day",
+      "light"
+    ]
+  },
+  "swatch": {
+    "component": "SwatchIcon",
+    "keywords": [
+      "colors",
+      "palette"
+    ]
+  },
+  "table-cells": {
+    "component": "TableCellsIcon",
+    "keywords": [
+      "data",
+      "grid",
+      "spreadsheet"
+    ]
+  },
+  "tag": {
+    "component": "TagIcon",
+    "keywords": [
+      "category",
+      "group",
+      "label"
+    ]
+  },
+  "ticket": {
+    "component": "TicketIcon",
+    "keywords": ""
+  },
+  "trash": {
+    "component": "TrashIcon",
+    "keywords": [
+      "bin",
+      "delete",
+      "garbage",
+      "remove",
+      "rubbish"
+    ]
+  },
+  "trophy": {
+    "component": "TrophyIcon",
+    "keywords": ""
+  },
+  "truck": {
+    "component": "TruckIcon",
+    "keywords": [
+      "lorry",
+      "vehicle"
+    ]
+  },
+  "tv": {
+    "component": "TvIcon",
+    "keywords": ""
+  },
+  "underline": {
+    "component": "UnderlineIcon",
+    "keywords": ""
+  },
+  "user-circle": {
+    "component": "UserCircleIcon",
+    "keywords": [
+      "account",
+      "person",
+      "profile"
+    ]
+  },
+  "user-group": {
+    "component": "UserGroupIcon",
+    "keywords": ""
+  },
+  "user-minus": {
+    "component": "UserMinusIcon",
+    "keywords": [
+      "account",
+      "person",
+      "profile",
+      "user-delete",
+      "user-remove"
+    ]
+  },
+  "user-plus": {
+    "component": "UserPlusIcon",
+    "keywords": [
+      "account",
+      "person",
+      "profile",
+      "user-add"
+    ]
+  },
+  "user": {
+    "component": "UserIcon",
+    "keywords": [
+      "account",
+      "person",
+      "profile"
+    ]
+  },
+  "users": {
+    "component": "UsersIcon",
+    "keywords": ""
+  },
+  "variable": {
+    "component": "VariableIcon",
+    "keywords": ""
+  },
+  "video-camera-slash": {
+    "component": "VideoCameraSlashIcon",
+    "keywords": [
+      "movie",
+      "record",
+      "stop"
+    ]
+  },
+  "video-camera": {
+    "component": "VideoCameraIcon",
+    "keywords": [
+      "movie",
+      "record"
+    ]
+  },
+  "view-columns": {
+    "component": "ViewColumnsIcon",
+    "keywords": ""
+  },
+  "viewfinder-circle": {
+    "component": "ViewfinderCircleIcon",
+    "keywords": ""
+  },
+  "wallet": {
+    "component": "WalletIcon",
+    "keywords": ""
+  },
+  "wifi": {
+    "component": "WifiIcon",
+    "keywords": [
+      "connection",
+      "online",
+      "signal",
+      "wireless"
+    ]
+  },
+  "window": {
+    "component": "WindowIcon",
+    "keywords": ""
+  },
+  "wrench-screwdriver": {
+    "component": "WrenchScrewdriverIcon",
+    "keywords": [
+      "options",
+      "settings",
+      "tool"
+    ]
+  },
+  "wrench": {
+    "component": "WrenchIcon",
+    "keywords": [
+      "options",
+      "settings",
+      "tool"
+    ]
+  },
+  "x-circle": {
+    "component": "XCircleIcon",
+    "keywords": [
+      "cancel",
+      "close",
+      "delete",
+      "remove",
+      "stop"
+    ]
+  },
+  "x-mark": {
+    "component": "XMarkIcon",
+    "keywords": [
+      "cancel",
+      "close",
+      "delete",
+      "remove",
+      "stop"
+    ]
+  }
+}
