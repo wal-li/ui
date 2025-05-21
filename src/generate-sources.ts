@@ -1,9 +1,11 @@
 import { writeFileSync } from 'fs';
 import { readdir, readFile, stat } from 'fs/promises';
-import { join, resolve } from 'path';
+import { basename, extname, join, relative, resolve } from 'path';
+import { cwd } from 'process';
 
 const ENTRIES = [
   '@/components/ui',
+  '@/icons',
   'index.html',
   'tsconfig.json',
   'tsconfig.app.json',
@@ -12,8 +14,23 @@ const ENTRIES = [
   'src/style.css',
 ];
 
+type Source = {
+  entry: string;
+  path: string;
+  content: string;
+  dependencies: string[];
+};
+
+let kebabCase: any;
+
+function pathToName(path: string) {
+  return kebabCase(basename(path, extname(path)).replace(/[^a-z0-9]/gi, '-'));
+}
+
 async function start() {
-  const result: Record<string, string> = {};
+  kebabCase = await import('change-case').then((mod) => mod.kebabCase);
+
+  const result: Record<string, Source> = {};
 
   for (const entry of ENTRIES) {
     const entryPath = resolve('./web/', entry.replace(/^\@/g, './src'));
@@ -31,17 +48,47 @@ async function start() {
       entries.push([entry, entryPath]);
     }
 
-    for (const [key, filePath] of entries) {
-      if ((await stat(filePath)).isDirectory()) continue;
+    for (const [entry, entryPath] of entries) {
+      if ((await stat(entryPath)).isDirectory()) continue;
 
-      const content = await readFile(filePath);
+      // read content
+      const content = (await readFile(entryPath)).toString();
+      const name = pathToName(entry);
 
-      console.log(`Added ${key}`);
-      result[key] = content.toString();
+      if (result[name]) {
+        throw new Error(
+          `Duplicate source "${name}" (${entry} vs ${result[name].entry})`,
+        );
+      }
+
+      // include delependecies
+      const r = /import.*from.*\'(.*)\'/gi;
+      const dependencies = [];
+      let rel;
+      while ((rel = r.exec(content))) {
+        dependencies.push(pathToName(rel[1]));
+      }
+
+      console.log(`Added ${name} -> ${entry}`);
+      result[name] = {
+        entry,
+        path: relative(resolve('./web'), entryPath),
+        content: content,
+        dependencies,
+      };
     }
   }
 
-  writeFileSync(resolve('./web/src/sources.json'), JSON.stringify(result));
+  // filter dependencies
+  for (const name in result) {
+    result[name].dependencies = result[name].dependencies.filter(
+      (dep) => dep in result,
+    );
+  }
+
+  const output = JSON.stringify(result);
+  writeFileSync(resolve('./web/src/sources.json'), output);
+  writeFileSync(resolve('./cli/src/sources.json'), output);
 }
 
 start();

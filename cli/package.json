@@ -1,6 +1,6 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
+  "name": "@wal-li/ui",
+  "version": "3.0.0",
   "main": "dist/wui.js",
   "types": "dist/wui.d.ts",
   "type": "commonjs",
@@ -11,13 +11,14 @@
     "/dist"
   ],
   "scripts": {
-    "dev": "tsc -w & NODE_ENV=development nodemon dist/wui.js -- serve ./example",
+    "wui": "tsc && NODE_ENV=development node dist/wui.js",
     "build": "tsc",
     "test": "jest --runInBand --detectOpenHandles",
     "coverage": "jest --coverage --runInBand"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "commander": "^14.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wal-li/ui.git"

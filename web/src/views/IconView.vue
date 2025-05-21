@@ -9,6 +9,8 @@ import Button from '@/components/ui/Button.vue';
 const loadedComponents = shallowRef([]);
 const outlined = ref(true);
 const searchText = ref('');
+const selectedIcon = shallowRef(null);
+const selectedSize = ref('base');
 
 const filteredComponents = computed(() => {
   return loadedComponents.value.filter((item) => {
@@ -70,19 +72,82 @@ onBeforeMount(async () => {
       >
     </div>
 
-    <div class="rounded-lg grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))]">
+    <div
+      class="rounded-lg grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] pb-18"
+    >
       <button
-        class="flex flex-col items-center justify-center gap-4 cursor-pointer p-4 rounded"
+        :class="`flex flex-col items-center justify-center gap-4 cursor-pointer p-4 rounded ${
+          selectedIcon === item
+            ? 'outline outline-2 -outline-offset-2 outline-foreground'
+            : ''
+        }`"
         v-for="item in filteredComponents"
-        @click=""
+        @click="selectedIcon = selectedIcon === item ? null : item"
       >
         <component class="w-6 h-6" :is="item.component" :outlined="outlined" />
-        <div
-          class="w-full text-center text-xs text-ellipsis overflow-hidden select-all"
-        >
+        <div class="w-full text-center text-xs text-ellipsis overflow-hidden">
           {{ item.componentName }}
         </div>
       </button>
+    </div>
+
+    <div
+      class="w-full fixed bottom-0 h-14 z-30 left-0 lg:left-64 bg-background border-t border-border flex items-center px-2 gap-2"
+      v-if="selectedIcon"
+    >
+      <Button
+        size="base"
+        :variant="selectedSize === 'base' ? 'primary' : 'none'"
+        @click="selectedSize = 'base'"
+      >
+        <component
+          class="w-6 h-6 -mx-1"
+          :is="selectedIcon.component"
+          :outlined="outlined"
+        />
+      </Button>
+
+      <Button
+        size="sm"
+        :variant="selectedSize === 'sm' ? 'primary' : 'none'"
+        @click="selectedSize = 'sm'"
+      >
+        <component
+          class="w-5 h-5 -mx-0.5"
+          :is="selectedIcon.component"
+          :outlined="outlined"
+        />
+      </Button>
+
+      <Button
+        size="xs"
+        :variant="selectedSize === 'xs' ? 'primary' : 'none'"
+        @click="selectedSize = 'xs'"
+      >
+        <component
+          class="w-4 h-4 -mx-0.5"
+          :is="selectedIcon.component"
+          :outlined="outlined"
+        />
+      </Button>
+
+      <pre
+        class="text-xs font-semibold select-all my-0 border-b border-background before:content-['$'] before:mr-2 px-2"
+      >
+wui add {{ selectedIcon.name + '-icon' }}</pre
+      >
+
+      <pre
+        class="text-xs font-semibold select-all my-0 border-b border-background px-2"
+      >
+&lt;{{ selectedIcon.componentName }} class="{{
+          selectedSize === 'base'
+            ? 'w-6 h-6'
+            : selectedSize === 'sm'
+            ? 'w-5 h-5'
+            : 'w-4 h-4'
+        }}" /&gt;</pre
+      >
     </div>
   </div>
 </template>

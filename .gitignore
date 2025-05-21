@@ -2,7 +2,6 @@ node_modules
 *.local
 dist
 .npmrc
-web/src/icons
 
 # Editor directories and files
 .vscode/*

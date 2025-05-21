@@ -25,15 +25,24 @@ const themeStore = useThemeStore();
   </div>
 
   <div class="prose">
-    <h2>1. Customize Your UI</h2>
+    <h2>1. Quickstart</h2>
 
-    <h3>1.1. Colors</h3>
+    <pre class="select-all">npm i -g @wal-li/ui</pre>
+    <pre class="select-all">npm create vite@latest</pre>
+    <pre class="select-all">
+npm i -D tailwindcss @tailwindcss/vite @types/node</pre
+    >
+    <pre class="select-all">wui init</pre>
 
-    <Colorize class="my-4" />
+    <pre class="select-all">wui add &lt;names...&gt;</pre>
 
     <h2>2. Setup Instructions</h2>
 
-    <h3>2.1. Create project</h3>
+    <h3>2.1. Colors</h3>
+
+    <Colorize class="my-4" />
+
+    <h3>2.2. Create project</h3>
     <pre class="select-all">npm create vite@latest</pre>
     <p>with options:</p>
     <ul>
@@ -41,10 +50,10 @@ const themeStore = useThemeStore();
       <li>TypeScript</li>
     </ul>
 
-    <h3>2.2. Add Tailwind CSS</h3>
+    <h3>2.3. Add Tailwind CSS</h3>
     <pre class="select-all">npm i -D tailwindcss @tailwindcss/vite</pre>
     <p>Replace everything in <code>src/index.css</code> with the following:</p>
-    <ViewSource src="src/index.css">
+    <ViewSource src="src/style.css">
       <pre class="p-4 text-sm select-all my-0">
 @import 'tailwindcss';
 
@@ -156,24 +165,24 @@ const themeStore = useThemeStore();
       >
     </ViewSource>
 
-    <h3>2.3. Edit <code>tsconfig.json</code> file</h3>
-    <ViewSource src="tsconfig.json" />
+    <h3>2.4. Edit <code>tsconfig.json</code> file</h3>
+    <ViewSource name="tsconfig" />
 
-    <h3>2.4. Edit <code>tsconfig.app.json</code> file</h3>
-    <ViewSource src="tsconfig.app.json" />
+    <h3>2.5. Edit <code>tsconfig.app.json</code> file</h3>
+    <ViewSource name="tsconfig-app" />
 
-    <h3>2.5. Update <code>vite.config.ts</code></h3>
+    <h3>2.6. Update <code>vite.config.ts</code></h3>
     <pre class="select-all">npm install -D @types/node</pre>
-    <ViewSource src="vite.config.ts" />
+    <ViewSource name="vite-config" />
 
-    <h3>2.6. Edit <code>src/vite-env.d.ts</code> file</h3>
-    <ViewSource src="src/vite-env.d.ts" />
+    <h3>2.7. Edit <code>src/vite-env.d.ts</code> file</h3>
+    <ViewSource name="vite-env-d" />
 
-    <h3>2.7. Run</h3>
+    <h3>2.8. Run</h3>
 
     <pre class="select-all">npm run dev</pre>
 
-    <h3>2.8. Build</h3>
+    <h3>2.9. Build</h3>
 
     <pre class="select-all">npm run build</pre>
 

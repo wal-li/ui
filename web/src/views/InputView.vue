@@ -9,6 +9,6 @@ import ViewSource from '@/components/web/ViewSource.vue';
 
     <Input />
 
-    <ViewSource src="@/components/ui/Input.vue" />
+    <ViewSource name="input" />
   </div>
 </template>

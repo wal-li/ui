@@ -295,7 +295,7 @@ function getIcons(dir: string) {
 }
 
 async function start() {
-  const camelcase = await import('camelcase').then((mod) => mod.default);
+  const pascalCase = await import('change-case').then((mod) => mod.pascalCase);
 
   // icons
   const data = [
@@ -319,7 +319,8 @@ async function start() {
 
   for (const item of data) {
     const { name } = item;
-    const componentName = camelcase(name, { pascalCase: true }) + 'Icon';
+    const componentName =
+      pascalCase(name, { mergeAmbiguousCharacters: true }) + 'Icon';
     let content = ICON_TEMPLATE;
 
     const outline = readFileSync(item.outline).toString();

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 import { ROUTE_PATHS } from '@/constants';
@@ -7,8 +8,11 @@ import HomeIcon from '@/icons/HomeIcon.vue';
 import ArrowRightEndOnRectangleIcon from '@/icons/ArrowRightEndOnRectangleIcon.vue';
 import ArrowDownOnSquareIcon from '@/icons/ArrowDownOnSquareIcon.vue';
 import GiftIcon from '@/icons/GiftIcon.vue';
+import Bars3Icon from '@/icons/Bars3Icon.vue';
+import Button from '@/components/ui/Button.vue';
 
 const route = useRoute();
+const sidebarState = ref(false);
 
 const NAVS = [
   {
@@ -37,7 +41,8 @@ const NAVS = [
 <template>
   <div class="flex items-start">
     <Sidebar
-      class="flex flex-col w-64 min-h-screen p-1 shrink-0 border-r border-border transition-all"
+      class="flex flex-col w-64 min-h-screen p-1 shrink-0 border-r border-border transition-all bg-background z-40"
+      v-model="sidebarState"
     >
       <RouterLink
         v-for="nav in NAVS"
@@ -56,7 +61,19 @@ const NAVS = [
       </RouterLink>
     </Sidebar>
 
+    <label
+      @click="sidebarState = !sidebarState"
+      v-if="sidebarState"
+      class="lg:hidden fixed top-0 left-0 w-screen h-screen bg-foreground/30 z-30"
+    ></label>
+
     <div class="grow w-full overflow-hidden max-w-12xl mx-auto p-6 pb-0">
+      <div class="lg:hidden">
+        <Button @click="sidebarState = !sidebarState">
+          <Bars3Icon size="sm" class="w-5 h-5 -mx-0.5" />
+        </Button>
+      </div>
+
       <RouterView />
     </div>
   </div>

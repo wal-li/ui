@@ -79,6 +79,6 @@ const outlined = ref(false);
       <Checkbox v-model="outlined" label="Outlined" />
     </Field>
 
-    <ViewSource src="@/components/ui/Button.vue" />
+    <ViewSource name="button" />
   </div>
 </template>
